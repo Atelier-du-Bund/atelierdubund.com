@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier du Bund · Type Specimen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500;600&family=Marcellus&family=Poppins:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14100d;
+    --ink-2:#1c1611;
+    --panel:#211a14;
+    --brass:#c8a24b;
+    --brass-soft:#d9bd84;
+    --oxblood:#8c343b;
+    --jade:#3f6b5a;
+    --ivory:#ece3d2;
+    --ivory-dim:#a99e8a;
+    --hair:rgba(200,162,75,.22);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1200px 600px at 70% -10%, rgba(140,52,59,.18), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(63,107,90,.14), transparent 55%),
+      var(--ink);
+    color:var(--ivory);
+    font-family:"Poppins",system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    padding:clamp(1.5rem,4vw,4rem);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto}
+  header.intro{text-align:center;padding-block:1rem 3rem;border-bottom:1px solid var(--hair);margin-bottom:3rem}
+  .eyebrow{font-family:"Poppins";font-weight:400;text-transform:uppercase;letter-spacing:.42em;font-size:.7rem;color:var(--brass);margin-bottom:1.2rem}
+  .intro h1{font-family:"Cinzel";font-weight:500;letter-spacing:.04em;font-size:clamp(1.6rem,5vw,2.6rem);color:var(--ivory);line-height:1.2}
+  .intro p{color:var(--ivory-dim);max-width:46ch;margin:1.2rem auto 0;font-size:.92rem}
+
+  .card{
+    background:linear-gradient(180deg, var(--panel), var(--ink-2));
+    border:1px solid var(--hair);
+    border-radius:4px;
+    padding:clamp(1.5rem,4vw,2.8rem);
+    margin-bottom:2rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;inset:0;border:1px solid rgba(217,189,132,.08);margin:8px;border-radius:2px;pointer-events:none}
+  .card .meta{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem;position:relative;z-index:1}
+  .card .name{font-family:"Poppins";font-weight:500;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;color:var(--brass-soft)}
+  .card .note{font-size:.78rem;color:var(--ivory-dim);font-style:italic}
+  .pick{display:inline-block;font-family:"Poppins";font-weight:500;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);background:var(--brass);padding:.25em .8em;border-radius:99px;margin-left:.6rem;vertical-align:middle}
+
+  .wordmark{font-size:clamp(2rem,7vw,3.4rem);line-height:1.05;color:var(--ivory);margin-bottom:.2rem}
+  .slogan{font-size:clamp(1.1rem,3.2vw,1.55rem);color:var(--brass-soft);margin:.8rem 0 1.4rem;font-weight:400}
+  .label{font-family:"Poppins";font-weight:400;text-transform:uppercase;letter-spacing:.35em;font-size:.72rem;color:var(--jade);margin-bottom:1rem}
+  .body{color:var(--ivory-dim);max-width:60ch;font-size:.9rem}
+  .body em{color:var(--ivory);font-style:italic}
+
+  /* per-font display assignments */
+  .f-playfair .wordmark,.f-playfair .slogan{font-family:"Playfair Display"}
+  .f-bodoni   .wordmark,.f-bodoni   .slogan{font-family:"Bodoni Moda"}
+  .f-cormorant .wordmark,.f-cormorant .slogan{font-family:"Cormorant Garamond";font-weight:500}
+  .f-cinzel   .wordmark{font-family:"Cinzel";font-weight:500;letter-spacing:.02em;font-size:clamp(1.7rem,6vw,3rem)}
+  .f-cinzel   .slogan{font-family:"Cormorant Garamond";font-style:italic}
+  .f-marcellus .wordmark{font-family:"Marcellus"}
+  .f-marcellus .slogan{font-family:"Marcellus"}
+
+  footer{text-align:center;color:var(--ivory-dim);font-size:.8rem;padding-top:2rem;border-top:1px solid var(--hair);margin-top:1rem}
+  footer strong{color:var(--brass-soft);font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="intro">
+    <div class="eyebrow">Atelier du Bund · Type Study</div>
+    <h1>Choosing the Voice of the House</h1>
+    <p>Each card below shows the same brand wordmark, slogan, a section label, and body copy. Body text stays in <strong>Poppins</strong> throughout — only the display serif changes. Pick the one that feels most “1930s Shanghai.”</p>
+  </header>
+
+  <!-- PLAYFAIR -->
+  <section class="card f-playfair">
+    <div class="meta"><span class="name">Option 1 — Playfair Display <span class="pick">Claude's pick</span></span><span class="note">fashion-plate elegance, timeless</span></div>
+    <div class="wordmark">Atelier du Bund</div>
+    <div class="slogan">The art of Shanghai tailoring, made for you.</div>
+    <div class="label">The Founding Collection</div>
+    <p class="body">Built to your body and to a suit you already love — <em>not</em> an algorithm. A tight, considered selection in the Shanghai-to-Hong-Kong tradition, now brought to Montréal.</p>
+  </section>
+
+  <!-- BODONI -->
+  <section class="card f-bodoni">
+    <div class="meta"><span class="name">Option 2 — Bodoni Moda</span><span class="note">dramatic couture, sharp glamour</span></div>
+    <div class="wordmark">Atelier du Bund</div>
+    <div class="slogan">The art of Shanghai tailoring, made for you.</div>
+    <div class="label">The Founding Collection</div>
+    <p class="body">Built to your body and to a suit you already love — <em>not</em> an algorithm. A tight, considered selection in the Shanghai-to-Hong-Kong tradition, now brought to Montréal.</p>
+  </section>
+
+  <!-- CORMORANT -->
+  <section class="card f-cormorant">
+    <div class="meta"><span class="name">Option 3 — Cormorant Garamond</span><span class="note">soft, romantic, In-the-Mood-for-Love</span></div>
+    <div class="wordmark">Atelier du Bund</div>
+    <div class="slogan">The art of Shanghai tailoring, made for you.</div>
+    <div class="label">The Founding Collection</div>
+    <p class="body">Built to your body and to a suit you already love — <em>not</em> an algorithm. A tight, considered selection in the Shanghai-to-Hong-Kong tradition, now brought to Montréal.</p>
+  </section>
+
+  <!-- CINZEL -->
+  <section class="card f-cinzel">
+    <div class="meta"><span class="name">Option 4 — Cinzel (caps) + Cormorant italic</span><span class="note">Art Deco poster wordmark</span></div>
+    <div class="wordmark">ATELIER DU BUND</div>
+    <div class="slogan">The art of Shanghai tailoring, made for you.</div>
+    <div class="label">The Founding Collection</div>
+    <p class="body">Built to your body and to a suit you already love — <em>not</em> an algorithm. A tight, considered selection in the Shanghai-to-Hong-Kong tradition, now brought to Montréal.</p>
+  </section>
+
+  <!-- MARCELLUS -->
+  <section class="card f-marcellus">
+    <div class="meta"><span class="name">Option 5 — Marcellus</span><span class="note">understated classical refinement</span></div>
+    <div class="wordmark">Atelier du Bund</div>
+    <div class="slogan">The art of Shanghai tailoring, made for you.</div>
+    <div class="label">The Founding Collection</div>
+    <p class="body">Built to your body and to a suit you already love — <em>not</em> an algorithm. A tight, considered selection in the Shanghai-to-Hong-Kong tradition, now brought to Montréal.</p>
+  </section>
+
+  <footer>Body copy set in <strong>Poppins</strong> · Tell me a number (1–5) and I'll wire it into the real site.</footer>
+</div>
+</body>
+</html>

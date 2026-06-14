@@ -1,0 +1,10 @@
+.DS_Store
+*.log
+
+# Unused source photos in images/ root (not referenced by the site).
+# The site uses images/web/ and images/studio/ — those stay tracked.
+/images/*.JPG
+/images/*.jpg
+/images/*.jpeg
+/images/*.PNG
+/images/*.png
