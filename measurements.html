@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Measurement Sheet — Atelier du Bund (private)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* page-local helpers for the measurement sheet */
+  .ms-wrap{padding-top:clamp(6rem,12vw,8rem);padding-bottom:var(--section)}
+  .ms-section{margin-top:2.6rem}
+  .ms-section__label{display:flex;align-items:center;gap:.7rem;font-family:var(--sans);font-weight:500;
+    font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:1.3rem}
+  .ms-section__label::before{content:"";width:1.6rem;height:1px;background:var(--brass);opacity:.7}
+  .ms-grid{display:grid;gap:1.1rem;grid-template-columns:repeat(3,1fr)}
+  @media (max-width:760px){.ms-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:460px){.ms-grid{grid-template-columns:1fr 1fr}}
+  .field .unit{text-transform:none;letter-spacing:0;color:var(--ivory-dim);opacity:.7}
+  .ms-actions{position:sticky;bottom:0;margin-top:2.4rem;padding:1.1rem 0 1.4rem;
+    background:linear-gradient(0deg,var(--ink) 70%,transparent);display:flex;gap:.8rem;flex-wrap:wrap}
+  .ms-hint{font-size:.8rem;color:var(--ivory-dim);font-style:italic;margin-top:.4rem}
+</style>
+</head>
+<body>
+
+<section class="ms-wrap">
+  <div class="container" style="max-width:920px">
+    <span class="eyebrow">Private · Atelier du Bund</span>
+    <h1 class="display" style="font-size:clamp(2rem,5vw,3.2rem)">Measurement Sheet</h1>
+    <p class="lede" style="margin-top:1rem">For in-person fittings. Fill as your tailor measures, then <strong>Copy summary</strong> or <strong>Email</strong> it. This page is unlisted and not indexed.</p>
+
+    <form id="msForm" class="form" autocomplete="off">
+
+      <!-- ===== SESSION ===== -->
+      <div class="ms-section">
+        <div class="ms-section__label">Session</div>
+        <div class="form__row">
+          <div class="field"><label for="date">Date</label><input id="date" name="Date" type="date"></div>
+          <div class="field"><label for="units">Units</label>
+            <select id="units" name="Units"><option value="cm">Centimetres (cm)</option><option value="in">Inches (in)</option></select>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field"><label for="client">Client name</label><input id="client" name="Client" type="text" placeholder="Full name"></div>
+          <div class="field"><label for="contact">Phone / email</label><input id="contact" name="Contact" type="text" placeholder="(514) 000-0000 · name@email"></div>
+        </div>
+        <div class="field"><label for="measured_by">Measured by</label><input id="measured_by" name="Measured by" type="text" placeholder="Tailor / partner name"></div>
+      </div>
+
+      <!-- ===== DESIGN (from the Studio) ===== -->
+      <div class="ms-section">
+        <div class="ms-section__label">Design — from the builder</div>
+        <div class="ms-grid">
+          <div class="field"><label for="fit">Fit</label>
+            <select id="fit" name="Fit"><option value="">—</option><option>The Maximilian (M · Tailored)</option><option>The Edmund (M · Relaxed)</option><option>The Josephine (W · Tailored)</option><option>The Maggie (W · Relaxed)</option></select></div>
+          <div class="field"><label for="colour">Colour</label>
+            <select id="colour" name="Colour"><option value="">—</option><option>Black</option><option>Beige</option><option>Blue</option><option>White</option></select></div>
+          <div class="field"><label for="tier">Tier</label>
+            <select id="tier" name="Tier"><option value="">—</option><option>Standard</option><option>Premium</option></select></div>
+          <div class="field"><label for="lapel">Lapel</label><input id="lapel" name="Lapel" type="text" placeholder="Notch / Peak / Shawl + width"></div>
+          <div class="field"><label for="buttoning">Buttoning</label><input id="buttoning" name="Buttoning" type="text" placeholder="SB1 / SB2 / DB"></div>
+          <div class="field"><label for="pockets">Pockets / Vents</label><input id="pockets" name="Pockets/Vents" type="text" placeholder="Flap·jetted·patch / vents"></div>
+          <div class="field"><label for="lining">Lining</label><input id="lining" name="Lining" type="text" placeholder="Matched / oxblood / …"></div>
+          <div class="field"><label for="trousers">Trousers</label><input id="trousers" name="Trousers" type="text" placeholder="Flat/pleated · hem"></div>
+          <div class="field"><label for="finishing">Finishing</label><input id="finishing" name="Finishing" type="text" placeholder="Cuffs, buttons, pick-stitch…"></div>
+        </div>
+        <div class="field" style="margin-top:1.1rem"><label for="design_notes">Design notes</label><textarea id="design_notes" name="Design notes" placeholder="Anything decided in the room"></textarea></div>
+      </div>
+
+      <!-- ===== JACKET / UPPER BODY ===== -->
+      <div class="ms-section">
+        <div class="ms-section__label">Jacket — upper body</div>
+        <div class="ms-grid">
+          <div class="field"><label for="height">Height</label><input id="height" name="Height" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="weight">Weight <span class="unit">(opt)</span></label><input id="weight" name="Weight" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="neck">Neck</label><input id="neck" name="Neck" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="chest">Chest <span class="unit">(fullest)</span></label><input id="chest" name="Chest" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="waist_n">Waist <span class="unit">(natural)</span></label><input id="waist_n" name="Waist (natural)" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="seat">Seat / Hip</label><input id="seat" name="Seat/Hip" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="shoulder">Shoulder <span class="unit">(seam–seam)</span></label><input id="shoulder" name="Shoulder" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="back">Across back</label><input id="back" name="Across back" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="bicep">Bicep</label><input id="bicep" name="Bicep" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="cuff">Cuff / wrist</label><input id="cuff" name="Cuff/wrist" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="sleeve_l">Sleeve length L</label><input id="sleeve_l" name="Sleeve L" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="sleeve_r">Sleeve length R</label><input id="sleeve_r" name="Sleeve R" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="jacket_len">Jacket length <span class="unit">(nape→hem)</span></label><input id="jacket_len" name="Jacket length" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="front_chest">Front chest <span class="unit">(opt)</span></label><input id="front_chest" name="Front chest" type="text" inputmode="decimal"></div>
+        </div>
+        <div class="form__row" style="margin-top:1.1rem">
+          <div class="field"><label for="posture">Posture / shoulder slope</label>
+            <select id="posture" name="Posture"><option value="">—</option><option>Regular</option><option>Erect / square</option><option>Stooped / forward</option><option>Sloping shoulders</option><option>Square shoulders</option></select></div>
+          <div class="field"><label for="asymmetry">Asymmetry notes <span class="unit">(L/R differences)</span></label><input id="asymmetry" name="Asymmetry" type="text" placeholder="e.g. right shoulder lower"></div>
+        </div>
+      </div>
+
+      <!-- ===== TROUSERS / LOWER BODY ===== -->
+      <div class="ms-section">
+        <div class="ms-section__label">Trousers — lower body</div>
+        <div class="ms-grid">
+          <div class="field"><label for="t_waist">Trouser waist</label><input id="t_waist" name="Trouser waist" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_seat">Seat</label><input id="t_seat" name="Trouser seat" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_thigh">Thigh</label><input id="t_thigh" name="Thigh" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_knee">Knee</label><input id="t_knee" name="Knee" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_hem">Hem opening</label><input id="t_hem" name="Hem opening" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_out">Outseam</label><input id="t_out" name="Outseam" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_in">Inseam</label><input id="t_in" name="Inseam" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_rise_f">Rise <span class="unit">(front)</span></label><input id="t_rise_f" name="Rise front" type="text" inputmode="decimal"></div>
+          <div class="field"><label for="t_rise_b">Rise <span class="unit">(back)</span></label><input id="t_rise_b" name="Rise back" type="text" inputmode="decimal"></div>
+        </div>
+      </div>
+
+      <!-- ===== FIT & NOTES ===== -->
+      <div class="ms-section">
+        <div class="ms-section__label">Fit preferences & notes</div>
+        <div class="field"><label for="fit_feel">Fit feel</label><textarea id="fit_feel" name="Fit feel" placeholder="Waist suppression, room at chest, sleeve/trouser break, snug vs. comfortable…"></textarea></div>
+        <div class="field" style="margin-top:1.1rem"><label for="special">Special considerations</label><textarea id="special" name="Special considerations" placeholder="Belly, dropped shoulder, prominent seat/blades, mobility needs…"></textarea></div>
+        <label class="choice" style="display:block;margin-top:1.1rem"><input type="checkbox" id="photos" name="Photos taken"><span>Reference photos taken (front · side · back)</span></label>
+      </div>
+
+      <div class="ms-actions">
+        <button type="button" class="btn" id="copyBtn">Copy summary</button>
+        <button type="button" class="btn btn--ghost" id="mailBtn">Email it</button>
+        <button type="button" class="btn btn--ghost" id="clearBtn">Clear</button>
+      </div>
+      <p class="ms-hint" id="msStatus">Tip: fill the Units field first. “Copy summary” puts a clean text record on your clipboard.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+const form = document.getElementById('msForm');
+const status = document.getElementById('msStatus');
+const today = new Date().toISOString().slice(0,10);
+document.getElementById('date').value = today;
+
+function summary(){
+  const units = (document.getElementById('units').value || 'cm');
+  const groups = [...form.querySelectorAll('.ms-section')];
+  let out = `ATELIER DU BUND — MEASUREMENT SHEET\nAll measurements in ${units}\n`;
+  groups.forEach(g => {
+    const label = g.querySelector('.ms-section__label')?.textContent.trim();
+    const lines = [];
+    g.querySelectorAll('input, select, textarea').forEach(el => {
+      let v = el.type === 'checkbox' ? (el.checked ? 'Yes' : '') : (el.value || '').trim();
+      if(!v) return;
+      lines.push(`  ${el.getAttribute('name')}: ${v}`);
+    });
+    if(lines.length){ out += `\n${label.toUpperCase()}\n` + lines.join('\n') + '\n'; }
+  });
+  return out;
+}
+
+document.getElementById('copyBtn').addEventListener('click', async () => {
+  const text = summary();
+  try { await navigator.clipboard.writeText(text); status.textContent = 'Copied to clipboard ✓ — paste it anywhere to save.'; }
+  catch(e){
+    const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove(); status.textContent = 'Copied ✓';
+  }
+});
+
+document.getElementById('mailBtn').addEventListener('click', () => {
+  const client = (document.getElementById('client').value || 'client').trim();
+  const subject = `Measurements — ${client} — Atelier du Bund`;
+  window.location.href = `mailto:hello@atelierdubund.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summary())}`;
+});
+
+document.getElementById('clearBtn').addEventListener('click', () => {
+  if(confirm('Clear all fields?')){ form.reset(); document.getElementById('date').value = today; status.textContent = 'Cleared.'; }
+});
+</script>
+</body>
+</html>
