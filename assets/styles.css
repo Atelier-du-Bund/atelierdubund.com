@@ -398,85 +398,132 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   select,input[type=date]{cursor:pointer}
 }
 
-/* ---------- The Invitation — envelope entry (seen from the back) ---------- */
+/* ---------- The Invitation — photoreal 3D paper envelope ---------- */
+:root{
+  /* fine paper grain (greyscale fractal noise), used on every paper face */
+  --paper-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  --hinge:cubic-bezier(.45,.05,.18,1);
+}
 .inv-lock{overflow:hidden}
 .invitation{
   position:fixed;inset:0;z-index:1000;
-  display:grid;place-items:center;gap:1.8rem;padding:var(--gutter);
-  grid-auto-flow:row;align-content:center;
+  display:grid;place-items:center;gap:clamp(1.2rem,3vw,2rem);align-content:center;
+  padding:var(--gutter);
   background:
-    radial-gradient(125% 100% at 50% 42%,rgba(151,50,59,.32),transparent 58%),
-    radial-gradient(150% 130% at 50% 50%,#2a1014,#150709 72%);
+    radial-gradient(70% 55% at 50% 40%,rgba(151,50,59,.20),transparent 60%),
+    radial-gradient(120% 120% at 50% 38%,#241019,#120508 70%),
+    #0e0406;
   color:var(--ivory);
-  transition:opacity .8s var(--ease);
+  transition:opacity .9s var(--ease);
 }
 .invitation[hidden]{display:none}
 
-/* the envelope itself — a pressable button */
+/* the envelope — large, like the whole page is a letter */
 .envelope{
-  --w:min(86vw,30rem);
-  position:relative;width:var(--w);height:calc(var(--w) * .64);
+  --w:min(93vw,58rem);
+  position:relative;width:var(--w);height:calc(var(--w) * .62);
+  max-height:80vh;aspect-ratio:1.6;
   background:none;border:0;padding:0;cursor:pointer;
-  perspective:1500px;
-  filter:drop-shadow(0 42px 70px rgba(0,0,0,.6));
-  transition:transform .8s var(--ease),opacity .8s var(--ease);
+  perspective:1700px;transform-style:preserve-3d;
+  filter:drop-shadow(0 50px 80px rgba(0,0,0,.62));
+  transition:transform 1s var(--ease),opacity .9s var(--ease);
+  animation:envIn .9s var(--ease) both;
 }
+@keyframes envIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
 .envelope:focus-visible{outline:none}
-.envelope:focus-visible .env-back{box-shadow:inset 0 0 0 1px rgba(200,162,75,.5),0 0 0 3px rgba(200,162,75,.55)}
+.envelope:focus-visible .env-pocket{box-shadow:inset 0 0 0 2px rgba(232,207,134,.95),inset 0 0 0 3px rgba(154,106,47,.85),inset 0 0 70px rgba(0,0,0,.5),0 0 0 4px rgba(200,162,75,.5)}
 
-/* static back of the envelope: four folds + gold seams (SVG fills the box) */
-.env-back{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:5px;overflow:hidden}
-.env-back svg{width:100%;height:100%;display:block}
+/* shared paper surface: oxblood cardstock + sheen + grain */
+.env-pocket,.env-flap::before{
+  background-image:
+    var(--paper-grain),
+    radial-gradient(125% 90% at 28% 8%,rgba(255,236,210,.20),transparent 42%),
+    linear-gradient(150deg,rgba(255,240,220,.10) 0%,transparent 26%,transparent 72%,rgba(0,0,0,.18) 100%),
+    linear-gradient(180deg,#7d2b34,#5a1d23 62%,#491720);
+  background-size:180px 180px,100% 100%,100% 100%,100% 100%;
+  background-blend-mode:soft-light,screen,normal,normal;
+}
 
-/* the openable top flap (covers the upper triangle, rotates back on press) */
-.env-flap{
-  position:absolute;top:0;left:0;width:100%;height:50%;
-  transform-origin:50% 0;
+/* the pocket = body of the envelope (with lower fold seams + inside recess) */
+.env-pocket{
+  position:absolute;inset:0;border-radius:7px;overflow:hidden;
+  box-shadow:
+    inset 0 0 0 2px rgba(232,207,134,.92),
+    inset 0 0 0 3px rgba(154,106,47,.82),
+    inset 0 0 70px rgba(0,0,0,.5);
+}
+.env-pocket::before{ /* the two lower side folds + bottom fold, as soft shaded triangles */
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom right,transparent 49.4%,rgba(0,0,0,.16) 49.7%,transparent 50%),
+    linear-gradient(to bottom left,transparent 49.4%,rgba(0,0,0,.16) 49.7%,transparent 50%),
+    linear-gradient(180deg,transparent 55%,rgba(0,0,0,.14));
+}
+.env-pocket::after{ /* dark inner recess that the open flap reveals at the top */
+  content:"";position:absolute;left:0;right:0;top:0;height:52%;
   clip-path:polygon(0 0,100% 0,50% 100%);
-  background:var(--brass);
-  transition:transform .75s var(--ease);
+  background:linear-gradient(180deg,#2a0f14,#3c151c 75%);
+  box-shadow:inset 0 8px 22px rgba(0,0,0,.55);
+}
+
+/* the openable top flap (hinged at the very top edge) */
+.env-flap{
+  position:absolute;top:0;left:0;width:100%;height:52%;
+  transform-origin:50% 0;transform-style:preserve-3d;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  background:linear-gradient(135deg,#f0d98c,#b07f33 45%,#e6cd84);  /* gold foil edge shows at the rim */
+  transition:transform 1.05s var(--hinge),filter 1.05s var(--hinge);
   z-index:3;
 }
-.env-flap::before{ /* oxblood face, inset a hair to leave a gold rim */
-  content:"";position:absolute;inset:1.5px;
+.env-flap::before{ /* the oxblood paper face, inset to leave a fine gold rim */
+  content:"";position:absolute;inset:2px;
   clip-path:polygon(0 0,100% 0,50% 100%);
-  background:linear-gradient(180deg,#7a2a33,#5a1d23);
+  background-size:180px 180px,100% 100%,100% 100%,100% 100%;
+  background-blend-mode:soft-light,screen,normal,normal;
 }
-.env-flap::after{ /* soft centre crease */
+.env-flap::after{ /* crease + sheen down the flap */
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.16),transparent 60%);
   clip-path:polygon(0 0,100% 0,50% 100%);
+  background:
+    linear-gradient(180deg,rgba(255,240,220,.16),transparent 30%),
+    linear-gradient(180deg,transparent 60%,rgba(0,0,0,.22));
 }
 
-/* wax seal where the flap closes (centre of the envelope) */
+/* wax seal where the flap tip meets the centre */
 .env-seal{
-  position:absolute;top:50%;left:50%;width:74px;height:74px;
+  position:absolute;top:52%;left:50%;width:clamp(58px,11vw,82px);height:clamp(58px,11vw,82px);
   transform:translate(-50%,-50%);border-radius:50%;z-index:4;
   display:grid;place-items:center;color:#f3e3c8;
-  background:radial-gradient(circle at 38% 32%,#b8434b,#7e2730 68%,#5e1c23);
-  box-shadow:0 6px 16px -4px rgba(0,0,0,.6),inset 0 2px 6px rgba(255,255,255,.28),inset 0 -7px 13px rgba(0,0,0,.45);
-  transition:opacity .4s var(--ease),transform .5s var(--ease);
+  background:radial-gradient(circle at 36% 30%,#c14b54,#86303a 55%,#5e1c23 100%);
+  box-shadow:
+    0 8px 18px -4px rgba(0,0,0,.65),
+    inset 0 3px 7px rgba(255,255,255,.3),
+    inset 0 -9px 16px rgba(0,0,0,.5);
+  transition:opacity .45s var(--ease),transform .55s var(--hinge);
 }
-.env-seal svg{width:40px;height:40px}
+.env-seal::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1px dashed rgba(240,220,191,.45)}
+.env-seal svg{width:46%;height:46%}
 .env-seal .blossom circle{stroke:#f0dcbf;stroke-width:1.4}
 .env-seal .blossom .pistil{fill:#f0dcbf;stroke:none}
 
 /* caption beneath the envelope */
-.invitation__caption{text-align:center;display:grid;gap:.5rem}
-.invitation__brand{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);color:var(--ivory);line-height:1}
+.invitation__caption{text-align:center;display:grid;gap:.5rem;transition:opacity .6s var(--ease)}
+.invitation__brand{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.3rem);color:var(--ivory);line-height:1}
 .invitation__hint{font-family:var(--sans);font-weight:400;text-transform:uppercase;letter-spacing:.32em;font-size:.66rem;color:var(--brass)}
-.envelope:hover ~ .invitation__caption .invitation__hint{color:var(--brass-soft)}
+.envelope:hover ~ .invitation__caption .invitation__hint,
+.envelope:focus-visible ~ .invitation__caption .invitation__hint{color:var(--brass-soft)}
 
-/* opening sequence: flap lifts, seal breaks away, then it all unfolds open */
-.invitation.is-open .env-flap{transform:rotateX(-172deg)}
-.invitation.is-open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+/* opening sequence: flap swings open in 3D, seal breaks, then it all opens into the site */
+.invitation.is-open .envelope{animation:none}
+.invitation.is-open .env-flap{transform:rotateX(-158deg);filter:brightness(.82)}
+.invitation.is-open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(-12deg)}
 .invitation--gone{opacity:0;pointer-events:none}
-.invitation--gone .envelope{transform:scale(1.45);opacity:0}
+.invitation--gone .envelope{transform:translateY(-3%) scale(1.85);opacity:0}
 .invitation--gone .invitation__caption{opacity:0}
 
 @media (prefers-reduced-motion:reduce){
-  .invitation,.envelope,.env-flap,.env-seal{transition:opacity .25s linear}
-  .invitation.is-open .env-flap{transform:none}
+  .invitation,.envelope,.env-flap,.env-seal,.invitation__caption{transition:opacity .25s linear;animation:none}
+  .invitation.is-open .env-flap{transform:none;filter:none}
   .invitation--gone .envelope{transform:none}
 }
 
