@@ -546,6 +546,12 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 }
 .band__mail:hover{color:var(--ivory);border-color:var(--brass)}
 
+/* a single, quiet price — the only figure on the site */
+.price-whisper{
+  margin-top:1.5rem;font-family:var(--sans);font-weight:400;
+  font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ivory-dim);
+}
+
 /* ---------- Replay the invitation (footer control) ---------- */
 .replay-invitation{
   background:none;border:0;color:var(--ivory-dim);
