@@ -190,57 +190,14 @@
   </div>
 </section>
 
-<!-- ============ HERITAGE (journey map) ============ -->
+<!-- ============ HERITAGE ============
+     PLACEHOLDER — copy is being written separately by the owner.
+     DO NOT write or restore heritage copy here. The skyline graphic stays. -->
 <section class="section heritage" id="heritage">
   <div class="container">
     <div class="center reveal">
       <span class="eyebrow eyebrow--center">Heritage</span>
-      <h2 class="heading">From the Bund to the Saint-Lawrence.</h2>
-      <p class="lede heritage-lede" style="margin-inline:auto">The <span class="serif-italic">Hongbang</span> — the “Red Gang” tailors — are a lineage, not a label. From a coastal beginning they became the master tailors of old Shanghai, carried their craft to Hong Kong, and now bring it to Montréal.</p>
-    </div>
-
-    <div class="journey reveal">
-      <div class="journey__track" id="journeyTrack">
-        <div class="journey__line" aria-hidden="true"></div>
-
-        <button class="j-node" type="button"
-          data-title="Ningbo — the origin"
-          data-text="The Hongbang, or “Red Gang,” tailors emerged from the coastal city of Ningbo — artisans whose mastery of the Western suit would soon reshape how a whole city dressed.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Ningbo</span>
-          <span class="j-node__year">The origin</span>
-        </button>
-
-        <button class="j-node active" type="button"
-          data-title="Shanghai — the Bund, 1930s"
-          data-text="On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits with a precision that defined an era of glamour.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Shanghai</span>
-          <span class="j-node__year">1930s</span>
-        </button>
-
-        <button class="j-node" type="button"
-          data-title="Hong Kong — the craft carried south"
-          data-text="In 1949 the lineage moved to Hong Kong. The same hands, the same methods — still producing today for established houses.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Hong Kong</span>
-          <span class="j-node__year">1949</span>
-        </button>
-
-        <button class="j-node j-node--future" type="button"
-          data-title="Montréal — brought home"
-          data-text="That unbroken tradition now arrives in Montréal — the first stop, with more of Canada to follow.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Montréal</span>
-          <span class="j-node__year">Today</span>
-        </button>
-      </div>
-
-      <div class="journey__panel" id="journeyPanel" aria-live="polite">
-        <h3 id="journeyTitle">Shanghai — the Bund, 1930s</h3>
-        <p id="journeyText">On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits with a precision that defined an era of glamour.</p>
-      </div>
-      <p class="journey__hint center">Tap a city to follow the thread →</p>
+      <p class="heritage-placeholder">[ HERITAGE COPY TO COME — DO NOT WRITE ]</p>
     </div>
   </div>
 
@@ -403,18 +360,6 @@
     entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // ----- Heritage journey map -----
-  const track = document.getElementById('journeyTrack');
-  const jTitle = document.getElementById('journeyTitle'), jText = document.getElementById('journeyText');
-  track.querySelectorAll('.j-node').forEach(node => {
-    node.addEventListener('click', () => {
-      track.querySelectorAll('.j-node').forEach(n => n.classList.remove('active'));
-      node.classList.add('active');
-      jTitle.textContent = node.dataset.title;
-      jText.textContent = node.dataset.text;
-    });
-  });
 </script>
 </body>
 </html>
