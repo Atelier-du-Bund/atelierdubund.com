@@ -398,50 +398,86 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   select,input[type=date]{cursor:pointer}
 }
 
-/* ---------- The Invitation — entry overlay ---------- */
+/* ---------- The Invitation — envelope entry (seen from the back) ---------- */
 .inv-lock{overflow:hidden}
 .invitation{
-  position:fixed;inset:0;z-index:1000;perspective:1200px;
-  display:grid;place-items:center;padding:var(--gutter);
-  background:radial-gradient(125% 95% at 50% 8%,#f6eed9,#e8dabd 58%,#dcc9a3);
-  color:var(--ink-warm);
-  transition:opacity .85s var(--ease);
+  position:fixed;inset:0;z-index:1000;
+  display:grid;place-items:center;gap:1.8rem;padding:var(--gutter);
+  grid-auto-flow:row;align-content:center;
+  background:
+    radial-gradient(125% 100% at 50% 42%,rgba(151,50,59,.32),transparent 58%),
+    radial-gradient(150% 130% at 50% 50%,#2a1014,#150709 72%);
+  color:var(--ivory);
+  transition:opacity .8s var(--ease);
 }
 .invitation[hidden]{display:none}
-.invitation__letter{
-  position:relative;max-width:34rem;width:100%;text-align:center;
-  padding:clamp(2.6rem,6vw,4rem) clamp(1.6rem,5vw,3.2rem);
-  background:linear-gradient(180deg,#fbf4e3,#f2e7cd);
-  border:1px solid #d8c5a0;border-radius:2px;
-  box-shadow:0 42px 90px -42px rgba(60,40,20,.55),inset 0 0 0 1px rgba(255,255,255,.45);
-  transform-origin:top center;
-  transition:transform .85s var(--ease),opacity .85s var(--ease);
+
+/* the envelope itself — a pressable button */
+.envelope{
+  --w:min(86vw,30rem);
+  position:relative;width:var(--w);height:calc(var(--w) * .64);
+  background:none;border:0;padding:0;cursor:pointer;
+  perspective:1500px;
+  filter:drop-shadow(0 42px 70px rgba(0,0,0,.6));
+  transition:transform .8s var(--ease),opacity .8s var(--ease);
 }
-.invitation__letter::before{content:"";position:absolute;inset:12px;border:1px solid rgba(154,106,47,.28);border-radius:1px;pointer-events:none}
-.invitation__seal{
-  width:80px;height:80px;margin:0 auto 1.7rem;border-radius:50%;
+.envelope:focus-visible{outline:none}
+.envelope:focus-visible .env-back{box-shadow:inset 0 0 0 1px rgba(200,162,75,.5),0 0 0 3px rgba(200,162,75,.55)}
+
+/* static back of the envelope: four folds + gold seams (SVG fills the box) */
+.env-back{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:5px;overflow:hidden}
+.env-back svg{width:100%;height:100%;display:block}
+
+/* the openable top flap (covers the upper triangle, rotates back on press) */
+.env-flap{
+  position:absolute;top:0;left:0;width:100%;height:50%;
+  transform-origin:50% 0;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  background:var(--brass);
+  transition:transform .75s var(--ease);
+  z-index:3;
+}
+.env-flap::before{ /* oxblood face, inset a hair to leave a gold rim */
+  content:"";position:absolute;inset:1.5px;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  background:linear-gradient(180deg,#7a2a33,#5a1d23);
+}
+.env-flap::after{ /* soft centre crease */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.16),transparent 60%);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+}
+
+/* wax seal where the flap closes (centre of the envelope) */
+.env-seal{
+  position:absolute;top:50%;left:50%;width:74px;height:74px;
+  transform:translate(-50%,-50%);border-radius:50%;z-index:4;
   display:grid;place-items:center;color:#f3e3c8;
   background:radial-gradient(circle at 38% 32%,#b8434b,#7e2730 68%,#5e1c23);
-  box-shadow:0 8px 18px -6px rgba(94,28,35,.7),inset 0 2px 6px rgba(255,255,255,.25),inset 0 -7px 13px rgba(0,0,0,.4);
+  box-shadow:0 6px 16px -4px rgba(0,0,0,.6),inset 0 2px 6px rgba(255,255,255,.28),inset 0 -7px 13px rgba(0,0,0,.45);
+  transition:opacity .4s var(--ease),transform .5s var(--ease);
 }
-.invitation__seal svg{width:44px;height:44px}
-.invitation__seal .blossom circle{stroke:#f0dcbf;stroke-width:1.4}
-.invitation__seal .blossom .pistil{fill:#f0dcbf;stroke:none}
-.invitation__eyebrow{display:block;font-family:var(--sans);font-weight:400;text-transform:uppercase;letter-spacing:.4em;font-size:.7rem;color:var(--gold-deep);margin-bottom:1rem}
-.invitation__title{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,6vw,3.2rem);color:#241b10;line-height:1.05;margin-bottom:.7rem}
-.invitation__line{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--ink-warm-dim);margin-bottom:2.1rem}
-.invitation__enter{
-  font-family:var(--sans);font-weight:500;font-size:.8rem;text-transform:uppercase;letter-spacing:.24em;
-  color:#fbf4e3;background:var(--oxblood);border:1px solid var(--oxblood);
-  padding:1.05em 2.7em;border-radius:999px;transition:.4s var(--ease);
-}
-.invitation__enter:hover{background:transparent;color:#7e2730;border-color:#7e2730}
-.invitation__enter:focus-visible{outline:2px solid #7e2730;outline-offset:3px}
+.env-seal svg{width:40px;height:40px}
+.env-seal .blossom circle{stroke:#f0dcbf;stroke-width:1.4}
+.env-seal .blossom .pistil{fill:#f0dcbf;stroke:none}
+
+/* caption beneath the envelope */
+.invitation__caption{text-align:center;display:grid;gap:.5rem}
+.invitation__brand{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);color:var(--ivory);line-height:1}
+.invitation__hint{font-family:var(--sans);font-weight:400;text-transform:uppercase;letter-spacing:.32em;font-size:.66rem;color:var(--brass)}
+.envelope:hover ~ .invitation__caption .invitation__hint{color:var(--brass-soft)}
+
+/* opening sequence: flap lifts, seal breaks away, then it all unfolds open */
+.invitation.is-open .env-flap{transform:rotateX(-172deg)}
+.invitation.is-open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
 .invitation--gone{opacity:0;pointer-events:none}
-.invitation--gone .invitation__letter{transform:translateY(-12px) rotateX(10deg) scale(.98);opacity:0}
+.invitation--gone .envelope{transform:scale(1.45);opacity:0}
+.invitation--gone .invitation__caption{opacity:0}
+
 @media (prefers-reduced-motion:reduce){
-  .invitation,.invitation__letter{transition:opacity .25s linear}
-  .invitation--gone .invitation__letter{transform:none}
+  .invitation,.envelope,.env-flap,.env-seal{transition:opacity .25s linear}
+  .invitation.is-open .env-flap{transform:none}
+  .invitation--gone .envelope{transform:none}
 }
 
 /* ---------- Three-tier pricing ---------- */
@@ -457,6 +493,15 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   border-bottom:1px solid var(--hair);padding-bottom:.12em;transition:.35s var(--ease);
 }
 .band__mail:hover{color:var(--ivory);border-color:var(--brass)}
+
+/* ---------- Replay the invitation (footer control) ---------- */
+.replay-invitation{
+  background:none;border:0;color:var(--ivory-dim);
+  font-family:var(--sans);font-size:.78rem;letter-spacing:.02em;
+  display:inline-flex;align-items:center;gap:.5em;transition:.3s var(--ease);
+}
+.replay-invitation:hover{color:var(--brass)}
+.replay-invitation::before{content:"↻";font-size:.9em}
 
 /* ---------- Private "Your Appointment" page ---------- */
 .appointment{

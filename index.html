@@ -14,17 +14,32 @@
 </head>
 <body>
 
-<!-- ============ THE INVITATION (entry) ============ -->
-<div class="invitation" id="invitation" role="dialog" aria-modal="true" aria-labelledby="invTitle">
-  <div class="invitation__letter">
-    <span class="invitation__seal" aria-hidden="true">
+<!-- ============ THE INVITATION (envelope entry) ============ -->
+<div class="invitation" id="invitation" role="dialog" aria-modal="true" aria-labelledby="invHint">
+  <button class="envelope" id="enterBtn" type="button" aria-label="Open your invitation and enter Atelier du Bund">
+    <span class="env-back" aria-hidden="true">
+      <svg viewBox="0 0 300 192" preserveAspectRatio="none">
+        <!-- back folds: top (the inside, revealed when the flap lifts), bottom, left, right -->
+        <polygon points="0,0 300,0 150,96" fill="#3f161b"/>
+        <polygon points="0,192 300,192 150,96" fill="#531b21"/>
+        <polygon points="0,0 0,192 150,96" fill="#6b2630"/>
+        <polygon points="300,0 300,192 150,96" fill="#642329"/>
+        <!-- gold seams along the folds + outer edge -->
+        <g fill="none" stroke="#c8a24b" stroke-width="1.4" stroke-opacity=".55">
+          <path d="M0 0 L150 96 M300 0 L150 96 M0 192 L150 96 M300 192 L150 96"/>
+          <rect x="1" y="1" width="298" height="190" rx="3" stroke-opacity=".9"/>
+        </g>
+      </svg>
+    </span>
+    <span class="env-flap" aria-hidden="true"></span>
+    <span class="env-seal" aria-hidden="true">
       <svg class="blossom" viewBox="0 0 30 30"><g><circle cx="15" cy="8" r="5"/><circle cx="22" cy="13" r="5"/><circle cx="19.5" cy="21" r="5"/><circle cx="10.5" cy="21" r="5"/><circle cx="8" cy="13" r="5"/><circle class="pistil" cx="15" cy="15" r="2"/></g></svg>
     </span>
-    <span class="invitation__eyebrow">Atelier du Bund</span>
-    <h1 class="invitation__title" id="invTitle">By invitation.</h1>
-    <p class="invitation__line">The art of Shanghai tailoring, made for you.</p>
-    <button class="invitation__enter" id="enterBtn" type="button">Step inside</button>
-  </div>
+  </button>
+  <span class="invitation__caption">
+    <span class="invitation__brand">Atelier du Bund</span>
+    <span class="invitation__hint" id="invHint">By invitation — press to open</span>
+  </span>
 </div>
 
 <!-- ============ HEADER ============ -->
@@ -287,36 +302,57 @@
     </div>
     <div class="footer__base">
       <span>© 2026 Atelier du Bund · Montréal, QC</span>
+      <button class="replay-invitation" id="replayInvitation" type="button">Replay the invitation</button>
       <span>The art of Shanghai tailoring, made for you.</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // ----- The Invitation: entry overlay -----
+  // ----- The Invitation: envelope entry -----
   (function(){
     const inv = document.getElementById('invitation');
     if(!inv) return;
     const enterBtn = document.getElementById('enterBtn');
+    const replayBtn = document.getElementById('replayInvitation');
+    const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let timers = [];
+    const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
+
     const seen = (() => { try { return sessionStorage.getItem('adb_entered') === '1'; } catch(e){ return false; } })();
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const forced = /[?&]invitation\b/.test(location.search) || location.hash === '#invitation';
 
-    if(seen){ inv.hidden = true; return; }
-
-    document.body.classList.add('inv-lock');
-    // focus the call-to-enter so keyboard users land on it
-    requestAnimationFrame(() => enterBtn.focus());
+    function show(){
+      clearTimers();
+      inv.hidden = false;
+      inv.classList.remove('invitation--gone', 'is-open');
+      document.body.classList.add('inv-lock');
+      // next frame so the reset paints before any animation
+      requestAnimationFrame(() => enterBtn.focus());
+    }
 
     function enter(){
+      if(inv.hidden || inv.classList.contains('is-open')) return;
       try { sessionStorage.setItem('adb_entered', '1'); } catch(e){}
-      inv.classList.add('invitation--gone');
       document.body.classList.remove('inv-lock');
-      const done = () => { inv.hidden = true; };
-      if(reduce){ setTimeout(done, 260); }
-      else { inv.addEventListener('transitionend', done, { once:true }); setTimeout(done, 1100); }
+      if(reduce()){
+        inv.classList.add('invitation--gone');
+        timers.push(setTimeout(() => { inv.hidden = true; }, 280));
+        return;
+      }
+      // 1) the flap lifts and the seal breaks
+      inv.classList.add('is-open');
+      // 2) then the whole envelope unfolds open into the site
+      timers.push(setTimeout(() => inv.classList.add('invitation--gone'), 650));
+      timers.push(setTimeout(() => { inv.hidden = true; }, 1500));
     }
+
     enterBtn.addEventListener('click', enter);
-    inv.addEventListener('keydown', e => { if(e.key === 'Escape' || e.key === 'Enter') enter(); });
+    inv.addEventListener('keydown', e => { if(e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); enter(); } });
+    if(replayBtn) replayBtn.addEventListener('click', () => { show(); window.scrollTo({top:0, behavior: reduce() ? 'auto' : 'smooth'}); });
+
+    if(seen && !forced){ inv.hidden = true; }
+    else { show(); }
   })();
 
   // ----- Header background on scroll -----
