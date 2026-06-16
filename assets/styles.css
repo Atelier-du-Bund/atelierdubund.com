@@ -603,3 +603,23 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .form-status{margin-top:1rem;font-size:.88rem;min-height:1.2em}
 .form-status.error{color:#e6a4a4}
 .form-status.success{color:var(--brass-soft)}
+
+/* ============================================================
+   v4 — photo-first gallery (homepage centrepiece)
+   ============================================================ */
+.gallery-section{background:var(--ink)}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.7rem,1.5vw,1.3rem);margin-top:clamp(2rem,5vw,3.4rem)}
+@media (max-width:680px){.gallery{grid-template-columns:1fr}}
+.gallery__item{position:relative;margin:0;overflow:hidden;border-radius:var(--radius);background:var(--ink-2);border:1px solid var(--hair)}
+.gallery__item--wide{grid-column:1 / -1}
+.gallery__item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.gallery__item--wide img{aspect-ratio:21/9}
+.gallery__item--tall img{aspect-ratio:4/5}
+@media (max-width:680px){.gallery__item--wide img{aspect-ratio:16/10}}
+.gallery__item:hover img{transform:scale(1.045)}
+.gallery__cap{position:absolute;inset:auto 0 0 0;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+  padding:1.5rem 1.2rem .95rem;font-family:var(--sans);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory);
+  background:linear-gradient(0deg,rgba(15,5,7,.8),transparent)}
+.gallery__cap b{font-weight:500;color:var(--brass)}
+.gallery__ph{position:absolute;top:.8rem;left:.8rem;z-index:1;font-family:var(--sans);font-weight:500;font-size:.56rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink);background:var(--brass);padding:.32em .72em;border-radius:999px;opacity:.92}
