@@ -51,16 +51,16 @@
         <div class="field"><label for="measured_by">Measured by</label><input id="measured_by" name="Measured by" type="text" placeholder="Tailor / partner name"></div>
       </div>
 
-      <!-- ===== DESIGN (from the Studio) ===== -->
+      <!-- ===== DESIGN (chosen in person) ===== -->
       <div class="ms-section">
-        <div class="ms-section__label">Design — from the builder</div>
+        <div class="ms-section__label">Design — chosen in person</div>
         <div class="ms-grid">
           <div class="field"><label for="fit">Fit</label>
             <select id="fit" name="Fit"><option value="">—</option><option>The Maximilian (M · Tailored)</option><option>The Edmund (M · Relaxed)</option><option>The Josephine (W · Tailored)</option><option>The Maggie (W · Relaxed)</option></select></div>
           <div class="field"><label for="colour">Colour</label>
             <select id="colour" name="Colour"><option value="">—</option><option>Black</option><option>Beige</option><option>Blue</option><option>White</option></select></div>
           <div class="field"><label for="tier">Tier</label>
-            <select id="tier" name="Tier"><option value="">—</option><option>Standard</option><option>Premium</option></select></div>
+            <select id="tier" name="Tier"><option value="">—</option><option>Standard (50% wool)</option><option>Signature (machine-washable wool)</option><option>Pure (100% wool)</option></select></div>
           <div class="field"><label for="lapel">Lapel</label><input id="lapel" name="Lapel" type="text" placeholder="Notch / Peak / Shawl + width"></div>
           <div class="field"><label for="buttoning">Buttoning</label><input id="buttoning" name="Buttoning" type="text" placeholder="SB1 / SB2 / DB"></div>
           <div class="field"><label for="pockets">Pockets / Vents</label><input id="pockets" name="Pockets/Vents" type="text" placeholder="Flap·jetted·patch / vents"></div>
@@ -166,7 +166,7 @@ document.getElementById('copyBtn').addEventListener('click', async () => {
 document.getElementById('mailBtn').addEventListener('click', () => {
   const client = (document.getElementById('client').value || 'client').trim();
   const subject = `Measurements — ${client} — Atelier du Bund`;
-  window.location.href = `mailto:hello@atelierdubund.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summary())}`;
+  window.location.href = `mailto:bonjour@atelierdubund.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summary())}`;
 });
 
 document.getElementById('clearBtn').addEventListener('click', () => {

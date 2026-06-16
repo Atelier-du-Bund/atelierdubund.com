@@ -4,13 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atelier du Bund — The art of Shanghai tailoring, made for you.</title>
-<meta name="description" content="Custom suits in the Shanghai-to-Hong-Kong tailoring tradition, brought to Canada. True custom — never an algorithm.">
+<meta name="description" content="Atelier du Bund — custom suits in the old-Shanghai and Hong Kong tailoring tradition, brought to Montréal. A founding collection of four fits, by appointment.">
+<meta name="theme-color" content="#200d11">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<noscript><style>.invitation{display:none!important}</style></noscript>
 </head>
 <body>
+
+<!-- ============ THE INVITATION (entry) ============ -->
+<div class="invitation" id="invitation" role="dialog" aria-modal="true" aria-labelledby="invTitle">
+  <div class="invitation__letter">
+    <span class="invitation__seal" aria-hidden="true">
+      <svg class="blossom" viewBox="0 0 30 30"><g><circle cx="15" cy="8" r="5"/><circle cx="22" cy="13" r="5"/><circle cx="19.5" cy="21" r="5"/><circle cx="10.5" cy="21" r="5"/><circle cx="8" cy="13" r="5"/><circle class="pistil" cx="15" cy="15" r="2"/></g></svg>
+    </span>
+    <span class="invitation__eyebrow">Atelier du Bund</span>
+    <h1 class="invitation__title" id="invTitle">By invitation.</h1>
+    <p class="invitation__line">The art of Shanghai tailoring, made for you.</p>
+    <button class="invitation__enter" id="enterBtn" type="button">Step inside</button>
+  </div>
+</div>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="header">
@@ -18,11 +33,9 @@
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">☰</button>
   <nav class="nav" id="nav">
     <a href="#collection">The Collection</a>
-    <a href="#cloth">Cloth &amp; Tiers</a>
-    <a href="#process">How It Works</a>
+    <a href="#cloth">Fabric &amp; Pricing</a>
     <a href="#heritage">Heritage</a>
-    <a href="studio.html">Design Studio</a>
-    <a href="book.html" class="btn btn--ghost">Reserve a Fitting</a>
+    <a href="#contact">Contact</a>
     <a href="#" class="lang" aria-label="Switch language — French coming soon" title="Français — à venir">EN</a>
   </nav>
 </header>
@@ -31,12 +44,12 @@
 <section class="hero">
   <img class="hero__img" src="images/web/hero.jpg" alt="A tailored navy three-piece suit with oxblood buttons and red silk lining, in a vintage brass-and-marble lobby.">
   <div class="container hero__inner">
-    <span class="eyebrow">China to Canada · Bespoke Suiting</span>
-    <h1 class="display">The art of Shanghai tailoring,<br>made for you.</h1>
-    <p class="hero__slogan">True custom — never an algorithm.</p>
+    <span class="eyebrow">Old Shanghai · Hong Kong · Montréal</span>
+    <h1 class="display">Atelier du Bund</h1>
+    <p class="hero__slogan">The art of Shanghai tailoring, made for you.</p>
     <div class="hero__cta">
-      <a href="book.html" class="btn btn--lg">Reserve a Fitting</a>
-      <a href="#collection" class="btn btn--ghost btn--lg">Explore the Collection</a>
+      <a href="#collection" class="btn btn--lg">The Collection</a>
+      <a href="#contact" class="btn btn--ghost btn--lg">By appointment</a>
     </div>
   </div>
   <span class="scrollcue">Scroll</span>
@@ -58,8 +71,8 @@
   <div class="container">
     <div class="center reveal">
       <span class="eyebrow eyebrow--center">The Founding Collection</span>
-      <h2 class="heading">Four silhouettes. One standard.</h2>
-      <p class="lede" style="margin-inline:auto">Every Atelier du Bund suit begins as one of four fits — two for men, two for women — each a starting point we tailor to you. <span class="serif-italic">“Fit” is the cut: tailored or relaxed.</span></p>
+      <h2 class="heading">Four fits. One standard.</h2>
+      <p class="lede" style="margin-inline:auto">Our first chapter is small and deliberate — a limited founding round. Every suit begins as one of four fits, two for men and two for women, then is tailored to you. <span class="serif-italic">“Fit” is the cut: tailored or relaxed.</span></p>
     </div>
 
     <div class="collection__grid">
@@ -69,7 +82,6 @@
           <h3 class="fit-card__name">The Maximilian</h3>
           <p class="fit-card__desc">A sharp, close silhouette that follows the body. For the man who wants definition and a clean, deliberate line.</p>
         </div>
-        <span class="fit-card__tag">Two-piece · wool blend with stretch</span>
         <span class="fit-card__num">i</span>
       </article>
 
@@ -79,7 +91,6 @@
           <h3 class="fit-card__name">The Edmund</h3>
           <p class="fit-card__desc">An easy, fuller cut with room to move. Quiet confidence over sharpness — ease without losing the shape.</p>
         </div>
-        <span class="fit-card__tag">Two-piece · wool blend with stretch</span>
         <span class="fit-card__num">ii</span>
       </article>
 
@@ -89,7 +100,6 @@
           <h3 class="fit-card__name">The Josephine</h3>
           <p class="fit-card__desc">A precise, waisted line. Structured and composed — the silhouette of someone who decides exactly how she enters a room.</p>
         </div>
-        <span class="fit-card__tag">Two-piece · wool blend with stretch</span>
         <span class="fit-card__num">iii</span>
       </article>
 
@@ -99,98 +109,70 @@
           <h3 class="fit-card__name">The Maggie</h3>
           <p class="fit-card__desc">A softer, draped silhouette with effortless flow. Named for a certain mood — tender, unhurried, quietly magnetic.</p>
         </div>
-        <span class="fit-card__tag">Two-piece · wool blend with stretch</span>
         <span class="fit-card__num">iv</span>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ CLOTH & TIERS (light) ============ -->
+<!-- ============ FABRIC & PRICING (light) ============ -->
 <section class="section section--light" id="cloth">
   <div class="container">
-    <div class="split">
-      <div class="split__media split__media--frame reveal">
-        <img src="images/web/detail-cuff.jpg" alt="A hand adjusting a surgeon's cuff with red working buttonholes on a navy jacket.">
-      </div>
-      <div class="reveal">
-        <span class="eyebrow">The Cloth</span>
-        <h2 class="heading">Wool blends, with a little give.</h2>
-        <p class="lede">We work in wool blends with stretch — not stiff 100% wool. The result is more comfortable to wear and far more forgiving in the fit, especially for bodies that have never found an off-the-rack suit that sits right.</p>
-        <div class="swatches" aria-label="Launch colours">
-          <span class="swatch"><i style="background:#15171c"></i>Black</span>
-          <span class="swatch"><i style="background:#c2a878"></i>Beige</span>
-          <span class="swatch"><i style="background:#2b3a55"></i>Blue</span>
-          <span class="swatch"><i style="background:#e8e2d4"></i>White</span>
-        </div>
-        <p class="note" style="margin-top:1.4rem">Our opening palette. Buttons and linings are chosen with you and made to order — from the house’s signature oxblood to a shade entirely your own.</p>
-      </div>
+    <div class="center reveal">
+      <span class="eyebrow eyebrow--center">Fabric &amp; Pricing</span>
+      <h2 class="heading">Choose your cloth.</h2>
+      <p class="lede" style="margin-inline:auto">Three cloths, one standard of making. Each suit is cut to your measurements and finished by hand in the Shanghai–Hong Kong tradition.</p>
     </div>
 
-    <div class="tiers" id="pricing">
+    <div class="tiers tiers--three" id="pricing">
       <div class="tier reveal">
         <h3 class="tier__name">Standard</h3>
-        <div class="tier__price" style="font-size:1.5rem">Full custom suiting</div>
+        <p class="tier__cloth">50% wool</p>
+        <div class="tier__price">$999</div>
         <ul class="tier__list">
-          <li>Wool-blend-with-stretch cloth</li>
+          <li>A refined wool blend with natural drape</li>
           <li>Cut to your measurements</li>
-          <li>Bespoke buttons &amp; lining</li>
-          <li>Made in the Shanghai–Hong Kong tradition</li>
+          <li>House buttons &amp; lining chosen with you</li>
         </ul>
       </div>
+
       <div class="tier tier--premium reveal">
-        <span class="tier__badge">The house, in full</span>
-        <h3 class="tier__name">Premium</h3>
-        <div class="tier__price" style="font-size:1.5rem">Elevated cloth &amp; construction</div>
+        <span class="tier__badge">The signature cloth</span>
+        <h3 class="tier__name">Signature</h3>
+        <p class="tier__cloth">Machine-washable wool</p>
+        <div class="tier__price">$1,099</div>
         <ul class="tier__list">
-          <li>Finer cloths &amp; upgraded construction</li>
-          <li>Refined hand-finishing throughout</li>
-          <li>Everything in Standard</li>
+          <li>Pure-feeling wool, cared for at home</li>
+          <li>Resilient and ready for everyday wear</li>
+          <li>Cut to your measurements</li>
+        </ul>
+      </div>
+
+      <div class="tier reveal">
+        <h3 class="tier__name">Pure</h3>
+        <p class="tier__cloth">100% wool</p>
+        <div class="tier__price">$1,399</div>
+        <ul class="tier__list">
+          <li>The finest pure-wool cloth</li>
+          <li>The richest hand and drape</li>
+          <li>Cut to your measurements</li>
         </ul>
       </div>
     </div>
-    <p class="note center" style="margin-top:1.8rem">Full custom, from under <strong>$1,000&nbsp;CAD</strong>. Qipao commissions are planned for a future chapter.</p>
+
+    <p class="note center" style="margin-top:1.8rem;max-width:60ch;margin-inline:auto">
+      Every suit is finished with a <strong>silk-touch lining</strong> — with a <strong>pure-silk upgrade</strong> available — and carries a <strong>complimentary embroidered signature</strong>. Prices in CAD.
+    </p>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="section process" id="process">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow eyebrow--center">How It Works</span>
-      <h2 class="heading">Made to you, in four movements.</h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <h3>Come in to be measured</h3>
-        <p>We begin in person — reading your body and your posture, the way only a real fitting can.</p>
-      </div>
-      <div class="step reveal">
-        <h3>We capture everything</h3>
-        <p>Precise measurements and reference photos — no AI scan, no generic pattern library.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Made to your measure</h3>
-        <p>Cut and hand-finished to those exact measurements, in the Shanghai–Hong Kong tradition.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Fitted in Montréal</h3>
-        <p>Collect your finished suit in person — with more Canadian cities to come.</p>
-      </div>
-    </div>
-    <div class="center" style="margin-top:3rem">
-      <a href="design.html" class="textlink">See how a design appointment works</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HERITAGE (full section + interactive map) ============ -->
+<!-- ============ HERITAGE (journey map) ============ -->
 <section class="section heritage" id="heritage">
   <div class="container">
     <div class="center reveal">
       <span class="eyebrow eyebrow--center">Heritage</span>
       <h2 class="heading">From the Bund to the Saint-Lawrence.</h2>
-      <p class="lede heritage-lede">The <span class="serif-italic">Hongbang</span> — the “Red Gang” tailors — are a lineage, not a label. From a fishing-port beginning they became the most sought-after tailors in Asia. We cut in that same unbroken tradition.</p>
+      <p class="lede heritage-lede" style="margin-inline:auto">The <span class="serif-italic">Hongbang</span> — the “Red Gang” tailors — are a lineage, not a label. From a coastal beginning they became the master tailors of old Shanghai, carried their craft to Hong Kong, and now bring it to Montréal.</p>
     </div>
 
     <div class="journey reveal">
@@ -207,7 +189,7 @@
 
         <button class="j-node active" type="button"
           data-title="Shanghai — the Bund, 1930s"
-          data-text="On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits for the city’s European expatriates with a precision that defined an era of glamour.">
+          data-text="On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits with a precision that defined an era of glamour.">
           <span class="j-node__dot"></span>
           <span class="j-node__city">Shanghai</span>
           <span class="j-node__year">1930s</span>
@@ -215,7 +197,7 @@
 
         <button class="j-node" type="button"
           data-title="Hong Kong — the craft carried south"
-          data-text="In 1949 the lineage moved to Hong Kong. The same hands, the same methods — still producing today for established Hong Kong houses.">
+          data-text="In 1949 the lineage moved to Hong Kong. The same hands, the same methods — still producing today for established houses.">
           <span class="j-node__dot"></span>
           <span class="j-node__city">Hong Kong</span>
           <span class="j-node__year">1949</span>
@@ -232,7 +214,7 @@
 
       <div class="journey__panel" id="journeyPanel" aria-live="polite">
         <h3 id="journeyTitle">Shanghai — the Bund, 1930s</h3>
-        <p id="journeyText">On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits for the city’s European expatriates with a precision that defined an era of glamour.</p>
+        <p id="journeyText">On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits with a precision that defined an era of glamour.</p>
       </div>
       <p class="journey__hint center">Tap a city to follow the thread →</p>
     </div>
@@ -266,14 +248,14 @@
   </svg>
 </section>
 
-<!-- ============ FOUNDING BAND ============ -->
-<section class="band">
+<!-- ============ CONTACT (closing band) ============ -->
+<section class="band" id="contact">
   <img class="band__img" src="images/web/founding-band.jpg" alt="Tailored navy suit against a terrazzo wall and brass stair rail.">
   <div class="container">
-    <span class="eyebrow eyebrow--center reveal">By Reservation</span>
-    <h2 class="display reveal">The Founding Collection.</h2>
-    <p class="lede reveal" style="margin:1.4rem auto 2.4rem;text-align:center">Our first round is small and deliberate. Before any suit reaches you, every piece is inspected by hand — on the ground in China — and carried home to Montréal. A limited collection, by reservation.</p>
-    <div class="center reveal"><a href="book.html" class="btn btn--xl">Reserve Your Place</a></div>
+    <span class="eyebrow eyebrow--center reveal">Contact</span>
+    <h2 class="display reveal">By appointment, in Montréal.</h2>
+    <p class="lede reveal" style="margin:1.4rem auto 2.2rem;text-align:center">The founding collection is offered privately. Appointments are arranged personally — write to us and we’ll find a time for an unhurried, one-on-one fitting.</p>
+    <div class="center reveal"><a class="band__mail" href="mailto:bonjour@atelierdubund.com">bonjour@atelierdubund.com</a></div>
   </div>
 </section>
 
@@ -283,24 +265,21 @@
     <div class="footer__grid">
       <div class="footer__brand">
         <span class="brand">Atelier du Bund</span>
-        <p>The art of Shanghai tailoring, made for you. Custom suiting in the Shanghai-to-Hong-Kong tradition, brought to Canada.</p>
+        <p>The art of Shanghai tailoring, made for you. Custom suiting in the Shanghai-to-Hong-Kong tradition, brought to Montréal.</p>
       </div>
       <div class="footer">
         <h4>Explore</h4>
         <ul>
           <li><a href="#collection">The Collection</a></li>
-          <li><a href="#cloth">Cloth &amp; Tiers</a></li>
-          <li><a href="#process">How It Works</a></li>
+          <li><a href="#cloth">Fabric &amp; Pricing</a></li>
           <li><a href="#heritage">Heritage</a></li>
-          <li><a href="design.html">Design</a></li>
-          <li><a href="studio.html">Design Studio</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer">
         <h4>Atelier</h4>
         <ul>
-          <li><a href="book.html">Reserve a Fitting</a></li>
-          <li><a href="mailto:hello@atelierdubund.com">hello@atelierdubund.com</a></li>
+          <li><a href="mailto:bonjour@atelierdubund.com">bonjour@atelierdubund.com</a></li>
           <li><a href="#">Instagram</a></li>
           <li><a href="#" title="Français — à venir">Français — à venir</a></li>
         </ul>
@@ -314,12 +293,38 @@
 </footer>
 
 <script>
-  // Header background on scroll
+  // ----- The Invitation: entry overlay -----
+  (function(){
+    const inv = document.getElementById('invitation');
+    if(!inv) return;
+    const enterBtn = document.getElementById('enterBtn');
+    const seen = (() => { try { return sessionStorage.getItem('adb_entered') === '1'; } catch(e){ return false; } })();
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if(seen){ inv.hidden = true; return; }
+
+    document.body.classList.add('inv-lock');
+    // focus the call-to-enter so keyboard users land on it
+    requestAnimationFrame(() => enterBtn.focus());
+
+    function enter(){
+      try { sessionStorage.setItem('adb_entered', '1'); } catch(e){}
+      inv.classList.add('invitation--gone');
+      document.body.classList.remove('inv-lock');
+      const done = () => { inv.hidden = true; };
+      if(reduce){ setTimeout(done, 260); }
+      else { inv.addEventListener('transitionend', done, { once:true }); setTimeout(done, 1100); }
+    }
+    enterBtn.addEventListener('click', enter);
+    inv.addEventListener('keydown', e => { if(e.key === 'Escape' || e.key === 'Enter') enter(); });
+  })();
+
+  // ----- Header background on scroll -----
   const header = document.getElementById('header');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
   onScroll(); addEventListener('scroll', onScroll, {passive:true});
 
-  // Mobile nav
+  // ----- Mobile nav -----
   const nav = document.getElementById('nav'), toggle = document.getElementById('navToggle');
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
@@ -330,13 +335,13 @@
     nav.classList.remove('open'); toggle.textContent = '☰'; toggle.setAttribute('aria-expanded', false);
   }));
 
-  // Reveal on scroll
+  // ----- Reveal on scroll -----
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Heritage journey map
+  // ----- Heritage journey map -----
   const track = document.getElementById('journeyTrack');
   const jTitle = document.getElementById('journeyTitle'), jText = document.getElementById('journeyText');
   track.querySelectorAll('.j-node').forEach(node => {
