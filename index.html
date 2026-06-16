@@ -15,16 +15,13 @@
 <body>
 
 <!-- ============ THE INVITATION (flip-open envelope entry) ============
-     Motion: front (seal + invite line) → letter turns around → flap opens → into site.
-     Paper texture + wax-seal art are placeholders; see NOTES.md "Assets needed". -->
+     Motion: front (invite line) → letter turns around → flap opens → into site.
+     Paper/wax texture is a placeholder; see NOTES.md "Assets needed". -->
 <div class="invitation" id="invitation" role="dialog" aria-modal="true" aria-label="You're invited to the Atelier">
   <div class="env-scene">
     <button class="envelope" id="enterBtn" type="button" aria-label="Open your invitation and enter the Atelier">
-      <!-- FRONT — wax seal + invitation line -->
+      <!-- FRONT — sleek waxed letter, no seal -->
       <span class="env-face env-face--front" aria-hidden="true">
-        <span class="env-seal">
-          <svg class="blossom" viewBox="0 0 30 30"><g><circle cx="15" cy="8" r="5"/><circle cx="22" cy="13" r="5"/><circle cx="19.5" cy="21" r="5"/><circle cx="10.5" cy="21" r="5"/><circle cx="8" cy="13" r="5"/><circle class="pistil" cx="15" cy="15" r="2"/></g></svg>
-        </span>
         <span class="env-invite">You're invited to the Atelier</span>
         <span class="env-hint">Press to open</span>
       </span>
