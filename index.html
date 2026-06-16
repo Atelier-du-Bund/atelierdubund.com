@@ -14,25 +14,28 @@
 </head>
 <body>
 
-<!-- ============ THE INVITATION (full-page envelope entry) ============ -->
-<div class="invitation" id="invitation" role="dialog" aria-modal="true" aria-label="Enter the atelier">
-  <button class="envelope" id="enterBtn" type="button" aria-label="Enter the atelier — open your invitation">
-    <span class="env-pocket" aria-hidden="true">
-      <svg class="env-seams" viewBox="0 0 100 60" preserveAspectRatio="none">
-        <g fill="none" stroke="#000" stroke-opacity=".16" stroke-width=".5">
-          <path d="M0 60 L50 30 M100 60 L50 30 M0 0 L50 30 M100 0 L50 30"/>
-        </g>
-        <g fill="none" stroke="#f0dcbf" stroke-opacity=".10" stroke-width=".5">
-          <path d="M0 60.6 L50 30.6 M100 60.6 L50 30.6"/>
-        </g>
-      </svg>
-    </span>
-    <span class="env-flap" aria-hidden="true"></span>
-  </button>
-  <span class="env-enter" aria-hidden="true">
-    <svg class="blossom" viewBox="0 0 30 30"><g><circle cx="15" cy="8" r="5"/><circle cx="22" cy="13" r="5"/><circle cx="19.5" cy="21" r="5"/><circle cx="10.5" cy="21" r="5"/><circle cx="8" cy="13" r="5"/><circle class="pistil" cx="15" cy="15" r="2"/></g></svg>
-    <span>Enter the atelier</span>
-  </span>
+<!-- ============ THE INVITATION (flip-open envelope entry) ============
+     Motion: front (seal + invite line) → letter turns around → flap opens → into site.
+     Paper texture + wax-seal art are placeholders; see NOTES.md "Assets needed". -->
+<div class="invitation" id="invitation" role="dialog" aria-modal="true" aria-label="You're invited to the Atelier">
+  <div class="env-scene">
+    <button class="envelope" id="enterBtn" type="button" aria-label="Open your invitation and enter the Atelier">
+      <!-- FRONT — wax seal + invitation line -->
+      <span class="env-face env-face--front" aria-hidden="true">
+        <span class="env-seal">
+          <svg class="blossom" viewBox="0 0 30 30"><g><circle cx="15" cy="8" r="5"/><circle cx="22" cy="13" r="5"/><circle cx="19.5" cy="21" r="5"/><circle cx="10.5" cy="21" r="5"/><circle cx="8" cy="13" r="5"/><circle class="pistil" cx="15" cy="15" r="2"/></g></svg>
+        </span>
+        <span class="env-invite">You're invited to the Atelier</span>
+        <span class="env-hint">Press to open</span>
+      </span>
+      <!-- BACK — the flap that opens from the fold -->
+      <span class="env-face env-face--back" aria-hidden="true">
+        <span class="env-recess"></span>
+        <span class="env-flap"></span>
+      </span>
+    </button>
+  </div>
+  <button class="env-skip" id="envSkip" type="button">Skip</button>
 </div>
 
 <!-- ============ HEADER ============ -->
@@ -302,11 +305,12 @@
 </footer>
 
 <script>
-  // ----- The Invitation: envelope entry -----
+  // ----- The Invitation: flip-open envelope entry -----
   (function(){
     const inv = document.getElementById('invitation');
     if(!inv) return;
     const enterBtn = document.getElementById('enterBtn');
+    const skipBtn = document.getElementById('envSkip');
     const replayBtn = document.getElementById('replayInvitation');
     const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
     let timers = [];
@@ -318,30 +322,46 @@
     function show(){
       clearTimers();
       inv.hidden = false;
-      inv.classList.remove('invitation--gone', 'is-open');
+      inv.classList.remove('invitation--gone', 'is-flipping', 'is-open');
       document.body.classList.add('inv-lock');
-      // next frame so the reset paints before any animation
       requestAnimationFrame(() => enterBtn.focus());
     }
 
-    function enter(){
-      if(inv.hidden || inv.classList.contains('is-open')) return;
+    function dismiss(){
       try { sessionStorage.setItem('adb_entered', '1'); } catch(e){}
       document.body.classList.remove('inv-lock');
+    }
+
+    // full sequence: turn around → open the flap → dissolve into the site
+    function enter(){
+      if(inv.hidden || inv.classList.contains('is-flipping')) return;
+      dismiss();
       if(reduce()){
         inv.classList.add('invitation--gone');
-        timers.push(setTimeout(() => { inv.hidden = true; }, 280));
+        timers.push(setTimeout(() => { inv.hidden = true; }, 300));
         return;
       }
-      // 1) the flap swings open and the seal breaks away
-      inv.classList.add('is-open');
-      // 2) then the opened envelope expands and fades, revealing the site
-      timers.push(setTimeout(() => inv.classList.add('invitation--gone'), 950));
-      timers.push(setTimeout(() => { inv.hidden = true; }, 2000));
+      inv.classList.add('is-flipping');                                           // 1) turn around
+      timers.push(setTimeout(() => inv.classList.add('is-open'), 1000));          // 2) open from the fold
+      timers.push(setTimeout(() => inv.classList.add('invitation--gone'), 2050)); // 3) dissolve into the site
+      timers.push(setTimeout(() => { inv.hidden = true; }, 3050));
+    }
+
+    // skip straight in (also the reduced-motion / no-patience path)
+    function skip(){
+      if(inv.hidden) return;
+      clearTimers();
+      dismiss();
+      inv.classList.add('invitation--gone');
+      timers.push(setTimeout(() => { inv.hidden = true; }, reduce() ? 200 : 650));
     }
 
     enterBtn.addEventListener('click', enter);
-    inv.addEventListener('keydown', e => { if(e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); enter(); } });
+    if(skipBtn) skipBtn.addEventListener('click', skip);
+    inv.addEventListener('keydown', e => {
+      if(e.key === 'Escape'){ e.preventDefault(); skip(); }
+      else if((e.key === 'Enter' || e.key === ' ') && e.target === enterBtn){ e.preventDefault(); enter(); }
+    });
     if(replayBtn) replayBtn.addEventListener('click', () => { show(); window.scrollTo({top:0, behavior: reduce() ? 'auto' : 'smooth'}); });
 
     if(seen && !forced){ inv.hidden = true; }
