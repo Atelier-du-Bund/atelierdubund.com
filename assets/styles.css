@@ -477,3 +477,68 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .form-status{margin-top:1rem;font-size:.88rem;min-height:1.2em}
 .form-status.error{color:#e6a4a4}
 .form-status.success{color:var(--brass-soft)}
+
+/* ════════════════════════════════════════════════════════════════
+   PROPOSAL styles (branch claude/below-hero-proposal — NOT LIVE)
+   Editorial below-hero flow: heritage map · scenes · CTA
+   ════════════════════════════════════════════════════════════════ */
+
+/* placeholder badges (clearly mark stand-in art) */
+.scene__ph,.map__ph{
+  position:absolute;z-index:2;top:.8rem;left:.8rem;
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ivory);background:rgba(16,6,8,.72);border:1px solid var(--hair);
+  padding:.45em .8em;border-radius:999px;backdrop-filter:blur(4px);
+}
+.scene__ph--band{top:auto;bottom:1rem;left:1rem}
+
+/* shared placeholder copy marker */
+.placeholder-copy{
+  display:inline-block;font-family:var(--sans);font-weight:400;letter-spacing:.16em;
+  text-transform:uppercase;font-size:.8rem;color:var(--brass);opacity:.75;
+  border:1px dashed var(--hair);border-radius:var(--radius);padding:1.4rem 1.4rem;margin-top:1rem;
+}
+
+/* ---------- Heritage as a map ---------- */
+.heritage-map{background:linear-gradient(180deg,var(--ink),var(--ink-2))}
+.map{
+  position:relative;margin-top:clamp(2rem,5vw,3.5rem);
+  border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;
+  background:radial-gradient(120% 120% at 50% 28%,#241a12,#180f0a);
+  padding:clamp(1rem,3vw,2.2rem);
+}
+.map__svg{width:100%;height:auto;display:block}
+.map__frame{fill:none;stroke:var(--brass);stroke-opacity:.35}
+.map__grid path{stroke:var(--brass);stroke-opacity:.12;stroke-dasharray:2 7}
+.map__compass-ring{fill:none;stroke:var(--brass);stroke-opacity:.4}
+.map__compass-needle{fill:var(--brass);fill-opacity:.65}
+.map__compass-needle--dim{fill-opacity:.3}
+.map__compass-n{fill:var(--brass);font-family:var(--serif);font-size:13px;text-anchor:middle}
+.route{
+  fill:none;stroke:var(--brass);stroke-width:2.4;stroke-linecap:round;
+  stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.6s var(--ease);
+  filter:drop-shadow(0 0 6px rgba(200,162,75,.35));
+}
+.map.in .route{stroke-dashoffset:0}
+.map__city circle{fill:var(--brass)}
+.map__ring{fill:none;stroke:var(--brass);stroke-opacity:.5}
+.map__label{fill:var(--ivory);font-family:var(--serif);font-style:italic;font-size:21px;text-anchor:middle}
+@media (prefers-reduced-motion:reduce){.route{transition:none;stroke-dashoffset:0}}
+
+/* ---------- Editorial scenes (image + text) ---------- */
+.scene{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.scene--reverse .scene__media{order:2}
+@media (max-width:860px){.scene{grid-template-columns:1fr}.scene--reverse .scene__media{order:0}}
+.scene__media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
+.scene__media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.scene__media:hover img{transform:scale(1.03)}
+.scene__text .eyebrow{margin-bottom:1rem}
+.scene__text .lede{max-width:44ch}
+.fitting-price{
+  margin-top:1.8rem;font-family:var(--sans);font-weight:400;
+  font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ivory-dim);
+}
+
+/* CTA inline email */
+.inline-mail{color:var(--brass-soft);border-bottom:1px solid var(--hair);transition:.3s var(--ease)}
+.inline-mail:hover{color:var(--ivory);border-color:var(--brass)}

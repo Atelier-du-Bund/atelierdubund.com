@@ -20,9 +20,9 @@
   <a href="index.html" class="brand">Atelier du Bund</a>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">☰</button>
   <nav class="nav" id="nav">
-    <a href="#collection">The Collection</a>
-    <a href="#cloth">The Cloth</a>
     <a href="#heritage">Heritage</a>
+    <a href="#private">The Atelier</a>
+    <a href="#fitting">The Fitting</a>
     <a href="#contact">Contact</a>
     <a href="#" class="lang" aria-label="Switch language — French coming soon" title="Français — à venir">EN</a>
   </nav>
@@ -43,171 +43,94 @@
   <span class="scrollcue">Scroll</span>
 </section>
 
-<!-- ============ MANIFESTO (light) ============ -->
-<section class="section--tight section manifesto section--light">
-  <div class="manifesto__pattern" aria-hidden="true"></div>
-  <div class="container center">
-    <span class="deco-divider" aria-hidden="true">
-      <svg class="blossom" viewBox="0 0 30 30"><g><circle cx="15" cy="8" r="5"/><circle cx="22" cy="13" r="5"/><circle cx="19.5" cy="21" r="5"/><circle cx="10.5" cy="21" r="5"/><circle cx="8" cy="13" r="5"/><circle cx="15" cy="15" r="2"/></g></svg>
-    </span>
-    <p>A suit cut to <em>one body</em>, and one body only.</p>
-  </div>
-</section>
+<!-- ════════════════════════════════════════════════════════════════
+     PROPOSAL (preview branch claude/below-hero-proposal — NOT LIVE)
+     New below-hero flow: Heritage map → A Private Affair → The Fitting → CTA.
+     One cinematic image per section; images are clearly-marked placeholders.
+     See PROPOSAL.md for rationale + the assets needed.
+     ════════════════════════════════════════════════════════════════ -->
 
-<!-- ============ COLLECTION ============ -->
-<section class="section collection" id="collection">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow eyebrow--center">The Founding Collection</span>
-      <h2 class="heading">Four fits. One standard.</h2>
-      <p class="lede" style="margin-inline:auto">Our first chapter is small and deliberate — a limited founding round. Every suit begins as one of four fits, two for men and two for women, then is tailored to you. <span class="serif-italic">“Fit” is the cut: tailored or relaxed.</span></p>
-    </div>
-
-    <div class="collection__grid">
-      <article class="fit-card reveal">
-        <div>
-          <span class="fit-card__cut">Men · Tailored</span>
-          <h3 class="fit-card__name">The Maximilian</h3>
-          <p class="fit-card__desc">A sharp, close silhouette that follows the body. For the man who wants definition and a clean, deliberate line.</p>
-        </div>
-        <span class="fit-card__num">i</span>
-      </article>
-
-      <article class="fit-card reveal">
-        <div>
-          <span class="fit-card__cut">Men · Relaxed</span>
-          <h3 class="fit-card__name">The Edmund</h3>
-          <p class="fit-card__desc">An easy, fuller cut with room to move. Quiet confidence over sharpness — ease without losing the shape.</p>
-        </div>
-        <span class="fit-card__num">ii</span>
-      </article>
-
-      <article class="fit-card reveal">
-        <div>
-          <span class="fit-card__cut">Women · Tailored</span>
-          <h3 class="fit-card__name">The Josephine</h3>
-          <p class="fit-card__desc">A precise, waisted line. Structured and composed — the silhouette of someone who decides exactly how she enters a room.</p>
-        </div>
-        <span class="fit-card__num">iii</span>
-      </article>
-
-      <article class="fit-card reveal">
-        <div>
-          <span class="fit-card__cut">Women · Relaxed</span>
-          <h3 class="fit-card__name">The Maggie</h3>
-          <p class="fit-card__desc">A softer, draped silhouette with effortless flow. Named for a certain mood — tender, unhurried, quietly magnetic.</p>
-        </div>
-        <span class="fit-card__num">iv</span>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ THE CLOTH (light) — pricing removed; one quiet price lives in Contact ============ -->
-<section class="section section--light" id="cloth">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow eyebrow--center">The Cloth</span>
-      <h2 class="heading">Chosen by hand, made for one.</h2>
-      <p class="lede" style="margin-inline:auto">Fine wool and wool-blend cloths, cut to your measurements and finished by hand in the Shanghai–Hong Kong tradition. The cloth, the buttons, the lining — chosen with you, in person.</p>
-    </div>
-    <p class="note center" style="margin-top:1.8rem;max-width:60ch;margin-inline:auto">
-      Every suit is finished with a <strong>silk-touch lining</strong> — with a <strong>pure-silk upgrade</strong> available — and carries a <strong>complimentary embroidered signature</strong>.
-    </p>
-  </div>
-</section>
-
-<!-- ============ HERITAGE (journey map) ============ -->
-<section class="section heritage" id="heritage">
+<!-- ============ HERITAGE — told through a map ============ -->
+<section class="section heritage-map" id="heritage">
   <div class="container">
     <div class="center reveal">
       <span class="eyebrow eyebrow--center">Heritage</span>
-      <h2 class="heading">From the Bund to the Saint-Lawrence.</h2>
-      <p class="lede heritage-lede" style="margin-inline:auto">The <span class="serif-italic">Hongbang</span> — the “Red Gang” tailors — are a lineage, not a label. From a coastal beginning they became the master tailors of old Shanghai, carried their craft to Hong Kong, and now bring it to Montréal.</p>
+      <p class="placeholder-copy">[ HERITAGE COPY TO COME — DO NOT WRITE ]</p>
     </div>
 
-    <div class="journey reveal">
-      <div class="journey__track" id="journeyTrack">
-        <div class="journey__line" aria-hidden="true"></div>
-
-        <button class="j-node" type="button"
-          data-title="Ningbo — the origin"
-          data-text="The Hongbang, or “Red Gang,” tailors emerged from the coastal city of Ningbo — artisans whose mastery of the Western suit would soon reshape how a whole city dressed.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Ningbo</span>
-          <span class="j-node__year">The origin</span>
-        </button>
-
-        <button class="j-node active" type="button"
-          data-title="Shanghai — the Bund, 1930s"
-          data-text="On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits with a precision that defined an era of glamour.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Shanghai</span>
-          <span class="j-node__year">1930s</span>
-        </button>
-
-        <button class="j-node" type="button"
-          data-title="Hong Kong — the craft carried south"
-          data-text="In 1949 the lineage moved to Hong Kong. The same hands, the same methods — still producing today for established houses.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Hong Kong</span>
-          <span class="j-node__year">1949</span>
-        </button>
-
-        <button class="j-node j-node--future" type="button"
-          data-title="Montréal — brought home"
-          data-text="That unbroken tradition now arrives in Montréal — the first stop, with more of Canada to follow.">
-          <span class="j-node__dot"></span>
-          <span class="j-node__city">Montréal</span>
-          <span class="j-node__year">Today</span>
-        </button>
-      </div>
-
-      <div class="journey__panel" id="journeyPanel" aria-live="polite">
-        <h3 id="journeyTitle">Shanghai — the Bund, 1930s</h3>
-        <p id="journeyText">On the Bund, the Red Gang became the master tailors of 1930s Shanghai — cutting suits with a precision that defined an era of glamour.</p>
-      </div>
-      <p class="journey__hint center">Tap a city to follow the thread →</p>
-    </div>
+    <figure class="map reveal" aria-label="A map tracing the tailoring lineage from Shanghai to Hong Kong to Montréal">
+      <span class="map__ph">Placeholder map — a licensed antique-style illustration can replace this art</span>
+      <svg class="map__svg" viewBox="0 0 1000 480" role="img" preserveAspectRatio="xMidYMid meet">
+        <!-- aged frame + faint graticule (editorial/antique feel) -->
+        <rect x="14" y="14" width="972" height="452" rx="3" class="map__frame"/>
+        <g class="map__grid">
+          <path d="M14 130 H986 M14 246 H986 M14 362 H986"/>
+          <path d="M210 14 V466 M406 14 V466 M602 14 V466 M798 14 V466"/>
+        </g>
+        <!-- compass rose -->
+        <g class="map__compass" transform="translate(905,408)">
+          <circle r="26" class="map__compass-ring"/>
+          <path d="M0,-22 L5,0 L0,22 L-5,0 Z" class="map__compass-needle"/>
+          <path d="M-22,0 L0,5 L22,0 L0,-5 Z" class="map__compass-needle map__compass-needle--dim"/>
+          <text x="0" y="-30" class="map__compass-n">N</text>
+        </g>
+        <!-- the lineage route: Shanghai → Hong Kong → Montréal (draws in on scroll) -->
+        <path class="route" pathLength="1"
+          d="M300,176 C306,206 312,226 316,252 C432,360 642,250 736,140"/>
+        <!-- city markers + labels -->
+        <g class="map__city">
+          <circle cx="300" cy="176" r="6"/><circle cx="300" cy="176" r="13" class="map__ring"/>
+          <text x="300" y="158" class="map__label">Shanghai</text>
+        </g>
+        <g class="map__city">
+          <circle cx="316" cy="252" r="6"/><circle cx="316" cy="252" r="13" class="map__ring"/>
+          <text x="316" y="278" class="map__label">Hong Kong</text>
+        </g>
+        <g class="map__city">
+          <circle cx="736" cy="140" r="6"/><circle cx="736" cy="140" r="13" class="map__ring"/>
+          <text x="736" y="122" class="map__label">Montréal</text>
+        </g>
+      </svg>
+    </figure>
   </div>
-
-  <!-- Stylised 1930s Bund skyline silhouette -->
-  <svg class="skyline" viewBox="0 0 1200 170" preserveAspectRatio="none" aria-hidden="true">
-    <g fill="currentColor">
-      <rect x="30" y="96" width="70" height="74"/>
-      <rect x="110" y="64" width="46" height="106"/>
-      <rect x="128" y="40" width="10" height="26"/>
-      <rect x="172" y="108" width="84" height="62"/>
-      <rect x="266" y="78" width="58" height="92"/>
-      <path d="M266 78 q29 -34 58 0 Z"/>
-      <rect x="338" y="116" width="76" height="54"/>
-      <rect x="424" y="58" width="40" height="112"/>
-      <rect x="438" y="30" width="12" height="28"/>
-      <circle cx="444" cy="64" r="9" fill="none" stroke="currentColor" stroke-width="3"/>
-      <rect x="478" y="104" width="92" height="66"/>
-      <rect x="582" y="86" width="62" height="84"/>
-      <path d="M582 86 q31 -30 62 0 Z"/>
-      <rect x="658" y="120" width="80" height="50"/>
-      <rect x="750" y="70" width="48" height="100"/>
-      <rect x="812" y="100" width="96" height="70"/>
-      <rect x="922" y="60" width="44" height="110"/>
-      <rect x="936" y="34" width="10" height="26"/>
-      <rect x="980" y="112" width="86" height="58"/>
-      <rect x="1078" y="84" width="62" height="86"/>
-      <path d="M1078 84 q31 -28 62 0 Z"/>
-    </g>
-  </svg>
 </section>
 
-<!-- ============ CONTACT (closing band) ============ -->
+<!-- ============ A PRIVATE AFFAIR ============ -->
+<section class="section scene" id="private">
+  <figure class="scene__media reveal">
+    <span class="scene__ph">Placeholder — photo of the private space</span>
+    <img src="images/web/editorial-sofa.jpg" alt="Placeholder — the private fitting space">
+  </figure>
+  <div class="scene__text reveal">
+    <span class="eyebrow">The Atelier</span>
+    <h2 class="heading">A Private Affair</h2>
+    <p class="lede">There are no showrooms and no racks. Each suit begins by invitation — a single appointment, in a private space downtown, hosted by the founder herself. For an afternoon, the atelier is yours alone.</p>
+  </div>
+</section>
+
+<!-- ============ THE FITTING ============ -->
+<section class="section scene scene--reverse" id="fitting">
+  <figure class="scene__media reveal">
+    <span class="scene__ph">Placeholder — photo of the fitting / hand measuring</span>
+    <img src="images/web/detail-cuff.jpg" alt="Placeholder — a hand finishing a working cuff">
+  </figure>
+  <div class="scene__text reveal">
+    <span class="eyebrow">The Fitting</span>
+    <h2 class="heading">The Fitting</h2>
+    <p class="lede">An experienced seamstress takes your measurements by hand — unhurried, precise, the way it has always been done. Then we move through it together: the cloth, the cut, the lining, and the small private details — the colour of a thread, the turn of a cuff, a monogram known only to you.</p>
+    <p class="fitting-price">Commissions from $999.</p>
+  </div>
+</section>
+
+<!-- ============ CTA — by appointment only ============ -->
 <section class="band" id="contact">
-  <img class="band__img" src="images/web/founding-band.jpg" alt="Tailored navy suit against a terrazzo wall and brass stair rail.">
+  <img class="band__img" src="images/web/founding-band.jpg" alt="Placeholder — a closing, atmospheric image">
+  <span class="scene__ph scene__ph--band">Placeholder — closing image</span>
   <div class="container">
-    <span class="eyebrow eyebrow--center reveal">Contact</span>
-    <h2 class="display reveal">By appointment, in Montréal.</h2>
-    <p class="lede reveal" style="margin:1.4rem auto 2.2rem;text-align:center">The founding collection is offered privately. Appointments are arranged personally — write to us and we’ll find a time for an unhurried, one-on-one fitting.</p>
+    <span class="eyebrow eyebrow--center reveal">By Appointment</span>
+    <h2 class="display reveal">By Appointment</h2>
+    <p class="lede reveal" style="margin:1.4rem auto 2.2rem;text-align:center">Atelier du Bund is by appointment only. To request yours, write to <a class="inline-mail" href="mailto:bonjour@atelierdubund.com">bonjour@atelierdubund.com</a>.</p>
     <div class="center reveal"><a class="band__mail" href="mailto:bonjour@atelierdubund.com">bonjour@atelierdubund.com</a></div>
-    <p class="price-whisper center reveal">Bespoke · from $999 CAD</p>
   </div>
 </section>
 
@@ -222,9 +145,9 @@
       <div class="footer">
         <h4>Explore</h4>
         <ul>
-          <li><a href="#collection">The Collection</a></li>
-          <li><a href="#cloth">The Cloth</a></li>
           <li><a href="#heritage">Heritage</a></li>
+          <li><a href="#private">The Atelier</a></li>
+          <li><a href="#fitting">The Fitting</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -266,18 +189,7 @@
     entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // ----- Heritage journey map -----
-  const track = document.getElementById('journeyTrack');
-  const jTitle = document.getElementById('journeyTitle'), jText = document.getElementById('journeyText');
-  track.querySelectorAll('.j-node').forEach(node => {
-    node.addEventListener('click', () => {
-      track.querySelectorAll('.j-node').forEach(n => n.classList.remove('active'));
-      node.classList.add('active');
-      jTitle.textContent = node.dataset.title;
-      jText.textContent = node.dataset.text;
-    });
-  });
+  // The heritage route line draws itself in via CSS when its .map.reveal gets .in (above).
 </script>
 </body>
 </html>
