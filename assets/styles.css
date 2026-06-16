@@ -393,137 +393,13 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   body{
     cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg fill='%2397323b' fill-opacity='0.9' stroke='%23ece3d2' stroke-opacity='0.55' stroke-width='0.7'%3E%3Ccircle cx='14' cy='7' r='4.6'/%3E%3Ccircle cx='20.7' cy='12' r='4.6'/%3E%3Ccircle cx='18.2' cy='19.8' r='4.6'/%3E%3Ccircle cx='9.8' cy='19.8' r='4.6'/%3E%3Ccircle cx='7.3' cy='12' r='4.6'/%3E%3C/g%3E%3Ccircle cx='14' cy='13.5' r='2.3' fill='%23c8a24b'/%3E%3C/svg%3E") 14 14, auto;
   }
-  a,button,label,summary,[role="button"],.j-node,.choice,.opt,.swatch-opt,.invitation__enter{cursor:pointer}
+  a,button,label,summary,[role="button"],.j-node,.choice,.opt,.swatch-opt{cursor:pointer}
   input[type=text],input[type=email],input[type=tel],input[type=date],input[type=search],textarea,select{cursor:text}
   select,input[type=date]{cursor:pointer}
 }
 
-/* ---------- The Invitation — flip-open envelope entry ----------
-   Motion sequence: FRONT (wax seal + "You're invited to the Atelier")
-   → the letter turns around (rotateY) → the flap opens from the fold (rotateX)
-   → the scene expands and dissolves into the site.
-   Paper texture and wax-seal art are PLACEHOLDERS — swap the two CSS vars below
-   for real assets (see NOTES.md → "Assets needed"). No code change required:
-     --env-paper-img: url('images/web/envelope-paper.jpg');
-     --env-wax-img:   url('images/web/wax-seal.png');
-*/
-:root{
-  /* fine paper grain (greyscale fractal noise) — placeholder texture */
-  --paper-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
-  --env-paper-img:none;   /* TODO: real paper photo/texture */
-  --env-wax-img:none;     /* TODO: real wax-seal PNG (transparent) */
-  --hinge:cubic-bezier(.45,.05,.18,1);
-}
-.inv-lock{overflow:hidden}
-.invitation{
-  position:fixed;inset:0;z-index:1000;overflow:hidden;
-  display:grid;place-items:center;
-  background:
-    radial-gradient(80% 60% at 50% 42%,rgba(151,50,59,.18),transparent 60%),
-    radial-gradient(140% 120% at 50% 40%,#241019,#100406 72%),#0e0406;
-  color:var(--ivory);
-  transition:opacity .9s var(--ease);
-}
-.invitation[hidden]{display:none}
-
-/* the 3D scene + the flip-card envelope */
-.env-scene{position:relative;width:min(92vw,40rem);height:min(62vh,26rem);perspective:2000px}
-.envelope{
-  position:absolute;inset:0;background:none;border:0;padding:0;cursor:pointer;
-  transform-style:preserve-3d;
-  transition:transform 1s var(--hinge);
-  animation:envIn .8s var(--ease) both;
-}
-@keyframes envIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.envelope:focus-visible{outline:none}
-.envelope:focus-visible .env-face--front{box-shadow:inset 0 0 0 3px rgba(232,207,134,.92),inset 0 0 0 5px rgba(154,106,47,.8),0 0 0 4px rgba(200,162,75,.5)}
-
-/* shared surface: real image (if set) over oxblood sealing-wax — glossy + grain */
-.env-face,.env-flap::before{
-  background-image:
-    var(--env-paper-img),
-    var(--paper-grain),
-    radial-gradient(115% 80% at 28% 4%,rgba(255,238,214,.26),transparent 44%),   /* glossy wax highlight */
-    radial-gradient(90% 70% at 80% 112%,rgba(255,206,176,.12),transparent 52%),  /* soft counter-sheen */
-    linear-gradient(160deg,rgba(255,240,220,.06) 0%,transparent 30%,transparent 70%,rgba(0,0,0,.24) 100%),
-    linear-gradient(180deg,#84303a,#5e1f27 58%,#4a1820);
-  background-size:cover,180px 180px,100% 100%,100% 100%,100% 100%,100% 100%;
-  background-position:center;
-  background-blend-mode:normal,soft-light,screen,screen,normal,normal;
-}
-
-.env-face{
-  position:absolute;inset:0;border-radius:8px;backface-visibility:hidden;
-  box-shadow:inset 0 0 0 3px rgba(232,207,134,.85),inset 0 0 0 5px rgba(154,106,47,.78),inset 0 0 120px rgba(0,0,0,.45);
-}
-/* FRONT — sleek waxed letter, just the invitation line (no seal) */
-.env-face--front{
-  z-index:2;overflow:hidden;
-  display:grid;align-content:center;justify-items:center;gap:1.1rem;
-  padding:clamp(1.4rem,4vw,2.4rem);text-align:center;
-}
-.env-invite{
-  font-family:var(--serif);font-style:italic;font-weight:500;
-  font-size:clamp(1.5rem,4.2vw,2.5rem);color:#ecd28a;letter-spacing:.01em;line-height:1.2;max-width:16ch;
-  text-shadow:0 1px 0 rgba(0,0,0,.45),0 0 22px rgba(200,162,75,.28);
-}
-.env-hint{
-  font-family:var(--sans);text-transform:uppercase;letter-spacing:.3em;font-size:.62rem;color:var(--brass);
-  animation:enterPulse 3.2s ease-in-out infinite;
-}
-@keyframes enterPulse{0%,100%{opacity:.6}50%{opacity:1}}
-
-/* BACK — the flap side: a dark recess + the openable top flap */
-.env-face--back{transform:rotateY(180deg);transform-style:preserve-3d;overflow:visible}
-.env-recess{
-  position:absolute;left:0;right:0;top:0;height:50%;
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  background:linear-gradient(180deg,#250d12,#3a141b 78%);
-  box-shadow:inset 0 10px 28px rgba(0,0,0,.55);
-}
-.env-flap{
-  position:absolute;top:0;left:0;width:100%;height:50%;
-  transform-origin:50% 0;
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  background:linear-gradient(135deg,#f0d98c,#b07f33 45%,#e6cd84);  /* gold-foil rim shows */
-  filter:drop-shadow(0 8px 14px rgba(0,0,0,.4));
-  transition:transform 1s var(--hinge) .05s,filter 1s var(--hinge);
-  z-index:3;
-}
-.env-flap::before{
-  content:"";position:absolute;inset:3px;clip-path:polygon(0 0,100% 0,50% 100%);
-  background-size:cover,200px 200px,100% 100%,100% 100%,100% 100%;
-  background-position:center;background-blend-mode:normal,soft-light,screen,normal,normal;
-}
-.env-flap::after{
-  content:"";position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 100%);
-  background:linear-gradient(180deg,rgba(255,240,220,.14),transparent 32%),linear-gradient(180deg,transparent 62%,rgba(0,0,0,.22));
-}
-
-/* skip control */
-.env-skip{
-  position:absolute;bottom:clamp(1rem,4vh,2.4rem);left:50%;transform:translateX(-50%);z-index:6;
-  background:none;border:1px solid var(--hair);color:var(--ivory-dim);
-  font-family:var(--sans);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;
-  padding:.7em 1.6em;border-radius:999px;transition:.3s var(--ease);
-}
-.env-skip:hover,.env-skip:focus-visible{color:var(--ivory);border-color:var(--brass);outline:none}
-
-/* the sequence */
-.invitation.is-flipping .envelope,
-.invitation.is-open .envelope,
-.invitation--gone .envelope{animation:none}  /* release envIn's held transform so the flip can apply */
-.invitation.is-flipping .envelope{transform:rotateY(180deg)}
-.invitation.is-open .env-flap{transform:rotateX(-150deg);filter:brightness(.82) drop-shadow(0 8px 14px rgba(0,0,0,.4))}
-.invitation--gone{opacity:0;pointer-events:none}
-.invitation--gone .env-scene{transform:scale(1.7);transition:transform 1s var(--ease)}
-
-@media (prefers-reduced-motion:reduce){
-  .invitation,.envelope,.env-flap,.env-scene{transition:opacity .25s linear;animation:none}
-  .invitation.is-flipping .envelope{transform:none}
-  .invitation.is-open .env-flap{transform:none;filter:none}
-  .invitation--gone .env-scene{transform:none}
-}
+/* The Invitation / envelope intro styles were archived to
+   /archive/envelope-intro/envelope.css (removed from live so the page opens on the hero). */
 
 /* ---------- Three-tier pricing ---------- */
 .tiers--three{grid-template-columns:repeat(3,1fr)}
@@ -545,14 +421,6 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ivory-dim);
 }
 
-/* ---------- Replay the invitation (footer control) ---------- */
-.replay-invitation{
-  background:none;border:0;color:var(--ivory-dim);
-  font-family:var(--sans);font-size:.78rem;letter-spacing:.02em;
-  display:inline-flex;align-items:center;gap:.5em;transition:.3s var(--ease);
-}
-.replay-invitation:hover{color:var(--brass)}
-.replay-invitation::before{content:"↻";font-size:.9em}
 
 /* ---------- Private "Your Appointment" page ---------- */
 .appointment{
