@@ -520,6 +520,9 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .env-skip:hover,.env-skip:focus-visible{color:var(--ivory);border-color:var(--brass);outline:none}
 
 /* the sequence */
+.invitation.is-flipping .envelope,
+.invitation.is-open .envelope,
+.invitation--gone .envelope{animation:none}  /* release envIn's held transform so the flip can apply */
 .invitation.is-flipping .envelope{transform:rotateY(180deg)}
 .invitation.is-open .env-flap{transform:rotateX(-150deg);filter:brightness(.82) drop-shadow(0 8px 14px rgba(0,0,0,.4))}
 .invitation--gone{opacity:0;pointer-events:none}
