@@ -478,7 +478,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 
 /* the only words on the envelope — at the tip of the fold, the centre */
 .env-enter{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5;
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;
   display:grid;justify-items:center;gap:.55rem;text-align:center;pointer-events:none;
   animation:enterPulse 3.2s ease-in-out infinite;
 }
