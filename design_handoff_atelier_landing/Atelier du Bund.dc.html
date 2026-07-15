@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;family=Jost:wght@300;400;500&amp;family=Noto+Serif+TC:wght@500;600&amp;display=swap" rel="stylesheet">
+<script src="assets/image-slot.js"></script>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#14110f;color:#ece3d2;font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  img{display:block;max-width:100%;height:auto}
+  a{color:#a6863c;text-decoration:none;transition:color .3s ease}
+  a:hover{color:#c8a24b}
+  ::selection{background:#6e1220;color:#faf7f1}
+  @keyframes adb-heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+  image-slot{--is-bg:#efe7d6;--is-fg:#8a7d63}
+</style>
+</helmet>
+
+<div data-screen-label="Atelier du Bund — Home" style="position:relative">
+
+<!-- ===================== HEADER ===================== -->
+<header id="adb-header" style="position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.35rem clamp(1.25rem,4vw,3.5rem);background:transparent;border-bottom:1px solid transparent;transition:background .5s ease,border-color .5s ease,box-shadow .5s ease">
+  <div style="display:flex;align-items:center;gap:clamp(1.5rem,4vw,3.4rem)">
+    <a href="#top" style="display:flex;align-items:center;gap:.85rem;color:inherit">
+      <span style="display:grid;grid-template-columns:1fr 1fr;width:33px;height:33px;border:1px solid rgba(166,134,60,.55);border-radius:2px;overflow:hidden;font-family:'Noto Serif TC',serif;font-weight:500;color:#c8a24b;font-size:.6rem;line-height:1">
+        <span style="display:grid;place-items:center;border-right:1px solid rgba(166,134,60,.28);border-bottom:1px solid rgba(166,134,60,.28)">外</span>
+        <span style="display:grid;place-items:center;border-bottom:1px solid rgba(166,134,60,.28)">灘</span>
+        <span style="display:grid;place-items:center;border-right:1px solid rgba(166,134,60,.28)">洋</span>
+        <span style="display:grid;place-items:center">服</span>
+      </span>
+      <span data-nav-role="brand" style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.12rem;letter-spacing:.24em;text-transform:uppercase;color:#faf7f1">Atelier du Bund</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(1.4rem,2.6vw,2.6rem)">
+      <a href="#about" data-nav-role="link" style="font-family:'Jost',sans-serif;font-size:.7rem;font-weight:400;text-transform:uppercase;letter-spacing:.22em;color:#d8cdb8" style-hover="opacity:.6">About</a>
+      <a href="#heritage" data-nav-role="link" style="font-family:'Jost',sans-serif;font-size:.7rem;font-weight:400;text-transform:uppercase;letter-spacing:.22em;color:#d8cdb8" style-hover="opacity:.6">Heritage</a>
+      <a href="#collection" data-nav-role="link" style="font-family:'Jost',sans-serif;font-size:.7rem;font-weight:400;text-transform:uppercase;letter-spacing:.22em;color:#d8cdb8" style-hover="opacity:.6">The Founding Collection</a>
+    </nav>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.5rem">
+    <a href="#reserve" data-nav-role="book" style="font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:#faf7f1;border:1px solid rgba(166,134,60,.55);border-radius:999px;padding:.72em 1.5em" style-hover="opacity:.6">Book an Appointment</a>
+    <span data-nav-role="lang" style="font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.14em;color:#c8a24b;white-space:nowrap">EN-CA&nbsp;<span style="opacity:.55">· FR-CA</span></span>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="top" data-nav-theme="dark" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;overflow:hidden">
+  <img src="assets/img/hero.jpg" alt="A tailored navy three-piece suit with red buttonholes and a carved Chinese wooden lighter, in a brass-and-marble lobby." style="position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:52% 28%;filter:brightness(1.16) contrast(1.02) saturate(1.06);animation:adb-heroZoom 9s ease forwards">
+  <div style="position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,13,12,.78) 0%,rgba(20,13,12,.4) 32%,rgba(20,13,12,.08) 56%,transparent 76%),linear-gradient(0deg,rgba(20,13,12,.86) 0%,rgba(20,13,12,.24) 28%,transparent 52%)"></div>
+
+  <div style="position:relative;width:100%;max-width:1320px;margin-inline:auto;padding:0 clamp(1.25rem,5vw,4rem) clamp(3rem,7vw,5.5rem)">
+    <div style="display:flex;align-items:flex-end;gap:2rem;margin-bottom:clamp(3rem,10vw,8.5rem)">
+      <div style="max-width:46rem">
+        <span style="display:inline-flex;align-items:center;gap:.8em;font-family:'Jost',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.32em;font-size:.7rem;color:#c8a24b;margin-bottom:1.5rem">
+          <span style="width:2.2rem;height:1px;background:#c8a24b;opacity:.85"></span>外灘洋服 · Montréal
+        </span>
+        <h1 style="font-family: 'Cormorant Garamond',serif; font-weight: 400; line-height: 1.02; letter-spacing: .005em; color: #faf7f1; font-size: clamp(2.9rem,7.6vw,6.2rem)">The art of Shanghai tailoring,<br>made for you.</h1>
+        
+      </div>
+      <div style="position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);text-align:right">
+        <div style="font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#c9bda6;margin-bottom:.5rem">Custom suits from</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,3.4vw,2.8rem);color:#faf7f1;line-height:1">$899 <span style="font-size:.6em;color:#c8a24b;letter-spacing:.04em">CAD</span></div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT / WHY ===================== -->
+<section id="about" data-nav-theme="light" style="background:linear-gradient(180deg,#faf7f1,#f2ece0);color:#2b2620;padding-block:clamp(5rem,11vw,9rem);overflow:hidden">
+  <div style="width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,4rem)">
+    <div style="display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:stretch">
+
+      <!-- large single carousel frame -->
+      <div data-reveal="" style="position:relative;min-height:clamp(26rem,46vw,40rem);overflow:hidden;box-shadow:0 50px 90px -44px rgba(40,20,14,.55);background:#e6ddcb">
+        <img src="assets/img/collection-seated.png" alt="A woman in a navy vest with red buttons seated in a bright studio." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity: {{ s0o }};transform: {{ s0t }};transition:opacity 1.1s ease, transform 6s ease">
+        <img src="assets/img/cuff.jpg" alt="Red working buttonholes on a navy jacket cuff." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity: {{ s1o }};transform: {{ s1t }};transition:opacity 1.1s ease, transform 6s ease">
+        <img src="assets/img/lining.jpg" alt="A hand tucking a card into a jacket's deep-red silk-touch lining." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity: {{ s2o }};transform: {{ s2t }};transition:opacity 1.1s ease, transform 6s ease">
+        <img src="assets/img/mirror.jpg" alt="Adjusting a cuff before a mirror." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:32% center;opacity: {{ s3o }};transform: {{ s3t }};transition:opacity 1.1s ease, transform 6s ease">
+        <img src="assets/img/lapel.jpg" alt="Navy jacket lapel with red working buttonholes over a waistcoat." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity: {{ s4o }};transform: {{ s4t }};transition:opacity 1.1s ease, transform 6s ease">
+        <div style="position:absolute;left:1.4rem;bottom:1.4rem;display:flex;gap:.5rem;z-index:2">
+          <sc-for list="{{ dots }}" as="d" hint-placeholder-count="0">
+            <button type="button" onClick="{{ d.go }}" aria-label="View photo" style="width: {{ d.w }};height:6px;border-radius:999px;border:0;cursor:pointer;padding:0;background: {{ d.bg }};transition:all .4s ease"></button>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- content right -->
+      <div data-reveal="" style="display:flex;flex-direction:column;justify-content:center">
+        <span style="display:inline-flex;align-items:center;gap:.8em;font-family:'Jost',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.3em;font-size:.68rem;color:#8a5e28;margin-bottom:1.2rem">
+          <span style="width:2rem;height:1px;background:#8a5e28;opacity:.8"></span>About
+        </span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.08;color:#211a12;font-size:clamp(1.9rem,3.9vw,2.9rem);margin-bottom:2rem;max-width:20ch">Hand-crafted to your measurements, in a private atelier setting.</h2>
+
+        <div style="border-top:1px solid rgba(40,28,16,.16)">
+          <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+            <div style="border-bottom:1px solid rgba(40,28,16,.16);padding:1.05rem 0 1.05rem 0;display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.1rem;border-left:2px solid transparent;padding-left:.9rem;margin-left:-.9rem;transition:border-color .3s,background .3s" style-hover="border-left-color:#8a5e28;background:rgba(138,94,40,.05)">
+              <span style="grid-row:1 / span 2;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:#8a5e28;line-height:1.4">{{ p.num }}</span>
+              <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.3rem,2.3vw,1.6rem);color:#211a12;line-height:1.15">{{ p.title }}</h3>
+              <p style="font-size:.95rem;color:#5c5344;max-width:50ch;line-height:1.55">{{ p.text }}</p>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-top:2.2rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.1rem">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#211a12">From <span style="color:#8a5e28">$899 CAD</span></span>
+          <span style="font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#8a7d63">The Essential · The Signature · The Reserve</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HERITAGE — scrollytelling, museum ===================== -->
+<section id="heritage" data-nav-theme="dark" style="position:relative;color:#ece3d2;background:#140b0d">
+  <div id="adb-heritage-track" style="position:relative;height:440vh">
+    <div style="position:sticky;top:0;height:100vh;overflow:hidden;isolation:isolate">
+
+      <!-- full-bleed backgrounds, one per step -->
+      <div style="position:absolute;inset:0;z-index:-4;background:radial-gradient(120% 100% at 70% 30%,#2c1217,#120a0c 75%)"></div>
+      <img src="heritage/1.jpg" alt="Ningbo harbour, junk boats along the Fenghua River." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ nb1 }};transition:opacity 1.4s ease">
+      <img src="heritage/2.jpeg" alt="An old Ningbo shopping street." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ nb2 }};transition:opacity 1.4s ease">
+      <img src="heritage/3.webp" alt="The Bund waterfront, Shanghai." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ sh1 }};transition:opacity 1.4s ease">
+      <img src="heritage/4.png" alt="Nanjing Road, Shanghai, in its golden age." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ sh2 }};transition:opacity 1.4s ease">
+      <img src="heritage/5.jpeg" alt="A Shanghai tailor storefront." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ sh3 }};transition:opacity 1.4s ease">
+      <img src="heritage/6.jpg" alt="A Hong Kong tailor at work." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ hk1 }};transition:opacity 1.4s ease">
+      <img src="heritage/7.jpg" alt="Tom Sung & Co., a Hong Kong tailor storefront." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ hk2 }};transition:opacity 1.4s ease">
+      <img src="heritage/8.jpeg" alt="A central Hong Kong street with tram." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:grayscale(1) contrast(1.05) brightness(.66);opacity: {{ hk3 }};transition:opacity 1.4s ease">
+      <img src="assets/img/cta.jpg" alt="The founder of Atelier du Bund before a mirror in a Montréal lobby." style="position:absolute;inset:0;z-index:-4;width:100%;height:100%;object-fit:cover;object-position:50% 36%;filter:contrast(1.02) brightness(.62) saturate(.85);opacity: {{ showMontreal }};transition:opacity 1s ease">
+      <div style="position:absolute;inset:0;z-index:-3;background: {{ overlayBg }};transition:background .8s ease"></div>
+
+      <!-- persistent eyebrow + heading -->
+      <div style="position:absolute;top:clamp(3.5rem,7vh,5rem);left:0;right:0;text-align:center;z-index:2;padding-inline:1rem">
+        <span style="display:inline-flex;align-items:center;gap:.8em;font-family:'Jost',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.34em;font-size:.66rem;color:#c8a24b">
+          <span style="width:2rem;height:1px;background:#c8a24b;opacity:.8"></span>The Hongbang · 紅幫 · The Red Gang Tailoring Heritage<span style="width:2rem;height:1px;background:#c8a24b;opacity:.8"></span>
+        </span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;color:#faf7f1;font-size:clamp(1.9rem,4vw,3rem);margin-top:.7rem;line-height:1.05">A long-lasting heritage.</h2>
+      </div>
+
+      <!-- stage -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center">
+        <div style="position:relative;width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,4rem);height:min(64vh,34rem);margin-top:clamp(3rem,7vh,5rem)">
+
+          <!-- east-coast map (Shanghai–Hong Kong), left -->
+          <div style="position:absolute;top:56%;left:clamp(1.25rem,5vw,4rem);width:min(28%,20rem);aspect-ratio:3/4;transform:translateY(-50%) {{ chinaTf }};opacity: {{ chinaOp }};transition:opacity .7s ease, transform .8s ease">
+            <span style="position:absolute;top:-1rem;left:0;font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:#8d8474">China 中國</span>
+            <svg viewBox="470 270 165 185" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+              <defs>
+                <pattern id="adb-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+                  <path d="M22 0H0V22" fill="none" stroke="#c8a24b" stroke-width="0.4" opacity="0.16"></path>
+                </pattern>
+                <mask id="hb-gap" maskUnits="userSpaceOnUse" x="0" y="0" width="760" height="455"><rect x="-50" y="0" width="860" height="455" fill="#fff"></rect><rect x="-50" y="128" width="860" height="34" fill="#000"></rect></mask>
+              </defs>
+              <path d="M20,170 L118,80 L192,28 L291,110 L340,80 L401,125 L475,110 L537,95 L586,65 L660,20 L721,35 L758,29 L721,80 L721,110 L709,125 L660,140 L635,155 L610,170 L561,170 L598,193 L619,194 L586,215 L586,245 L604,287 L610,305 L586,350 L561,388 L512,420 L463,440 L438,433 L414,425 L401,410 L364,425 L328,425 L315,395 L309,335 L266,335 L192,335 L155,335 L106,305 L82,275 L69,230 Z" fill="url(#adb-grid)" stroke="#c8a24b" stroke-width="1" opacity="0.8" stroke-linejoin="round" mask="url(#hb-gap)"></path>
+              <path d="M20,170 L118,80 L192,28 L291,110 L340,80 L401,125 L475,110 L537,95 L586,65 L660,20 L721,35 L758,29 L721,80 L721,110 L709,125 L660,140 L635,155 L610,170 L561,170 L598,193 L619,194 L586,215 L586,245 L604,287 L610,305 L586,350 L561,388 L512,420 L463,440 L438,433 L414,425 L401,410 L364,425 L328,425 L315,395 L309,335 L266,335 L192,335 L155,335 L106,305 L82,275 L69,230 Z" fill="rgba(110,18,32,0.2)" stroke="none"></path>
+            </svg>
+            <button type="button" onClick="{{ goShanghai }}" aria-label="Shanghai" style="position:absolute;top:11%;left:82%;transform:translate(-50%,-50%);background:none;border:0;cursor:pointer;display:flex;flex-direction:column-reverse;align-items:flex-start;gap:.3rem;color:inherit;padding:.35rem;z-index:3">
+              <span style="width:14px;height:14px;border-radius:50%;background: {{ mShanghai }};box-shadow:0 0 0 5px rgba(200,162,75,.2);transition:.3s"></span>
+              <span style="font-family:'Jost',sans-serif;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color: {{ lShanghai }};transition:.3s;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.8)">Shanghai 上海</span>
+            </button>
+            <button type="button" onClick="{{ goNingbo }}" aria-label="Ningbo" style="position:absolute;top:22%;left:88%;transform:translate(-50%,-50%);background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;color:inherit;padding:.35rem;z-index:2">
+              <span style="width:11px;height:11px;border-radius:50%;background: {{ mNingbo }};box-shadow:0 0 0 4px rgba(200,162,75,.18);transition:.3s"></span>
+              <span style="font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color: {{ lNingbo }};transition:.3s;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.8)">Ningbo 寧波</span>
+            </button>
+            <button type="button" onClick="{{ goHongkong }}" aria-label="Hong Kong" style="position:absolute;top:82%;left:26%;transform:translate(-50%,-50%);background:none;border:0;cursor:pointer;display:flex;flex-direction:column-reverse;align-items:flex-start;gap:.3rem;color:inherit;padding:.35rem;z-index:2">
+              <span style="width:11px;height:11px;border-radius:50%;background: {{ mHongkong }};box-shadow:0 0 0 4px rgba(200,162,75,.18);transition:.3s"></span>
+              <span style="font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color: {{ lHongkong }};transition:.3s;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.8)">Hong Kong 香港</span>
+            </button>
+          </div>
+
+          <!-- Montréal close-up, right (Canada → zoom to island) -->
+          <div style="position:absolute;top:56%;right:clamp(0.25rem,2vw,1.5rem);width:min(52%,40rem);aspect-ratio:6/5;transform:translateY(-50%) {{ mtlTf }};opacity: {{ mtlOp }};transition:opacity .7s ease, transform .8s ease">
+
+            <!-- layer A: Canada, shown first -->
+            <div style="position:absolute;inset:0;opacity: {{ canadaOp }};transform: {{ canadaTf }};transform-origin:78.6% 75.7%;transition:opacity .9s ease, transform 1.6s cubic-bezier(.5,0,.2,1)">
+              <span style="position:absolute;top:57%;left:26%;transform:translate(-50%,-50%);font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:#8d8474;pointer-events:none">Canada 加拿大</span>
+              <svg viewBox="8 36 444 370" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+                <path d="M198.9,125.2 L208.2,125.2 L200.5,143.9 L216.0,171.8 L220.7,165.6 L230.0,181.2 L234.7,165.6 L231.6,157.8 L239.3,157.8 L248.6,174.9 L242.4,185.8 L231.6,187.4 L231.6,206.0 L223.8,210.7 L209.8,234.0 L208.2,255.7 L217.6,260.4 L220.7,271.3 L234.7,271.3 L258.0,282.2 L273.5,282.2 L278.2,299.3 L295.3,313.2 L301.5,307.0 L289.1,282.2 L299.9,262.0 L295.3,252.6 L282.8,244.9 L285.9,234.0 L275.1,215.3 L292.2,207.6 L304.6,215.3 L313.9,213.8 L320.1,229.3 L332.6,232.4 L337.2,210.7 L362.1,227.8 L365.2,235.5 L376.1,240.2 L391.6,237.1 L390.1,241.8 L402.5,241.8 L410.3,249.5 L399.4,277.5 L369.9,293.0 L359.0,317.9 L360.5,325.7 L365.2,313.2 L380.7,299.3 L385.4,305.5 L377.6,311.7 L386.9,311.7 L386.9,316.3 L399.4,324.1 L413.4,317.9 L413.4,305.5 L419.6,310.1 L397.8,347.4 L393.2,342.8 L397.8,333.4 L394.7,328.8 L383.8,338.1 L371.4,322.6 L365.2,324.1 L359.0,349.0 L340.3,355.2 L331.0,372.3 L321.7,373.8 L317.0,378.5 L320.1,381.6 L298.4,398.7 L299.9,380.1 L295.3,369.2 L275.1,353.6 L254.9,345.9 L230.0,349.0 L216.0,345.9 L214.5,341.2 L153.9,344.3 L102.6,338.1 L57.5,327.2 L43.5,308.6 L48.2,330.3 L42.0,325.7 L29.5,302.4 L35.8,302.4 L35.8,293.0 L40.4,289.9 L32.6,274.4 L32.6,265.1 L40.4,254.2 L34.2,246.4 L32.6,213.8 L21.8,215.3 L21.8,201.4 L14.0,196.7 L62.2,129.9 L71.5,142.3 L94.8,140.7 L97.9,145.4 L102.6,140.7 L104.1,151.6 L110.3,147.0 L110.3,154.7 L116.6,151.6 L136.8,167.2 L133.7,174.9 L150.7,176.5 L157.0,187.4 L158.5,176.5 L163.2,174.9 L157.0,173.4 L160.1,170.3 L177.2,181.2 L188.0,181.2 L192.7,173.4 L188.0,168.7 L191.2,162.5 L198.9,170.3 L192.7,173.4 L197.4,182.7 L202.0,182.7 L206.7,170.3 L195.8,157.8 L198.9,125.2 Z M240.9,120.5 L245.5,125.2 L236.2,128.3 L237.8,134.5 L244.0,128.3 L251.8,128.3 L256.4,134.5 L275.1,134.5 L278.2,140.7 L282.8,139.2 L279.7,142.3 L285.9,142.3 L285.9,150.1 L309.3,156.3 L313.9,153.2 L315.5,170.3 L299.9,164.1 L296.8,167.2 L299.9,173.4 L320.1,184.3 L321.7,190.5 L304.6,190.5 L321.7,198.2 L298.4,198.2 L284.4,188.9 L270.4,196.7 L268.8,187.4 L281.3,182.7 L276.6,178.0 L279.7,165.6 L273.5,159.4 L264.2,154.7 L261.1,157.8 L262.6,154.7 L251.8,147.0 L239.3,154.7 L219.1,153.2 L222.2,148.5 L214.5,145.4 L214.5,128.3 L222.2,123.7 L223.8,139.2 L225.3,126.8 L240.9,120.5 Z M125.9,112.8 L141.4,119.0 L146.1,133.0 L152.3,133.0 L153.9,137.6 L158.5,134.5 L163.2,145.4 L163.2,131.4 L169.4,134.5 L170.9,151.6 L180.3,159.4 L174.1,164.1 L175.6,170.3 L163.2,164.1 L141.4,168.7 L132.1,157.8 L133.7,153.2 L149.2,153.2 L132.1,147.0 L139.9,142.3 L132.1,139.2 L139.9,129.9 L135.2,128.3 L119.7,139.2 L115.0,129.9 L125.9,112.8 Z M217.6,41.3 L230.0,42.8 L230.0,66.2 L223.8,72.4 L228.4,77.0 L225.3,92.6 L230.0,97.2 L208.2,101.9 L208.2,91.0 L212.9,89.5 L208.2,86.4 L214.5,80.1 L211.4,77.0 L200.5,87.9 L191.2,70.8 L194.3,63.1 L206.7,77.0 L209.8,75.5 L206.7,70.8 L217.6,63.1 L202.0,66.2 L197.4,58.4 L217.6,41.3 Z M413.4,255.7 L418.0,272.8 L419.6,268.2 L427.4,271.3 L435.1,266.6 L436.7,271.3 L441.3,269.7 L442.9,279.1 L444.4,274.4 L446.0,285.3 L441.3,277.5 L438.2,289.9 L436.7,282.2 L416.5,296.1 L413.4,255.7 Z" fill="url(#adb-grid)" stroke="#c8a24b" stroke-width="1.7" opacity="0.8" stroke-linejoin="round"></path>
+                <path d="M198.9,125.2 L208.2,125.2 L200.5,143.9 L216.0,171.8 L220.7,165.6 L230.0,181.2 L234.7,165.6 L231.6,157.8 L239.3,157.8 L248.6,174.9 L242.4,185.8 L231.6,187.4 L231.6,206.0 L223.8,210.7 L209.8,234.0 L208.2,255.7 L217.6,260.4 L220.7,271.3 L234.7,271.3 L258.0,282.2 L273.5,282.2 L278.2,299.3 L295.3,313.2 L301.5,307.0 L289.1,282.2 L299.9,262.0 L295.3,252.6 L282.8,244.9 L285.9,234.0 L275.1,215.3 L292.2,207.6 L304.6,215.3 L313.9,213.8 L320.1,229.3 L332.6,232.4 L337.2,210.7 L362.1,227.8 L365.2,235.5 L376.1,240.2 L391.6,237.1 L390.1,241.8 L402.5,241.8 L410.3,249.5 L399.4,277.5 L369.9,293.0 L359.0,317.9 L360.5,325.7 L365.2,313.2 L380.7,299.3 L385.4,305.5 L377.6,311.7 L386.9,311.7 L386.9,316.3 L399.4,324.1 L413.4,317.9 L413.4,305.5 L419.6,310.1 L397.8,347.4 L393.2,342.8 L397.8,333.4 L394.7,328.8 L383.8,338.1 L371.4,322.6 L365.2,324.1 L359.0,349.0 L340.3,355.2 L331.0,372.3 L321.7,373.8 L317.0,378.5 L320.1,381.6 L298.4,398.7 L299.9,380.1 L295.3,369.2 L275.1,353.6 L254.9,345.9 L230.0,349.0 L216.0,345.9 L214.5,341.2 L153.9,344.3 L102.6,338.1 L57.5,327.2 L43.5,308.6 L48.2,330.3 L42.0,325.7 L29.5,302.4 L35.8,302.4 L35.8,293.0 L40.4,289.9 L32.6,274.4 L32.6,265.1 L40.4,254.2 L34.2,246.4 L32.6,213.8 L21.8,215.3 L21.8,201.4 L14.0,196.7 L62.2,129.9 L71.5,142.3 L94.8,140.7 L97.9,145.4 L102.6,140.7 L104.1,151.6 L110.3,147.0 L110.3,154.7 L116.6,151.6 L136.8,167.2 L133.7,174.9 L150.7,176.5 L157.0,187.4 L158.5,176.5 L163.2,174.9 L157.0,173.4 L160.1,170.3 L177.2,181.2 L188.0,181.2 L192.7,173.4 L188.0,168.7 L191.2,162.5 L198.9,170.3 L192.7,173.4 L197.4,182.7 L202.0,182.7 L206.7,170.3 L195.8,157.8 L198.9,125.2 Z M240.9,120.5 L245.5,125.2 L236.2,128.3 L237.8,134.5 L244.0,128.3 L251.8,128.3 L256.4,134.5 L275.1,134.5 L278.2,140.7 L282.8,139.2 L279.7,142.3 L285.9,142.3 L285.9,150.1 L309.3,156.3 L313.9,153.2 L315.5,170.3 L299.9,164.1 L296.8,167.2 L299.9,173.4 L320.1,184.3 L321.7,190.5 L304.6,190.5 L321.7,198.2 L298.4,198.2 L284.4,188.9 L270.4,196.7 L268.8,187.4 L281.3,182.7 L276.6,178.0 L279.7,165.6 L273.5,159.4 L264.2,154.7 L261.1,157.8 L262.6,154.7 L251.8,147.0 L239.3,154.7 L219.1,153.2 L222.2,148.5 L214.5,145.4 L214.5,128.3 L222.2,123.7 L223.8,139.2 L225.3,126.8 L240.9,120.5 Z M125.9,112.8 L141.4,119.0 L146.1,133.0 L152.3,133.0 L153.9,137.6 L158.5,134.5 L163.2,145.4 L163.2,131.4 L169.4,134.5 L170.9,151.6 L180.3,159.4 L174.1,164.1 L175.6,170.3 L163.2,164.1 L141.4,168.7 L132.1,157.8 L133.7,153.2 L149.2,153.2 L132.1,147.0 L139.9,142.3 L132.1,139.2 L139.9,129.9 L135.2,128.3 L119.7,139.2 L115.0,129.9 L125.9,112.8 Z M217.6,41.3 L230.0,42.8 L230.0,66.2 L223.8,72.4 L228.4,77.0 L225.3,92.6 L230.0,97.2 L208.2,101.9 L208.2,91.0 L212.9,89.5 L208.2,86.4 L214.5,80.1 L211.4,77.0 L200.5,87.9 L191.2,70.8 L194.3,63.1 L206.7,77.0 L209.8,75.5 L206.7,70.8 L217.6,63.1 L202.0,66.2 L197.4,58.4 L217.6,41.3 Z M413.4,255.7 L418.0,272.8 L419.6,268.2 L427.4,271.3 L435.1,266.6 L436.7,271.3 L441.3,269.7 L442.9,279.1 L444.4,274.4 L446.0,285.3 L441.3,277.5 L438.2,289.9 L436.7,282.2 L416.5,296.1 L413.4,255.7 Z" fill="rgba(110,18,32,0.2)" stroke="none"></path>
+              </svg>
+              <div style="position:absolute;top:75.7%;left:78.6%;transform:translate(-100%,-50%);display:flex;align-items:center;gap:.4rem;pointer-events:none">
+                <span style="font-family:'Jost',sans-serif;font-size:.545rem;letter-spacing:.14em;text-transform:uppercase;color:#faf7f1;text-align:right;line-height:1.34;text-shadow:0 1px 6px rgba(0,0,0,.8)">Montréal<br>蒙特利爾</span>
+                <span style="width:10px;height:10px;border-radius:50%;background:#e0c48a;box-shadow:0 0 0 4px rgba(200,162,75,.22);flex:none"></span>
+              </div>
+            </div>
+
+            <!-- layer B: Île de Montréal, zoomed in -->
+            <div style="position:absolute;inset:0;opacity: {{ islandOp }};transform: {{ islandTf }};transform-origin:center;transition:opacity .9s ease, transform 1.3s cubic-bezier(.5,0,.2,1)">
+              <svg viewBox="44 65 252 210" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+                <path d="M285.0,68.6 L288.0,69.6 L282.0,79.6 L281.0,87.7 L283.0,111.8 L272.9,131.8 L274.9,149.9 L266.9,163.0 L266.9,169.0 L257.9,182.1 L254.9,201.1 L251.8,205.1 L255.9,206.2 L256.9,202.1 L256.9,210.2 L259.9,216.2 L256.9,222.2 L261.9,227.2 L253.9,240.3 L248.8,241.3 L250.8,229.3 L256.9,224.2 L251.8,225.2 L248.8,228.2 L247.8,235.3 L242.8,244.3 L227.7,260.4 L220.7,263.4 L209.7,262.4 L197.6,253.4 L189.6,254.4 L196.6,253.4 L189.6,250.3 L185.6,251.3 L174.5,247.3 L156.4,248.3 L149.4,245.3 L147.4,246.3 L143.4,241.3 L138.4,240.3 L133.3,244.3 L132.3,250.3 L126.3,251.3 L123.3,255.4 L112.3,253.4 L100.2,259.4 L97.2,263.4 L90.2,263.4 L78.1,268.4 L77.1,271.4 L62.0,271.4 L60.0,269.4 L52.0,255.4 L52.0,251.3 L59.0,242.3 L62.0,243.3 L63.0,240.3 L69.1,239.3 L69.1,236.3 L65.1,234.3 L69.1,226.2 L75.1,224.2 L78.1,231.3 L85.1,233.3 L97.2,225.2 L102.2,216.2 L101.2,214.2 L98.2,215.2 L97.2,219.2 L87.1,227.2 L81.1,227.2 L72.1,220.2 L67.1,222.2 L69.1,212.2 L80.1,205.1 L81.1,202.1 L86.1,199.1 L86.1,195.1 L94.2,192.1 L104.2,193.1 L108.2,197.1 L108.2,201.1 L113.3,195.1 L131.3,195.1 L134.3,196.1 L136.4,200.1 L150.4,200.1 L157.4,197.1 L170.5,182.1 L175.5,181.0 L182.6,174.0 L191.6,173.0 L193.6,171.0 L195.6,165.0 L200.6,160.0 L199.6,153.9 L204.6,148.9 L210.7,131.8 L214.7,123.8 L223.7,114.8 L222.7,112.8 L226.7,112.8 L242.8,96.7 L256.9,89.7 L269.9,71.6 L280.0,71.6 L285.0,68.6 Z" fill="url(#adb-grid)" stroke="#c8a24b" stroke-width="1.0" opacity="0.8" stroke-linejoin="round"></path>
+                <path d="M285.0,68.6 L288.0,69.6 L282.0,79.6 L281.0,87.7 L283.0,111.8 L272.9,131.8 L274.9,149.9 L266.9,163.0 L266.9,169.0 L257.9,182.1 L254.9,201.1 L251.8,205.1 L255.9,206.2 L256.9,202.1 L256.9,210.2 L259.9,216.2 L256.9,222.2 L261.9,227.2 L253.9,240.3 L248.8,241.3 L250.8,229.3 L256.9,224.2 L251.8,225.2 L248.8,228.2 L247.8,235.3 L242.8,244.3 L227.7,260.4 L220.7,263.4 L209.7,262.4 L197.6,253.4 L189.6,254.4 L196.6,253.4 L189.6,250.3 L185.6,251.3 L174.5,247.3 L156.4,248.3 L149.4,245.3 L147.4,246.3 L143.4,241.3 L138.4,240.3 L133.3,244.3 L132.3,250.3 L126.3,251.3 L123.3,255.4 L112.3,253.4 L100.2,259.4 L97.2,263.4 L90.2,263.4 L78.1,268.4 L77.1,271.4 L62.0,271.4 L60.0,269.4 L52.0,255.4 L52.0,251.3 L59.0,242.3 L62.0,243.3 L63.0,240.3 L69.1,239.3 L69.1,236.3 L65.1,234.3 L69.1,226.2 L75.1,224.2 L78.1,231.3 L85.1,233.3 L97.2,225.2 L102.2,216.2 L101.2,214.2 L98.2,215.2 L97.2,219.2 L87.1,227.2 L81.1,227.2 L72.1,220.2 L67.1,222.2 L69.1,212.2 L80.1,205.1 L81.1,202.1 L86.1,199.1 L86.1,195.1 L94.2,192.1 L104.2,193.1 L108.2,197.1 L108.2,201.1 L113.3,195.1 L131.3,195.1 L134.3,196.1 L136.4,200.1 L150.4,200.1 L157.4,197.1 L170.5,182.1 L175.5,181.0 L182.6,174.0 L191.6,173.0 L193.6,171.0 L195.6,165.0 L200.6,160.0 L199.6,153.9 L204.6,148.9 L210.7,131.8 L214.7,123.8 L223.7,114.8 L222.7,112.8 L226.7,112.8 L242.8,96.7 L256.9,89.7 L269.9,71.6 L280.0,71.6 L285.0,68.6 Z" fill="rgba(110,18,32,0.2)" stroke="none"></path>
+              </svg>
+              <div style="position:absolute;top:71%;left:56%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:.34rem;pointer-events:none">
+                <span style="width:12px;height:12px;border-radius:50%;background:#e0c48a;box-shadow:0 0 0 5px rgba(200,162,75,.22)"></span>
+                <span style="font-family:'Jost',sans-serif;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#faf7f1;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.8)">Montréal 蒙特利爾</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- reading panel (shifts left on the final step) -->
+          <div style="position:absolute;top:55%;transform:translateY(-50%);width: {{ panelW }};left: {{ textLeft }};transition:left .8s cubic-bezier(.4,0,.2,1)">
+            <div style="font-family:'Noto Serif TC',serif;font-size:clamp(3rem,7vw,5rem);color:#e0c48a;line-height:.9;margin-bottom:.9rem;text-shadow:0 2px 30px rgba(168,32,26,.45)">{{ cityCn }}</div>
+            <div style="display:flex;align-items:baseline;gap:.9rem;margin-bottom:.9rem;flex-wrap:wrap">
+              <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.5rem,2.6vw,2.1rem);color:#faf7f1">{{ cityTitle }}</h3>
+              <span style="font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:#c8a24b;border:1px solid rgba(200,162,75,.35);border-radius:999px;padding:.35em .9em">{{ cityYear }}</span>
+            </div>
+            <p style="color:#ded2bc;font-size:clamp(.95rem,1.25vw,1.08rem);max-width:52ch;line-height:1.72;white-space:pre-line">{{ cityText }}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- clickable stepper -->
+      <div style="position:absolute;bottom:clamp(2rem,5vh,3.2rem);left:0;right:0;display:flex;justify-content:center;gap:clamp(1.2rem,3vw,2.4rem);z-index:2">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+          <button type="button" onClick="{{ st.go }}" style="background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:.3rem">
+            <span style="font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color: {{ st.color }};transition:.4s;white-space:nowrap">{{ st.name }}</span>
+            <span style="width: {{ st.w }};height:2px;background: {{ st.bar }};transition:all .5s ease"></span>
+          </button>
+        </sc-for>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE FOUNDING COLLECTION ===================== -->
+<section id="collection" data-nav-theme="light" style="background:linear-gradient(180deg,#f2ece0,#faf7f1);color:#2b2620;padding-block:clamp(5rem,11vw,9rem)">
+  <div style="width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,4rem)">
+    <div data-reveal="" style="text-align:center;max-width:44rem;margin-inline:auto;margin-bottom:clamp(2.5rem,5vw,3.5rem)">
+      <span style="display:inline-flex;align-items:center;gap:.8em;font-family:'Jost',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.3em;font-size:.68rem;color:#8a5e28;margin-bottom:1.2rem;justify-content:center">
+        <span style="width:2rem;height:1px;background:#8a5e28;opacity:.8"></span>The Founding Collection<span style="width:2rem;height:1px;background:#8a5e28;opacity:.8"></span>
+      </span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.08;color:#211a12;font-size:clamp(1.9rem,4vw,3rem);margin-bottom:1rem">Drawn in the old manner. Cut for you.</h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,1.7vw,1.3rem);color:#5c5344">Hover a marked point on each figure to see where our construction departs from the rest.</p>
+    </div>
+
+    <!-- gender toggle -->
+    <div data-reveal="" style="display:flex;justify-content:center;margin-bottom:clamp(2rem,4vw,3rem)">
+      <div style="display:inline-flex;border:1px solid #d8caac;border-radius:999px;padding:.3rem;background:#fffdf8">
+        <button type="button" data-gender="men" onClick="{{ onGender }}" style="font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:.75em 2em;border:0;border-radius:999px;cursor:pointer;transition:.3s;background: {{ menBg }};color: {{ menFg }}">Men</button>
+        <button type="button" data-gender="women" onClick="{{ onGender }}" style="font-family:'Jost',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:.75em 2em;border:0;border-radius:999px;cursor:pointer;transition:.3s;background: {{ womenBg }};color: {{ womenFg }}">Women</button>
+      </div>
+    </div>
+
+    <!-- two floating figures for the active gender -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-bottom:clamp(2rem,4vw,3rem)">
+      <sc-for list="{{ figures }}" as="fig" hint-placeholder-count="2">
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <div style="position:relative;width:100%;max-width:22rem;aspect-ratio:2/3">
+            <image-slot id="{{ fig.slotId }}" shape="rect" fit="contain" placeholder="{{ fig.placeholder }}" style="position:absolute;inset:0;--is-bg:transparent"></image-slot>
+            <sc-for list="{{ fig.hotspots }}" as="h" hint-placeholder-count="3">
+              <button type="button" onMouseEnter="{{ h.hover }}" onFocus="{{ h.hover }}" onClick="{{ h.hover }}" aria-label="{{ h.title }}" style="position:absolute;top: {{ h.top }};left: {{ h.left }};transform:translate(-50%,-50%);width:28px;height:28px;border-radius:50%;border:1px solid #6e1220;background: {{ h.bg }};color: {{ h.fg }};font-family:'Jost',sans-serif;font-size:.68rem;cursor:pointer;display:grid;place-items:center;transition:.25s;box-shadow:0 2px 10px -2px rgba(110,18,32,.4)" style-hover="transform:translate(-50%,-50%) scale(1.18)">{{ h.num }}</button>
+            </sc-for>
+          </div>
+          <div style="text-align:center;margin-top:1rem">
+            <span style="font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#8a5e28">{{ fig.tag }}</span>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.5rem,2.6vw,2rem);color:#211a12;margin-top:.15rem">{{ fig.name }}</h3>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- shared detail readout -->
+    <div data-reveal="" style="max-width:52rem;margin-inline:auto;text-align:center;background:#fffdf8;border:1px solid #e3d8bf;border-radius:4px;padding:clamp(1.5rem,3vw,2.4rem)">
+      <span style="font-family:'Jost',sans-serif;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:#8a5e28">{{ detailFit }}</span>
+      <h4 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.5rem,2.8vw,2rem);color:#6e1220;margin:.35rem 0 .7rem">{{ detailTitle }}</h4>
+      <p style="font-size:1.02rem;color:#5c5344;max-width:52ch;margin-inline:auto;min-height:3em">{{ detailText }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section data-nav-theme="dark" style="background:#1a0d10;color:#ece3d2;padding-block:clamp(4.5rem,10vw,8rem)">
+  <div style="width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,4rem)">
+    <div data-reveal="" style="text-align:center;margin-bottom:clamp(2.5rem,5vw,3.5rem)">
+      <span style="display:inline-flex;align-items:center;gap:.8em;font-family:'Jost',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.3em;font-size:.68rem;color:#c8a24b;margin-bottom:1.1rem;justify-content:center"><span style="width:2rem;height:1px;background:#c8a24b;opacity:.8"></span>How It Works</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.9rem,4vw,3rem);color:#faf7f1">Four quiet steps to a suit that is yours.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem">
+      <div data-reveal="" style="border-top:1px solid rgba(200,162,75,.25);padding-top:1.5rem"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:#c8a24b">01</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.35rem;color:#faf7f1;margin:.3rem 0 .5rem">The invitation</h3><p style="font-size:.9rem;color:#b9ad97">We receive you by appointment, in a private Montréal atelier — an unhurried conversation before a single measure is taken.</p></div>
+      <div data-reveal="" style="border-top:1px solid rgba(200,162,75,.25);padding-top:1.5rem"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:#c8a24b">02</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.35rem;color:#faf7f1;margin:.3rem 0 .5rem">The measure</h3><p style="font-size:.9rem;color:#b9ad97">Your proportions and posture are read entirely by hand, then cloth, lining and finishings are chosen together.</p></div>
+      <div data-reveal="" style="border-top:1px solid rgba(200,162,75,.25);padding-top:1.5rem"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:#c8a24b">03</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.35rem;color:#faf7f1;margin:.3rem 0 .5rem">The making</h3><p style="font-size:.9rem;color:#b9ad97">Your suit is cut and hand-finished in the Shanghai–Hong Kong tradition, each stage overseen personally.</p></div>
+      <div data-reveal="" style="border-top:1px solid rgba(200,162,75,.25);padding-top:1.5rem"><span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:#c8a24b">04</span><h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.35rem;color:#faf7f1;margin:.3rem 0 .5rem">The homecoming</h3><p style="font-size:.9rem;color:#b9ad97">A final fitting, in person, in Montréal — and a suit you will return to for years.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESERVE / CTA ===================== -->
+<section id="reserve" data-nav-theme="dark" style="position:relative;isolation:isolate;padding-block:clamp(6rem,15vw,11rem);overflow:hidden">
+  <img src="assets/img/cta.jpg" alt="A woman in a navy vest by brass mailboxes and a carved lighter, in a marble-and-brass lobby." style="position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:60% 40%;filter:brightness(.86)">
+  <div style="position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(18,10,11,.86) 0%,rgba(18,10,11,.55) 45%,rgba(18,10,11,.2) 80%),radial-gradient(90% 70% at 30% 60%,rgba(110,18,32,.28),transparent)"></div>
+  <div data-reveal="" style="width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,4rem)">
+    <div style="max-width:40rem">
+      <span style="display:inline-flex;align-items:center;gap:.8em;font-family:'Jost',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.32em;font-size:.7rem;color:#e0c48a;margin-bottom:1.3rem"><span style="width:2.2rem;height:1px;background:#e0c48a"></span>By Appointment · Montréal</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.4rem,6vw,4.4rem);color:#faf7f1;line-height:1.04;margin-bottom:1.3rem">Begin your suit.</h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2vw,1.5rem);color:#e6dcc9;max-width:46ch;margin-bottom:2.4rem">A private experience and a living Shanghai tradition — a suit cut for you and no one else. It begins with a conversation.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem">
+        <a href="mailto:bonjour@atelierdubund.com" style="display:inline-flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-weight:500;font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;padding:1.25em 3em;border:1px solid #a6863c;background:#a6863c;color:#1a0e10;border-radius:2px;transition:.4s ease" style-hover="background:transparent;color:#e0c48a">Book an Appointment</a>
+        <span style="font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#c9bda6">Custom suits from <span style="color:#faf7f1">$899 CAD</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer data-nav-theme="dark" style="background:#14110f;border-top:1px solid rgba(200,162,75,.18);padding-block:clamp(3.5rem,7vw,5.5rem) 2.5rem;color:#b9ad97">
+  <div style="width:100%;max-width:1200px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,4rem)">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem">
+      <div>
+        <div style="display:flex;align-items:center;gap:.9rem;margin-bottom:1.2rem">
+          <span style="display:grid;grid-template-columns:1fr 1fr;width:36px;height:36px;border:1px solid rgba(166,134,60,.55);border-radius:2px;overflow:hidden;font-family:'Noto Serif TC',serif;color:#c8a24b;font-size:.66rem">
+            <span style="display:grid;place-items:center;border-right:1px solid rgba(166,134,60,.28);border-bottom:1px solid rgba(166,134,60,.28)">外</span><span style="display:grid;place-items:center;border-bottom:1px solid rgba(166,134,60,.28)">灘</span><span style="display:grid;place-items:center;border-right:1px solid rgba(166,134,60,.28)">洋</span><span style="display:grid;place-items:center">服</span>
+          </span>
+          <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.15rem;letter-spacing:.22em;text-transform:uppercase;color:#faf7f1">Atelier du Bund</span>
+        </div>
+        <p style="max-width:46ch;font-size:.92rem;color:#a89c86">Atelier du Bund began with a search that came up empty. Founded in Montréal by <span style="color:#e0c48a;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem">Zhenai Xiao</span>, in the lineage of the Shanghai master-tailors — built on a simple belief: that dressing well is not a luxury but an investment, made once and worn for years.</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:#c8a24b;margin-bottom:1.2rem;font-weight:500">Explore</h4>
+        <ul style="list-style:none;display:grid;gap:.7rem;font-size:.92rem">
+          <li><a href="#about" style="color:#a89c86" style-hover="color:#faf7f1">About</a></li>
+          <li><a href="#heritage" style="color:#a89c86" style-hover="color:#faf7f1">Heritage</a></li>
+          <li><a href="#collection" style="color:#a89c86" style-hover="color:#faf7f1">The Founding Collection</a></li>
+          <li><a href="#reserve" style="color:#a89c86" style-hover="color:#faf7f1">Book an Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:#c8a24b;margin-bottom:1.2rem;font-weight:500">Atelier</h4>
+        <ul style="list-style:none;display:grid;gap:.7rem;font-size:.92rem">
+          <li><a href="mailto:bonjour@atelierdubund.com" style="color:#a89c86" style-hover="color:#faf7f1">bonjour@atelierdubund.com</a></li>
+          <li><a href="#" style="color:#a89c86" style-hover="color:#faf7f1">atelierdubund.com</a></li>
+          <li><a href="#" style="color:#a89c86" style-hover="color:#faf7f1">Instagram</a></li>
+          <li><span style="color:#8d8474">Français — à venir</span></li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:3.5rem;padding-top:1.6rem;border-top:1px solid rgba(200,162,75,.14);font-size:.76rem;color:#8d8474">
+      <span>© 2026 Atelier du Bund · Montréal, QC</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:#a89c86">L'art du tailleur shanghaïen, façonné pour vous.</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { openPillar: 0, city: 'shanghai', gender: 'men', detail: null, slide: 0, step: 0, mtlZoom: false, tick: 0 };
+
+  slidesData = [
+    { src:'assets/img/collection-seated.png', alt:'A woman in a navy vest with red buttons seated in a bright studio.' },
+    { src:'assets/img/cuff.jpg', alt:'Red working buttonholes on a navy jacket cuff.' },
+    { src:'assets/img/lining.jpg', alt:'A hand tucking a card into a jacket\u2019s deep-red silk-touch lining.' },
+    { src:'assets/img/mirror.jpg', alt:'Adjusting a cuff before a mirror.' },
+    { src:'assets/img/lapel.jpg', alt:'Navy jacket lapel with red working buttonholes over a waistcoat.' },
+  ];
+
+  pillarsData = [
+    { num:'01', title:'Appointment-only', text:'We receive a client at a time, by appointment, in a private downtown atelier — no storefront, no rush. Only the conversation your suit begins with.' },
+    { num:'02', title:'Handcrafted expertise', text:'Every suit is cut and hand-finished in the Shanghai\u2013Hong Kong tradition, by tailors trained within it. Never an algorithm, never a body-scan.' },
+    { num:'03', title:'Fitting real human bodies', text:'We cut for real proportions and real posture \u2014 the shoulders, the stance, the shape the ready-made pattern never accounts for.' },
+    { num:'04', title:'Premium finishes', text:'Silk-touch linings, working cuffs, and buttons in ceramic and shell \u2014 chosen with you. The quiet details only you know are there.' },
+  ];
+
+  cities = {
+    ningbo:   { cn:'寧波', title:'Ningbo — where it begins', year:'Late 1800s', text:'A Qing-dynasty scholar wrote that "tailors are found everywhere, especially in Ningbo." From this coastal city along the Fenghua River came the artisans who would master the Western suit. \nThey earned their name from the men they dressed — Westerners \nthe Chinese then called the "red-haired," 紅毛 — and so became \nthe Hongbang, the Red Gang: the tailors of the red-haired foreigners.\n\nA craft learned where two worlds met.' },
+    shanghai: { cn:'上海', title:'Shanghai — the Bund', year:'1920s\u201330s', text:'In 1896, a Ningbo tailor opened one of Shanghai\'s first suit houses; within a generation, more than four hundred lined Nanjing Road and the city\'s grandest avenues. In Shanghai\'s golden age, the Red Gang became the master-tailors of the city — structured shoulders, curved chests, hand-stitched lapels, techniques drawn from British and Russian cutters and made entirely their own. By the 1940s, they were six of every ten tailors in the city, dressing its bankers, its film stars, and its foreign houses.\n\nOur house takes its name from the Bund, the emblem of that golden age.' },
+    hongkong: { cn:'香港', title:'Hong Kong — carried south', year:'1949', text:'When the era turned, the Red Gang masters carried their craft south \nto Hong Kong, many following the international clients they had long dressed. The Shanghai hand met the rhythm of a new city, and the lineage lived on — the same methods, the same quiet precision, \ncarried faithfully into the present. What began on the Fenghua River, \nand flourished on the Bund, continues now in Montréal.\n\nThe thread was never cut; it only traveled.' },
+    montreal: { cn:'蒙特利爾', title:'Montréal — a new chapter', year:'Today', text:'Canada has been home to Chinese people for well over 200 years. From the first workers who arrived from Canton in the 1780s to take part in the fur trade, to the labourers who built the Canadian railway in the 1880s, to the families who immigrated in the decades since. Atelier du Bund writes itself into that long story. Founded in Montréal by Zhenai Xiao, a proud Chinese Canadian, the atelier carries the Red Gang\'s craft into a new country and a new century.\n\nIt is time this heritage — a century and a half of Chinese tailoring — was made known to Canadians, cut for the lives they lead today: a lineage of precise, enduring craftsmanship, offered \nto all who wish to discover it.' },
+  };
+  stepOrder = ['ningbo','shanghai','hongkong','montreal'];
+
+  fitsData = {
+    vincent: { name:'The Vincent', tag:"Men's · Signature", slotId:'fig-vincent', placeholder:'The Vincent — men\u2019s figure (drawn)',
+      hotspots:[
+        { num:'1', title:'Peak lapel', text:'A sharp, hand-rolled peak lapel \u2014 the line that defines the signature.', top:'20%', left:'56%' },
+        { num:'2', title:'Full-canvas front', text:'A full floating canvas runs the length of the chest, so the jacket moulds to you and holds its shape for years \u2014 where others stop at half-canvas to save time.', top:'40%', left:'44%' },
+        { num:'3', title:'Working cuffs', text:'Functioning surgeon\u2019s cuffs, buttonholes bound in your lining colour \u2014 a quiet proof of hand-work.', top:'66%', left:'28%' },
+      ] },
+    maximilian: { name:'The Maximilian', tag:"Men's · Double-breasted", slotId:'fig-maximilian', placeholder:'The Maximilian — men\u2019s figure (drawn)',
+      hotspots:[
+        { num:'1', title:'Wide peak lapel', text:'A broad, confident peak \u2014 the boldest lapel in the house.', top:'20%', left:'58%' },
+        { num:'2', title:'Double-breasted wrap', text:'A deep six-on-two wrap, drafted to close clean and drape long.', top:'44%', left:'46%' },
+        { num:'3', title:'Silk-touch lining', text:'A silk-touch lining in gold, fuchsia or house red \u2014 the reveal only you see when you move.', top:'56%', left:'60%' },
+      ] },
+    vivienne: { name:'The Vivienne', tag:"Women's · Signature", slotId:'fig-vivienne', placeholder:'The Vivienne — women\u2019s figure (drawn)',
+      hotspots:[
+        { num:'1', title:'Single-button peak', text:'The signature peak lapel, cut and closed on a single button \u2014 for a woman.', top:'22%', left:'56%' },
+        { num:'2', title:'Waisted cut', text:'Shaped through the waist by hand for a close, deliberate line.', top:'48%', left:'48%' },
+        { num:'3', title:'Half-canvas front', text:'A half-canvas front \u2014 light, precise, and made to move.', top:'38%', left:'42%' },
+      ] },
+    maggie: { name:'The Maggie', tag:"Women's · Soft", slotId:'fig-maggie', placeholder:'The Maggie — women\u2019s figure (drawn)',
+      hotspots:[
+        { num:'1', title:'Rounded lapel', text:'Soft, rounded lapels \u2014 tender and unhurried.', top:'22%', left:'55%' },
+        { num:'2', title:'Softly puffed shoulder', text:'A gently puffed shoulder with a romantic, easy volume.', top:'15%', left:'40%' },
+        { num:'3', title:'Unstructured drape', text:'A softer construction that drapes rather than sculpts.', top:'54%', left:'52%' },
+      ] },
+  };
+
+  genderFits = { men: ['vincent','maximilian'], women: ['vivienne','maggie'] };
+
+  onPillar = (i) => this.setState({ openPillar: this.state.openPillar === i ? -1 : i });
+  goStep = (i) => {
+    const track = document.getElementById('adb-heritage-track');
+    if (!track) return;
+    const total = track.offsetHeight - window.innerHeight;
+    const y = track.offsetTop + ((i + 0.5) / this.stepOrder.length) * total;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+  onGender = (e) => {
+    const g = e.currentTarget.dataset.gender;
+    const firstFit = this.genderFits[g][0];
+    this.setState({ gender: g, detail: { fit: firstFit, idx: 0 } });
+  };
+
+  goSlide = (i) => this.setState({ slide: i });
+
+  componentDidMount() {
+    // header: blend into the hero, turn solid oxblood after it
+    const header = document.getElementById('adb-header');
+    const hero = document.getElementById('top');
+    if (header && hero) {
+      const onHdr = () => {
+        const solid = window.scrollY > hero.offsetHeight - header.offsetHeight - 8;
+        header.style.background = solid ? '#2a1015' : 'transparent';
+        header.style.borderBottomColor = solid ? 'rgba(200,162,75,.3)' : 'transparent';
+        header.style.boxShadow = solid ? '0 12px 34px -20px rgba(0,0,0,.7)' : 'none';
+      };
+      onHdr();
+      window.addEventListener('scroll', onHdr, { passive: true });
+      this._onHdr = onHdr;
+    }
+    // heritage scrollytelling: derive the active step from scroll through the track
+    const track = document.getElementById('adb-heritage-track');
+    if (track) {
+      let ticking = false;
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          ticking = false;
+          const total = track.offsetHeight - window.innerHeight;
+          const scrolled = Math.min(Math.max(-track.getBoundingClientRect().top, 0), total);
+          const p = total > 0 ? scrolled / total : 0;
+          const step = Math.min(this.stepOrder.length - 1, Math.floor(p * this.stepOrder.length));
+          if (step !== this.state.step) {
+            this.setState({ step, city: this.stepOrder[step], tick: 0 });
+            if (this._zoomT) { clearTimeout(this._zoomT); this._zoomT = null; }
+            if (step === 3) {
+              this.setState({ mtlZoom: false });
+              this._zoomT = setTimeout(() => this.setState({ mtlZoom: true }), 2400);
+            } else if (this.state.mtlZoom) {
+              this.setState({ mtlZoom: false });
+            }
+          }
+        });
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      this._onScroll = onScroll;
+    }
+    // about carousel auto-advance
+    this._carousel = setInterval(() => {
+      this.setState(s => ({ slide: (s.slide + 1) % this.slidesData.length }));
+    }, 4200);
+    // heritage background carousel auto-advance (5s crossfade)
+    this._heritageCar = setInterval(() => {
+      this.setState(s => ({ tick: s.tick + 1 }));
+    }, 5000);
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if (reduce) return;
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(30px)'; el.style.transition='opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1)'; });
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='none'; io.unobserve(e.target); } }); }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(el=>io.observe(el));
+    this._io = io;
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); if (this._onHdr) window.removeEventListener('scroll', this._onHdr); if (this._io) this._io.disconnect(); if (this._carousel) clearInterval(this._carousel); if (this._heritageCar) clearInterval(this._heritageCar); if (this._zoomT) clearTimeout(this._zoomT); }
+
+  renderVals() {
+    // pillars (all visible; hover accent handled in CSS)
+    const pillars = this.pillarsData.map((p) => ({ num:p.num, title:p.title, text:p.text }));
+
+    // about carousel (5 fixed slides)
+    const cur = this.state.slide;
+    const so = {}; 
+    for (let i = 0; i < 5; i++) {
+      so['s' + i + 'o'] = i === cur ? '1' : '0';
+      so['s' + i + 't'] = i === cur ? 'scale(1.06)' : 'scale(1)';
+    }
+    const dots = [0,1,2,3,4].map((i) => ({
+      w: i === cur ? '26px' : '10px',
+      bg: i === cur ? '#8a5e28' : 'rgba(40,28,16,.28)',
+      go: () => this.goSlide(i),
+    }));
+
+    // heritage scrollytelling
+    const step = this.state.step;
+    const ck = this.stepOrder[step];
+    const c = this.cities[ck];
+    const isMtl = step === 3;
+    const zoom = isMtl && this.state.mtlZoom;
+    const marker = (k) => k === ck ? '#e0c48a' : 'rgba(200,162,75,.35)';
+    const label = (k) => k === ck ? '#faf7f1' : '#9a8f7c';
+    const overlayBg = isMtl
+      ? 'linear-gradient(90deg,rgba(16,9,10,.86) 0%,rgba(16,9,10,.5) 55%,rgba(16,9,10,.62) 100%),linear-gradient(0deg,rgba(16,9,10,.55),transparent 45%)'
+      : 'linear-gradient(90deg,rgba(16,9,10,.55) 0%,rgba(16,9,10,.42) 40%,rgba(16,9,10,.84) 100%),linear-gradient(0deg,rgba(16,9,10,.55),transparent 45%)';
+    const stepNames = ['Ningbo', 'Shanghai', 'Hong Kong', 'Montréal'];
+    const steps = this.stepOrder.map((k, i) => ({
+      name: stepNames[i],
+      color: i === step ? '#e0c48a' : '#8d8474',
+      bar: i === step ? '#c8a24b' : 'rgba(200,162,75,.25)',
+      w: i === step ? '30px' : '14px',
+      go: () => this.goStep(i),
+    }));
+
+    // collection figures for active gender
+    const g = this.state.gender;
+    const detail = this.state.detail || { fit: this.genderFits[g][0], idx: 0 };
+    const figures = this.genderFits[g].map(fk => {
+      const f = this.fitsData[fk];
+      return { name:f.name, tag:f.tag, slotId:f.slotId, placeholder:f.placeholder,
+        hotspots: f.hotspots.map((h, hi) => {
+          const active = detail.fit === fk && detail.idx === hi;
+          return { num:h.num, title:h.title, top:h.top, left:h.left,
+            bg: active ? '#6e1220' : 'rgba(250,247,241,.9)',
+            fg: active ? '#faf7f1' : '#6e1220',
+            hover: () => this.setState({ detail: { fit: fk, idx: hi } }) };
+        }) };
+    });
+    const df = this.fitsData[detail.fit];
+    const dh = df.hotspots[detail.idx];
+
+    return {
+      pillars, dots, ...so, steps,
+      goNingbo: () => this.goStep(0), goShanghai: () => this.goStep(1), goHongkong: () => this.goStep(2),
+      cityCn: c.cn, cityTitle: c.title, cityYear: c.year, cityText: c.text,
+      mNingbo: marker('ningbo'), mShanghai: marker('shanghai'), mHongkong: marker('hongkong'),
+      lNingbo: label('ningbo'), lShanghai: label('shanghai'), lHongkong: label('hongkong'),
+      showNingbo: ck==='ningbo'?'1':'0', showShanghai: ck==='shanghai'?'1':'0', showHongkong: ck==='hongkong'?'1':'0',
+      showMontreal: isMtl?'1':'0', overlayBg,
+      nb1:(ck==='ningbo'&&((this.state.tick||0)%2)===0)?'1':'0', nb2:(ck==='ningbo'&&((this.state.tick||0)%2)===1)?'1':'0',
+      sh1:(ck==='shanghai'&&((this.state.tick||0)%3)===0)?'1':'0', sh2:(ck==='shanghai'&&((this.state.tick||0)%3)===1)?'1':'0', sh3:(ck==='shanghai'&&((this.state.tick||0)%3)===2)?'1':'0',
+      hk1:(ck==='hongkong'&&((this.state.tick||0)%3)===0)?'1':'0', hk2:(ck==='hongkong'&&((this.state.tick||0)%3)===1)?'1':'0', hk3:(ck==='hongkong'&&((this.state.tick||0)%3)===2)?'1':'0',
+      chinaOp: isMtl?'0':'1', chinaTf: isMtl?'translateX(-50px)':'translateX(0)',
+      mtlOp: isMtl?'1':'0', mtlTf: isMtl?'translateX(0)':'translateX(50px)',
+      textLeft: isMtl?'clamp(1.25rem,5vw,4rem)':'52%',
+      panelW: isMtl?'min(38%,29rem)':'min(50%,39rem)',
+      canadaOp: (isMtl && !zoom)?'1':'0', canadaTf: zoom?'scale(3.4)':'scale(1)',
+      islandOp: (isMtl && zoom)?'1':'0', islandTf: zoom?'scale(0.85)':'scale(.53)',
+      onGender: this.onGender, figures,
+      menBg: g==='men'?'#6e1220':'transparent', menFg: g==='men'?'#faf7f1':'#8a5e28',
+      womenBg: g==='women'?'#6e1220':'transparent', womenFg: g==='women'?'#faf7f1':'#8a5e28',
+      detailFit: df.name, detailTitle: dh.title, detailText: dh.text,
+    };
+  }
+}
+</script>
+</body>
+</html>
