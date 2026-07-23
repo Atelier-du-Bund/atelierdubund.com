@@ -376,25 +376,25 @@ A craft learned where two worlds met.</p>
     const textEl = document.getElementById('colDetailText');
 
     const fits = {
-      vincent:    { name:'The Vincent', tag:"Men's · Signature", placeholder:'The Vincent — men’s figure (drawn)',
+      vincent:    { name:'The Vincent', tag:"Men's · Signature", img:'images/founding%20collection/The%20Vincent%20Front.PNG', alt:'The Vincent — drawn figure in a navy single-breasted suit with peak lapels.',
         hotspots:[
           { num:'1', title:'Peak lapel', text:'A sharp, hand-rolled peak lapel — the line that defines the signature.', top:'20%', left:'56%' },
           { num:'2', title:'Full-canvas front', text:'A full floating canvas runs the length of the chest, so the jacket moulds to you and holds its shape for years — where others stop at half-canvas to save time.', top:'40%', left:'44%' },
           { num:'3', title:'Working cuffs', text:'Functioning surgeon’s cuffs, buttonholes bound in your lining colour — a quiet proof of hand-work.', top:'66%', left:'28%' },
         ] },
-      maximilian: { name:'The Maximilian', tag:"Men's · Double-breasted", placeholder:'The Maximilian — men’s figure (drawn)',
+      maximilian: { name:'The Maximilian', tag:"Men's · Double-breasted", img:'images/founding%20collection/The%20Maximilian%20Front.PNG', alt:'The Maximilian — drawn figure in a navy double-breasted suit with wide peak lapels.',
         hotspots:[
           { num:'1', title:'Wide peak lapel', text:'A broad, confident peak — the boldest lapel in the house.', top:'20%', left:'58%' },
           { num:'2', title:'Double-breasted wrap', text:'A deep six-on-two wrap, drafted to close clean and drape long.', top:'44%', left:'46%' },
           { num:'3', title:'Silk-touch lining', text:'A silk-touch lining in gold, fuchsia or house red — the reveal only you see when you move.', top:'56%', left:'60%' },
         ] },
-      vivienne:   { name:'The Vivienne', tag:"Women's · Signature", placeholder:'The Vivienne — women’s figure (drawn)',
+      vivienne:   { name:'The Vivienne', tag:"Women's · Signature", img:'images/founding%20collection/The%20Vivienne%20Front.PNG', alt:'The Vivienne — drawn figure in a waisted navy suit with a single-button peak lapel.',
         hotspots:[
           { num:'1', title:'Single-button peak', text:'The signature peak lapel, cut and closed on a single button — for a woman.', top:'22%', left:'56%' },
           { num:'2', title:'Waisted cut', text:'Shaped through the waist by hand for a close, deliberate line.', top:'48%', left:'48%' },
           { num:'3', title:'Half-canvas front', text:'A half-canvas front — light, precise, and made to move.', top:'38%', left:'42%' },
         ] },
-      maggie:     { name:'The Maggie', tag:"Women's · Soft", placeholder:'The Maggie — women’s figure (drawn)',
+      maggie:     { name:'The Maggie', tag:"Women's · Soft", img:'images/founding%20collection/The%20Maggie%20Front.PNG', alt:'The Maggie — drawn figure in a soft, draped navy suit with rounded lapels.',
         hotspots:[
           { num:'1', title:'Rounded lapel', text:'Soft, rounded lapels — tender and unhurried.', top:'22%', left:'55%' },
           { num:'2', title:'Softly puffed shoulder', text:'A gently puffed shoulder with a romantic, easy volume.', top:'15%', left:'40%' },
@@ -423,10 +423,12 @@ A craft learned where two worlds met.</p>
         col.className = 'adb-figure';
         const stage = document.createElement('div');
         stage.className = 'adb-figure__stage';
-        const slot = document.createElement('div');
-        slot.className = 'adb-figure__slot';
-        slot.textContent = f.placeholder;
-        stage.appendChild(slot);
+        const fig = document.createElement('img');
+        fig.className = 'adb-figure__img';
+        fig.src = f.img;
+        fig.alt = f.alt;
+        fig.loading = 'lazy';
+        stage.appendChild(fig);
         f.hotspots.forEach((h, i) => {
           const b = document.createElement('button');
           b.type = 'button'; b.className = 'adb-hotspot';
