@@ -14,21 +14,23 @@
 
 <!-- ============ HEADER ============ -->
 <header class="adb-header" id="adb-header">
-  <a href="#top" class="adb-brand" aria-label="Atelier du Bund — home">
-    <span class="adb-mark" aria-hidden="true"><span>外</span><span>灘</span><span>洋</span><span>服</span></span>
-    <span class="adb-brand__name">Atelier du Bund</span>
-  </a>
-  <nav class="adb-nav" id="adbNav" aria-label="Primary">
-    <a href="#about" class="adb-nav__link">About</a>
-    <a href="#heritage" class="adb-nav__link">Heritage</a>
-    <a href="#collection" class="adb-nav__link">The Founding Collection</a>
-    <span class="adb-nav__actions">
-      <a href="#reserve" class="adb-book">Book a Private Appointment</a>
-      <button type="button" class="adb-lang" id="adbLang" aria-label="Passer en français" title="Passer en français">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"></path></svg><span id="adbLangLabel">EN-CA</span>
-      </button>
-    </span>
-  </nav>
+  <div class="adb-header__left">
+    <a href="#top" class="adb-brand" aria-label="Atelier du Bund — home">
+      <span class="adb-mark" aria-hidden="true"><span>外</span><span>灘</span><span>洋</span><span>服</span></span>
+      <span class="adb-brand__name">Atelier du Bund</span>
+    </a>
+    <nav class="adb-nav" id="adbNav" aria-label="Primary">
+      <a href="#about" class="adb-nav__link">About</a>
+      <a href="#heritage" class="adb-nav__link">Heritage</a>
+      <a href="#collection" class="adb-nav__link">The Founding Collection</a>
+    </nav>
+  </div>
+  <div class="adb-header__right">
+    <a href="#reserve" class="adb-book">Book a Private Appointment</a>
+    <button type="button" class="adb-lang" id="adbLang" aria-label="Passer en français" title="Passer en français">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"></path></svg><span id="adbLangLabel">EN-CA</span>
+    </button>
+  </div>
   <button class="adb-nav-toggle" id="adbNavToggle" aria-label="Open menu" aria-expanded="false" aria-controls="adbNav">☰</button>
 </header>
 
@@ -392,17 +394,16 @@ A craft learned where two worlds met.</p>
 
   // ---- Mobile nav (added; the prototype has no mobile menu) ----
   (function(){
-    const nav = document.getElementById('adbNav');
+    const header = document.getElementById('adb-header');
     const toggle = document.getElementById('adbNavToggle');
-    if (!nav || !toggle) return;
+    if (!header || !toggle) return;
     const setOpen = (open) => {
-      nav.classList.toggle('is-open', open);
-      document.getElementById('adb-header').classList.toggle('is-navopen', open);
+      header.classList.toggle('is-navopen', open);
       toggle.setAttribute('aria-expanded', open);
       toggle.textContent = open ? '✕' : '☰';
     };
-    toggle.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    toggle.addEventListener('click', () => setOpen(!header.classList.contains('is-navopen')));
+    header.querySelectorAll('.adb-nav a, .adb-header__right a').forEach(a => a.addEventListener('click', () => setOpen(false)));
   })();
 
   // ---- Reveal on scroll ----

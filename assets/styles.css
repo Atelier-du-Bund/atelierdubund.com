@@ -599,8 +599,10 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    Scoped to `.adb-home`; the Heritage block above is shared.
    ============================================================ */
 .adb-home{background:#14110f;color:#ece3d2;font-family:'Jost',system-ui,sans-serif;font-weight:300;line-height:1.6;letter-spacing:normal}
-.adb-home a{color:#a6863c;transition:color .3s ease}
-.adb-home a:hover{color:#c8a24b}
+/* zero-specificity page scope so component classes win, exactly as the
+   prototype's inline styles beat its global a{} rule */
+:where(.adb-home) a{color:#a6863c;transition:color .3s ease}
+:where(.adb-home) a:hover{color:#c8a24b}
 .adb-home ::selection{background:#6e1220;color:#faf7f1}
 .adb-home section:not(.heritage){scroll-margin-top:4.5rem}
 @keyframes adb-heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
@@ -628,15 +630,16 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-mark span:nth-child(3){border-right:1px solid rgba(166,134,60,.28)}
 
 /* ---------- Header ---------- */
-.adb-header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;gap:clamp(1.5rem,4vw,3.4rem);padding:1.35rem clamp(1.25rem,4vw,3.5rem);background:transparent;border-bottom:1px solid transparent;transition:background .5s ease,border-color .5s ease,box-shadow .5s ease}
+.adb-header{position:fixed;inset:0 0 auto 0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.35rem clamp(1.25rem,4vw,3.5rem);background:transparent;border-bottom:1px solid transparent;transition:background .5s ease,border-color .5s ease,box-shadow .5s ease}
 .adb-header.is-solid{background:#33161f;border-bottom-color:rgba(200,162,75,.3);box-shadow:0 12px 34px -20px rgba(0,0,0,.7)}
+.adb-header__left{display:flex;align-items:center;gap:clamp(1.5rem,4vw,3.4rem)}
+.adb-header__right{display:flex;align-items:center;gap:1.5rem}
 .adb-brand{display:flex;align-items:center;gap:.85rem;color:inherit}
 .adb-brand:hover{color:inherit}
 .adb-brand__name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.12rem;letter-spacing:.24em;text-transform:uppercase;color:#faf7f1;white-space:nowrap}
-.adb-nav{flex:1;display:flex;align-items:center;gap:clamp(1.4rem,2.6vw,2.6rem)}
+.adb-nav{display:flex;align-items:center;gap:clamp(1.4rem,2.6vw,2.6rem)}
 .adb-nav__link{font-family:'Jost',sans-serif;font-size:.7rem;font-weight:400;text-transform:uppercase;letter-spacing:.22em;color:#faf7f1;white-space:nowrap}
 .adb-nav__link:hover{color:#faf7f1;opacity:.62}
-.adb-nav__actions{margin-left:auto;display:flex;align-items:center;gap:1.5rem}
 .adb-book{font-family:'Jost',sans-serif;font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;color:#1a0e10;background:#c8a24b;border:1px solid #c8a24b;border-radius:7px;padding:.8em 1.7em;white-space:nowrap;transition:background .3s ease,border-color .3s ease,color .3s ease}
 .adb-book:hover{background:#e0c48a;border-color:#e0c48a;color:#1a0e10}
 .adb-lang{display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(200,162,75,.45);border-radius:999px;padding:.5em .85em;font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.14em;color:#c8a24b;white-space:nowrap;cursor:pointer;transition:border-color .3s ease,color .3s ease}
@@ -800,13 +803,17 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 
 /* ---------- Home responsive ---------- */
 @media (max-width:920px){
+  /* the prototype defines no mobile nav; the header itself becomes the menu */
   .adb-nav-toggle{display:block}
-  .adb-nav{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:2.2rem;
-    background:rgba(20,13,12,.97);backdrop-filter:blur(10px);transform:translateX(100%);
-    transition:transform .5s ease;padding:2rem}
-  .adb-nav.is-open{transform:none}
-  .adb-nav__link{font-size:1rem}
-  .adb-nav__actions{margin-left:0;flex-direction:column;gap:1.4rem}
+  .adb-nav,.adb-header__right{display:none}
+  .adb-header.is-navopen{flex-direction:column;justify-content:center;align-items:center;gap:2rem;
+    height:100dvh;background:rgba(20,13,12,.97);backdrop-filter:blur(10px);
+    overflow-y:auto;padding-block:5rem 2rem}
+  .adb-header.is-navopen .adb-header__left{flex-direction:column;gap:2rem}
+  .adb-header.is-navopen .adb-nav{display:flex;flex-direction:column;gap:2.2rem}
+  .adb-header.is-navopen .adb-nav__link{font-size:1rem}
+  .adb-header.is-navopen .adb-header__right{display:flex;flex-direction:column;gap:1.4rem}
+  .adb-header.is-navopen .adb-nav-toggle{position:absolute;top:1.35rem;right:clamp(1.25rem,4vw,3.5rem)}
 }
 @media (max-width:860px){
   .adb-about__grid{grid-template-columns:1fr}
