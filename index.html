@@ -23,8 +23,10 @@
     <a href="#heritage" class="adb-nav__link">Heritage</a>
     <a href="#collection" class="adb-nav__link">The Founding Collection</a>
     <span class="adb-nav__actions">
-      <a href="#reserve" class="adb-book">Book an Appointment</a>
-      <span class="adb-lang">EN-CA&nbsp;<span>· FR-CA</span></span>
+      <a href="#reserve" class="adb-book">Book a Private Appointment</a>
+      <button type="button" class="adb-lang" id="adbLang" aria-label="Passer en français" title="Passer en français">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18"></path></svg><span id="adbLangLabel">EN-CA</span>
+      </button>
     </span>
   </nav>
   <button class="adb-nav-toggle" id="adbNavToggle" aria-label="Open menu" aria-expanded="false" aria-controls="adbNav">☰</button>
@@ -55,8 +57,8 @@
 
       <!-- carousel -->
       <div class="adb-about__frame" data-reveal>
-        <img class="adb-about__slide is-active" data-idx="0" src="images/web/collection-seated.jpg" alt="A woman in a navy vest with red buttons seated in a bright studio.">
-        <img class="adb-about__slide" data-idx="1" src="images/web/cuff.jpg" alt="Red working buttonholes on a navy jacket cuff.">
+        <img class="adb-about__slide is-active" data-idx="0" src="images/web/cuff.jpg" alt="Red working buttonholes on a navy jacket cuff.">
+        <img class="adb-about__slide" data-idx="1" src="images/web/collection-seated.jpg" alt="A woman in a navy vest with red buttons seated in a bright studio.">
         <img class="adb-about__slide" data-idx="2" src="images/web/lining.jpg" alt="A hand tucking a card into a jacket's deep-red silk-touch lining.">
         <img class="adb-about__slide adb-about__slide--mirror" data-idx="3" src="images/web/mirror.jpg" alt="Adjusting a cuff before a mirror.">
         <img class="adb-about__slide" data-idx="4" src="images/web/lapel.jpg" alt="Navy jacket lapel with red working buttonholes over a waistcoat.">
@@ -66,32 +68,32 @@
       <!-- content -->
       <div class="adb-about__content" data-reveal>
         <span class="adb-eyebrow adb-eyebrow--brown"><span class="adb-eyebrow__rule"></span>About</span>
-        <h2 class="adb-about__heading">Hand-crafted to your measurements, in a private atelier setting.</h2>
+        <h2 class="adb-about__heading">Measured by hand and crafted for your body, <br>in a private downtown atelier.</h2>
         <div class="adb-about__pillars">
           <div class="adb-pillar">
             <span class="adb-pillar__num">01</span>
             <h3 class="adb-pillar__title">Appointment-only</h3>
-            <p class="adb-pillar__text">We receive a client at a time, by appointment, in a private downtown atelier — no storefront, no rush. Only the conversation your suit begins with.</p>
+            <p class="adb-pillar__text">One client at a time, measured by a seamstress's hand. Over tea, we find the signature that suits you and shape it to your body, reading posture and proportion the way no scanner can. For a fit that is truly yours.</p>
           </div>
           <div class="adb-pillar">
             <span class="adb-pillar__num">02</span>
-            <h3 class="adb-pillar__title">Handcrafted expertise</h3>
-            <p class="adb-pillar__text">Every suit is cut and hand-finished in the Shanghai–Hong Kong tradition, by tailors trained within it. Never an algorithm, never a body-scan.</p>
+            <h3 class="adb-pillar__title">The Shanghai hand</h3>
+            <p class="adb-pillar__text">Every suit is canvassed and hand-finished in the Shanghai–Hong Kong tradition, by master tailors trained in its craft. Built to hold its line, and to last the years.</p>
           </div>
           <div class="adb-pillar">
             <span class="adb-pillar__num">03</span>
-            <h3 class="adb-pillar__title">Fitting real human bodies</h3>
-            <p class="adb-pillar__text">We cut for real proportions and real posture — the shoulders, the stance, the shape the ready-made pattern never accounts for.</p>
+            <h3 class="adb-pillar__title">For the body you have</h3>
+            <p class="adb-pillar__text">No one is built to a standard pattern. We cut for the shoulders you have and the posture you carry, so the suit is shaped to you, and never you to it.</p>
           </div>
           <div class="adb-pillar">
             <span class="adb-pillar__num">04</span>
-            <h3 class="adb-pillar__title">Premium finishes</h3>
-            <p class="adb-pillar__text">Silk-touch linings, working cuffs, and buttons in ceramic and shell — chosen with you. The quiet details only you know are there.</p>
+            <h3 class="adb-pillar__title">Made unmistakably yours</h3>
+            <p class="adb-pillar__text">Bold linings, contrast stitching, buttons of ceramic and horn, custom embroidery — the details that elevate your suit in an instant, and make it no one else's. Discover the full selection at your appointment.</p>
           </div>
         </div>
         <div class="adb-about__from">
           <span class="adb-about__from-price">From <span>$899 CAD</span></span>
-          <span class="adb-about__from-tiers">The Essential · The Signature · The Reserve</span>
+          <span class="adb-about__from-tiers">The Essential · The Signature · The Reserve&nbsp; &nbsp;↓&nbsp; &nbsp;More details below</span>
         </div>
       </div>
 
@@ -215,23 +217,95 @@ A craft learned where two worlds met.</p>
   <div class="adb-container adb-container--narrow">
     <div class="adb-collection__intro" data-reveal>
       <span class="adb-eyebrow adb-eyebrow--brown adb-eyebrow--center"><span class="adb-eyebrow__rule"></span>The Founding Collection<span class="adb-eyebrow__rule"></span></span>
-      <h2 class="adb-collection__heading">Drawn in the old manner. Cut for you.</h2>
-      <p class="adb-collection__lede">Hover a marked point on each figure to see where our construction departs from the rest.</p>
+      <h2 class="adb-collection__heading">Modern elegance, traditional craft.</h2>
+      <p class="adb-collection__lede">Every detail can be personalized. These house styles are simply our recommendation: the effortless choice for an elegant design.</p>
+      <p class="adb-collection__hint">Hover above any marked point to see what defines each design</p>
     </div>
 
-    <div class="adb-collection__toggle" data-reveal>
-      <div class="adb-toggle" role="tablist" aria-label="Choose collection">
-        <button type="button" class="adb-toggle__btn is-active" data-gender="men" role="tab" aria-selected="true">Men</button>
-        <button type="button" class="adb-toggle__btn" data-gender="women" role="tab" aria-selected="false">Women</button>
+    <!-- house-style tabs, grouped Women / Men -->
+    <div class="adb-styletabs" data-reveal>
+      <div class="adb-styletabs__group">
+        <span class="adb-styletabs__label">Women</span>
+        <div class="adb-styletabs__pill" role="tablist" aria-label="Women's house styles">
+          <button type="button" class="adb-styletab" data-style="vivienne" role="tab">The Vivienne</button>
+          <button type="button" class="adb-styletab" data-style="maggie" role="tab">The Maggie</button>
+        </div>
+      </div>
+      <div class="adb-styletabs__group">
+        <span class="adb-styletabs__label">Men</span>
+        <div class="adb-styletabs__pill" role="tablist" aria-label="Men's house styles">
+          <button type="button" class="adb-styletab is-active" data-style="vincent" role="tab" aria-selected="true">The Vincent</button>
+          <button type="button" class="adb-styletab" data-style="maximilian" role="tab">The Maximilian</button>
+        </div>
       </div>
     </div>
 
-    <div class="adb-collection__figures" id="collectionFigures"></div>
+    <!-- active style header -->
+    <div class="adb-activestyle">
+      <span class="adb-activestyle__tag" id="clTag"></span>
+      <h3 class="adb-activestyle__name" id="clName"></h3>
+      <p class="adb-activestyle__blurb" id="clBlurb"></p>
+    </div>
 
-    <div class="adb-collection__detail" data-reveal>
-      <span class="adb-collection__detail-fit" id="colDetailFit"></span>
-      <h4 class="adb-collection__detail-title" id="colDetailTitle"></h4>
-      <p class="adb-collection__detail-text" id="colDetailText"></p>
+    <!-- stage: front figure · centre gold frame · back figure, with connector line -->
+    <div class="adb-clstage" id="adb-cl-stage">
+      <div class="adb-clview adb-clview--front">
+        <div class="adb-clview__figure">
+          <div class="adb-clview__panel" id="clPanelFront" aria-hidden="true"></div>
+          <div class="adb-clview__art" id="clArtFront" role="img"></div>
+        </div>
+        <span class="adb-clview__label">Front</span>
+      </div>
+
+      <svg class="adb-clline" id="adb-cl-svg" preserveAspectRatio="none" aria-hidden="true">
+        <path id="adb-cl-line" d="" fill="none" stroke="#9c7c43" stroke-width="1.4" stroke-opacity=".92"></path>
+        <circle id="adb-cl-o1" r="3.4" fill="#9c7c43"></circle>
+        <circle id="adb-cl-o2" r="2.4" fill="#9c7c43"></circle>
+      </svg>
+
+      <div class="adb-clcard-wrap">
+        <div class="adb-clcard" id="adb-cl-card">
+          <span class="adb-clcard__num" id="clNum"></span>
+          <span class="adb-clcard__meta" id="clMeta"></span>
+          <h4 class="adb-clcard__title" id="clTitle"></h4>
+          <p class="adb-clcard__text" id="clText"></p>
+        </div>
+      </div>
+
+      <div class="adb-clview adb-clview--back">
+        <div class="adb-clview__figure">
+          <div class="adb-clview__panel" id="clPanelBack" aria-hidden="true"></div>
+          <div class="adb-clview__art" id="clArtBack" role="img"></div>
+        </div>
+        <span class="adb-clview__label">Back</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE CLOTH / FABRICS ============ -->
+<section class="adb-fabrics" id="fabrics">
+  <div class="adb-container">
+    <div class="adb-fabrics__grid">
+
+      <div class="adb-fabrics__media" data-reveal>
+        <div class="adb-fabrics__slot is-active" data-fabric="reserve">The Reserve — a rich, textured cloth draped by window light</div>
+        <div class="adb-fabrics__slot" data-fabric="signature">The Signature — Italian flannel or check, folded to show the weave</div>
+        <div class="adb-fabrics__slot" data-fabric="essential">The Essential — navy / charcoal worsted, shot flat in daylight</div>
+        <div class="adb-fabrics__caption">
+          <span class="adb-fabrics__capname" id="fabName"></span>
+          <span class="adb-fabrics__capcomp" id="fabComp"></span>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <span class="adb-eyebrow adb-eyebrow--gold"><span class="adb-eyebrow__rule"></span>The Cloth</span>
+        <h2 class="adb-fabrics__heading">Every suit begins with the cloth.</h2>
+        <p class="adb-fabrics__lede">Three tiers of cloth, one standard of making. You choose the bolt — the hand that cuts it never changes.</p>
+        <div class="adb-tiers" id="fabricTiers"></div>
+        <p class="adb-fabrics__note">Exact cloth &amp; pricing confirmed at your private consultation</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -254,15 +328,15 @@ A craft learned where two worlds met.</p>
 
 <!-- ============ RESERVE / CTA ============ -->
 <section class="adb-reserve" id="reserve">
-  <img class="adb-reserve__img" src="images/web/founder-mirror.jpg" alt="A woman in a navy vest by brass mailboxes and a carved lighter, in a marble-and-brass lobby.">
+  <img class="adb-reserve__img" src="images/heritage/15.%20vintage%20measurement%20form.webp" alt="A vintage tailor's measurement form, its figure diagrams and instructions drawn in blue ink.">
   <div class="adb-reserve__scrim" aria-hidden="true"></div>
   <div class="adb-container" data-reveal>
     <div class="adb-reserve__inner">
-      <span class="adb-eyebrow adb-eyebrow--lightgold"><span class="adb-eyebrow__rule"></span>By Appointment · Montréal</span>
-      <h2 class="adb-reserve__heading">Begin your suit.</h2>
+      <span class="adb-eyebrow adb-eyebrow--brown"><span class="adb-eyebrow__rule"></span>By Appointment · Montréal</span>
+      <h2 class="adb-reserve__heading">Craft your suit.</h2>
       <p class="adb-reserve__lede">A private experience and a living Shanghai tradition — a suit cut for you and no one else. It begins with a conversation.</p>
       <div class="adb-reserve__actions">
-        <a href="appointment.html" class="adb-reserve__btn">Book an Appointment</a>
+        <a href="appointment.html" class="adb-reserve__btn">Book a Private Appointment</a>
         <span class="adb-reserve__note">Custom suits from <span>$899 CAD</span></span>
       </div>
     </div>
@@ -278,7 +352,7 @@ A craft learned where two worlds met.</p>
           <span class="adb-mark" aria-hidden="true"><span>外</span><span>灘</span><span>洋</span><span>服</span></span>
           <span class="adb-footer__brandname">Atelier du Bund</span>
         </div>
-        <p class="adb-footer__blurb">Atelier du Bund began with a search that came up empty. Founded in Montréal by <span class="adb-footer__founder">Zhenai Xiao</span>, in the lineage of the Shanghai master-tailors — built on a simple belief: that dressing well is not a luxury but an investment, made once and worn for years.</p>
+        <p class="adb-footer__blurb">Atelier du Bund began with a search that came up empty. Founded in Montréal by <span class="adb-footer__founder">Zhenai Xiao</span>, in the lineage of the Shanghai master tailors — built on a simple belief: that dressing well is not a luxury but an investment, made once and worn for years.</p>
       </div>
       <div>
         <h4 class="adb-footer__h">Explore</h4>
@@ -367,107 +441,270 @@ A craft learned where two worlds met.</p>
     paint(); tick();
   })();
 
-  // ---- Founding Collection: gender toggle + hotspot detail ----
+  // ---- Language toggle (label only — no French copy exists yet) ----
   (function(){
-    const figuresWrap = document.getElementById('collectionFigures');
-    if (!figuresWrap) return;
-    const fitEl = document.getElementById('colDetailFit');
-    const titleEl = document.getElementById('colDetailTitle');
-    const textEl = document.getElementById('colDetailText');
+    const btn = document.getElementById('adbLang');
+    const label = document.getElementById('adbLangLabel');
+    if (!btn || !label) return;
+    let lang = 'EN';
+    btn.addEventListener('click', () => {
+      lang = lang === 'EN' ? 'FR' : 'EN';
+      label.textContent = lang === 'EN' ? 'EN-CA' : 'FR-CA';
+      const aria = lang === 'EN' ? 'Passer en français' : 'Switch to English';
+      btn.setAttribute('aria-label', aria);
+      btn.setAttribute('title', aria);
+    });
+  })();
 
-    const fits = {
-      vincent:    { name:'The Vincent', tag:"Men's · Signature", img:'images/founding%20collection/The%20Vincent%20Front.PNG', alt:'The Vincent — drawn figure in a navy single-breasted suit with peak lapels.',
-        hotspots:[
-          { num:'1', title:'Peak lapel', text:'A sharp, hand-rolled peak lapel — the line that defines the signature.', top:'20%', left:'56%' },
-          { num:'2', title:'Full-canvas front', text:'A full floating canvas runs the length of the chest, so the jacket moulds to you and holds its shape for years — where others stop at half-canvas to save time.', top:'40%', left:'44%' },
-          { num:'3', title:'Working cuffs', text:'Functioning surgeon’s cuffs, buttonholes bound in your lining colour — a quiet proof of hand-work.', top:'66%', left:'28%' },
-        ] },
-      maximilian: { name:'The Maximilian', tag:"Men's · Double-breasted", img:'images/founding%20collection/The%20Maximilian%20Front.PNG', alt:'The Maximilian — drawn figure in a navy double-breasted suit with wide peak lapels.',
-        hotspots:[
-          { num:'1', title:'Wide peak lapel', text:'A broad, confident peak — the boldest lapel in the house.', top:'20%', left:'58%' },
-          { num:'2', title:'Double-breasted wrap', text:'A deep six-on-two wrap, drafted to close clean and drape long.', top:'44%', left:'46%' },
-          { num:'3', title:'Silk-touch lining', text:'A silk-touch lining in gold, fuchsia or house red — the reveal only you see when you move.', top:'56%', left:'60%' },
-        ] },
-      vivienne:   { name:'The Vivienne', tag:"Women's · Signature", img:'images/founding%20collection/The%20Vivienne%20Front.PNG', alt:'The Vivienne — drawn figure in a waisted navy suit with a single-button peak lapel.',
-        hotspots:[
-          { num:'1', title:'Single-button peak', text:'The signature peak lapel, cut and closed on a single button — for a woman.', top:'22%', left:'56%' },
-          { num:'2', title:'Waisted cut', text:'Shaped through the waist by hand for a close, deliberate line.', top:'48%', left:'48%' },
-          { num:'3', title:'Half-canvas front', text:'A half-canvas front — light, precise, and made to move.', top:'38%', left:'42%' },
-        ] },
-      maggie:     { name:'The Maggie', tag:"Women's · Soft", img:'images/founding%20collection/The%20Maggie%20Front.PNG', alt:'The Maggie — drawn figure in a soft, draped navy suit with rounded lapels.',
-        hotspots:[
-          { num:'1', title:'Rounded lapel', text:'Soft, rounded lapels — tender and unhurried.', top:'22%', left:'55%' },
-          { num:'2', title:'Softly puffed shoulder', text:'A gently puffed shoulder with a romantic, easy volume.', top:'15%', left:'40%' },
-          { num:'3', title:'Unstructured drape', text:'A softer construction that drapes rather than sculpts.', top:'54%', left:'52%' },
-        ] },
+  // ---- Founding Collection: house styles, front/back figures, connector line ----
+  (function(){
+    const stage = document.getElementById('adb-cl-stage');
+    if (!stage) return;
+    const tagEl = document.getElementById('clTag');
+    const nameEl = document.getElementById('clName');
+    const blurbEl = document.getElementById('clBlurb');
+    const numEl = document.getElementById('clNum');
+    const metaEl = document.getElementById('clMeta');
+    const titleEl = document.getElementById('clTitle');
+    const textEl = document.getElementById('clText');
+    const art = { front: document.getElementById('clArtFront'), back: document.getElementById('clArtBack') };
+    const panel = { front: document.getElementById('clPanelFront'), back: document.getElementById('clPanelBack') };
+    const svg = document.getElementById('adb-cl-svg');
+    const linePath = document.getElementById('adb-cl-line');
+    const o1 = document.getElementById('adb-cl-o1');
+    const o2 = document.getElementById('adb-cl-o2');
+    const card = document.getElementById('adb-cl-card');
+
+    const BASE = 'images/web/collection/';
+    const panelUrls = { green: BASE + 'marble-green.png', oxblood: BASE + 'marble-oxblood.png' };
+
+    const styleData = {
+      vincent: { name:'The Vincent', tag:"Men's · Signature", blurb:'Our signature unisex cut — effortless from the desk to a late soirée.', panel:'oxblood',
+        front:{ src: BASE + 'vincent-front.png', alt:'The Vincent — navy single-breasted suit, front view.',
+          hotspots:[
+            { num:1, title:'Peak lapels', text:'A sharp peak lapel — the most formal, confident line, hand-rolled to stand crisp.', top:'26%', left:'58%' },
+            { num:2, title:'Structured shoulders', text:'A clean, structured shoulder squares the frame and holds its line all day.', top:'18%', left:'39%' },
+            { num:3, title:'Princess seams', text:'Long princess seams shape the jacket through the body for a lean, deliberate waist.', top:'40%', left:'42%' },
+            { num:4, title:'One button', text:'A single button — sharp and classic, closing high for a long, elegant lapel line.', top:'48%', left:'50%' },
+          ] },
+        back:{ src: BASE + 'vincent-back.png', alt:'The Vincent — navy single-breasted suit, back view.',
+          hotspots:[
+            { num:5, title:'Pintuck trousers', text:'A pressed pintuck runs the length of the trouser, adding definition and a longer line.', top:'70%', left:'54%' },
+            { num:6, title:'Single vent', text:'A single vent — elegant and clean, with just enough room to move.', top:'50%', left:'52%' },
+          ] } },
+      maximilian: { name:'The Maximilian', tag:"Men's · Double-breasted", blurb:'A relaxed-fit take on the traditional double-breasted.', panel:'green',
+        front:{ src: BASE + 'maximilian-front.png', alt:'The Maximilian — brown double-breasted suit, front view.',
+          hotspots:[
+            { num:1, title:'Wide peak lapel', text:'A broad peak lapel — the boldest, most traditional line in the collection.', top:'26%', left:'60%' },
+            { num:2, title:'Relaxed shoulder', text:'A softer, relaxed shoulder — natural and easy rather than sharply built.', top:'18%', left:'39%' },
+            { num:3, title:'Double-breasted front', text:'A six-on-two wrap closes deep and clean for a rich, classic chest.', top:'45%', left:'47%' },
+            { num:4, title:'Full-cut trouser', text:'A relaxed, straight-leg trouser with a full break for a traditional silhouette.', top:'74%', left:'54%' },
+          ] },
+        back:{ src: BASE + 'maximilian-back.png', alt:'The Maximilian — brown double-breasted suit, back view.',
+          hotspots:[
+            { num:5, title:'Double vent', text:'Twin side vents — room to move and a clean drape over the seat.', top:'50%', left:'49%' },
+            { num:6, title:'Draped back', text:'A clean, gently draped back that skims the body rather than clings.', top:'36%', left:'53%' },
+          ] } },
+      vivienne: { name:'The Vivienne', tag:"Women's · Signature", blurb:'Our signature unisex cut — effortless from the desk to a late soirée.', panel:'oxblood',
+        front:{ src: BASE + 'vivienne-front.png', alt:'The Vivienne — black peak-lapel suit, front view.',
+          hotspots:[
+            { num:1, title:'Peak lapels', text:'Sharp, professional peak lapels — the defining line of the signature suit.', top:'27%', left:'58%' },
+            { num:2, title:'Structured shoulders', text:'Structured shoulders bring definition and sharpness to the figure.', top:'19%', left:'39%' },
+            { num:3, title:'Princess seams', text:'Princess seams draw the jacket in, tying in the waist for a shaped silhouette.', top:'40%', left:'43%' },
+            { num:4, title:'One button', text:'A single button — sharp and classic, for a clean, elongating close.', top:'47%', left:'49%' },
+          ] },
+        back:{ src: BASE + 'vivienne-back.png', alt:'The Vivienne — black peak-lapel suit, back view.',
+          hotspots:[
+            { num:5, title:'Pintuck trousers', text:'Pintuck detailing on the trouser gives definition and a crisp, tailored line.', top:'70%', left:'54%' },
+            { num:6, title:'Single vent', text:'A single vent — elegant, and gives room to move in the suit.', top:'50%', left:'52%' },
+          ] } },
+      maggie: { name:'The Maggie', tag:"Women's · Evening", blurb:'Our more feminine evening wear — sharp, dark and cut for the night.', panel:'green',
+        front:{ src: BASE + 'maggie-front.png', alt:'The Maggie — grey notch-lapel suit, front view.',
+          hotspots:[
+            { num:1, title:'Notch lapel', text:'A softly rolled notch lapel — refined and easy, made for the evening.', top:'26%', left:'57%' },
+            { num:2, title:'Nipped waist', text:'Shaping seams nip the waist for a feminine, hourglass line.', top:'44%', left:'44%' },
+            { num:3, title:'Shell buttons', text:'Iridescent shell buttons with a faint pearl sheen — a quiet, luxe detail.', top:'50%', left:'50%' },
+          ] },
+        back:{ src: BASE + 'maggie-back.png', alt:'The Maggie — grey notch-lapel suit, back view.',
+          hotspots:[
+            { num:4, title:'Puffed shoulder', text:'A lightly gathered, puffed shoulder — a soft, romantic volume set by hand.', top:'20%', left:'44%' },
+            { num:5, title:'Flared trouser', text:'A gently flared trouser that lengthens the leg and moves as you do.', top:'74%', left:'52%' },
+          ] } },
     };
-    const genderFits = { men: ['vincent','maximilian'], women: ['vivienne','maggie'] };
-    let detail = { fit:'vincent', idx:0 };
 
-    const setDetail = (fitKey, idx) => {
-      detail = { fit:fitKey, idx };
-      const h = fits[fitKey].hotspots[idx];
-      fitEl.textContent = fits[fitKey].name;
+    let style = 'vincent';
+    let detail = { view:'front', idx:0 };
+    const mq = matchMedia('(max-width: 860px)');
+    let narrow = mq.matches;
+    const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+    const buildHotspots = (view) => {
+      const figure = art[view].parentElement;
+      figure.querySelectorAll('.adb-hotspot').forEach(b => b.remove());
+      styleData[style][view].hotspots.forEach((h, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'adb-hotspot';
+        b.dataset.mk = view + '-' + i;
+        b.dataset.view = view;
+        b.dataset.idx = i;
+        b.style.top = h.top;
+        b.style.left = h.left;
+        b.textContent = h.num;
+        b.setAttribute('aria-label', h.title);
+        const act = () => setDetail(view, i);
+        b.addEventListener('mouseenter', act);
+        b.addEventListener('focus', act);
+        b.addEventListener('click', act);
+        figure.appendChild(b);
+      });
+    };
+
+    const paintHotspots = () => {
+      stage.querySelectorAll('.adb-hotspot').forEach(b => {
+        b.classList.toggle('is-active', b.dataset.view === detail.view && +b.dataset.idx === detail.idx);
+      });
+    };
+
+    const animateLine = () => {
+      if (reduce) return;
+      let len;
+      try { len = linePath.getTotalLength(); } catch (e) { return; }
+      if (!len) return;
+      linePath.style.transition = 'none';
+      linePath.style.strokeDasharray = len;
+      linePath.style.strokeDashoffset = len;
+      linePath.getBoundingClientRect();
+      linePath.style.transition = 'stroke-dashoffset .55s cubic-bezier(.4,0,.2,1)';
+      linePath.style.strokeDashoffset = '0';
+      [o1, o2].forEach((el, i) => {
+        if (!el) return;
+        el.style.transition = 'none';
+        el.style.opacity = '0';
+        el.getBoundingClientRect();
+        el.style.transition = 'opacity .35s ease ' + (i ? '.32s' : '.12s');
+        el.style.opacity = '1';
+      });
+    };
+
+    const computeLine = () => {
+      if (narrow) { svg.style.display = 'none'; return; }
+      svg.style.display = '';
+      const mk = stage.querySelector('[data-mk="' + detail.view + '-' + detail.idx + '"]');
+      if (!mk || !card) return;
+      const sr = stage.getBoundingClientRect();
+      const mr = mk.getBoundingClientRect();
+      const cr = card.getBoundingClientRect();
+      if (!sr.width || !sr.height) return;
+      svg.setAttribute('viewBox', '0 0 ' + sr.width + ' ' + sr.height);
+      const x1 = mr.left + mr.width / 2 - sr.left;
+      const y1 = mr.top + mr.height / 2 - sr.top;
+      const leftSide = x1 < sr.width / 2;
+      const x2 = (leftSide ? cr.left : cr.right) - sr.left;
+      const y2 = Math.min(Math.max(y1, cr.top - sr.top + 22), cr.bottom - sr.top - 22);
+      const midx = leftSide ? Math.min(x2, (x1 + x2) / 2 + 26) : Math.max(x2, (x1 + x2) / 2 - 26);
+      linePath.setAttribute('d', 'M ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' L ' + midx.toFixed(1) + ' ' + y1.toFixed(1) + ' L ' + x2.toFixed(1) + ' ' + y2.toFixed(1));
+      o1.setAttribute('cx', x1); o1.setAttribute('cy', y1);
+      o2.setAttribute('cx', x2); o2.setAttribute('cy', y2);
+      animateLine();
+    };
+
+    const scheduleLine = () => requestAnimationFrame(() => requestAnimationFrame(computeLine));
+
+    function setDetail(view, idx){
+      detail = { view, idx };
+      const sd = styleData[style];
+      const h = sd[view].hotspots[idx];
+      numEl.textContent = String(h.num).padStart(2, '0');
+      metaEl.textContent = sd.name + ' · ' + (view === 'front' ? 'Front' : 'Back');
       titleEl.textContent = h.title;
       textEl.textContent = h.text;
-      figuresWrap.querySelectorAll('.adb-hotspot').forEach(btn => {
-        btn.classList.toggle('is-active', btn.dataset.fit === fitKey && +btn.dataset.idx === idx);
+      paintHotspots();
+      scheduleLine();
+    }
+
+    const setStyle = (k) => {
+      style = k;
+      const sd = styleData[k];
+      tagEl.textContent = sd.tag;
+      nameEl.textContent = sd.name;
+      blurbEl.textContent = sd.blurb;
+      ['front','back'].forEach(v => {
+        art[v].style.backgroundImage = "url('" + sd[v].src + "')";
+        art[v].setAttribute('aria-label', sd[v].alt);
+        panel[v].style.backgroundImage = "linear-gradient(rgba(250,247,241,.34), rgba(250,247,241,.34)), url('" + panelUrls[sd.panel] + "')";
+        buildHotspots(v);
       });
+      document.querySelectorAll('.adb-styletab').forEach(b => {
+        const on = b.dataset.style === k;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on);
+      });
+      setDetail('front', 0);
     };
 
-    const render = (gender) => {
-      figuresWrap.innerHTML = '';
-      genderFits[gender].forEach(fitKey => {
-        const f = fits[fitKey];
-        const col = document.createElement('div');
-        col.className = 'adb-figure';
-        const stage = document.createElement('div');
-        stage.className = 'adb-figure__stage';
-        const fig = document.createElement('img');
-        fig.className = 'adb-figure__img';
-        fig.src = f.img;
-        fig.alt = f.alt;
-        fig.loading = 'lazy';
-        stage.appendChild(fig);
-        f.hotspots.forEach((h, i) => {
-          const b = document.createElement('button');
-          b.type = 'button'; b.className = 'adb-hotspot';
-          b.dataset.fit = fitKey; b.dataset.idx = i;
-          b.style.top = h.top; b.style.left = h.left;
-          b.textContent = h.num;
-          b.setAttribute('aria-label', h.title);
-          const act = () => setDetail(fitKey, i);
-          b.addEventListener('mouseenter', act);
-          b.addEventListener('focus', act);
-          b.addEventListener('click', act);
-          stage.appendChild(b);
-        });
-        col.appendChild(stage);
-        const cap = document.createElement('div');
-        cap.className = 'adb-figure__cap';
-        cap.innerHTML = '<span class="adb-figure__tag"></span><h3 class="adb-figure__name"></h3>';
-        cap.querySelector('.adb-figure__tag').textContent = f.tag;
-        cap.querySelector('.adb-figure__name').textContent = f.name;
-        col.appendChild(cap);
-        figuresWrap.appendChild(col);
-      });
-    };
-
-    document.querySelectorAll('.adb-toggle__btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const g = btn.dataset.gender;
-        document.querySelectorAll('.adb-toggle__btn').forEach(b => {
-          const on = b === btn;
-          b.classList.toggle('is-active', on);
-          b.setAttribute('aria-selected', on);
-        });
-        render(g);
-        setDetail(genderFits[g][0], 0);
-      });
+    document.querySelectorAll('.adb-styletab').forEach(b => {
+      b.addEventListener('click', () => setStyle(b.dataset.style));
     });
 
-    render('men');
-    setDetail('vincent', 0);
+    mq.addEventListener('change', (e) => { narrow = e.matches; computeLine(); });
+    addEventListener('resize', computeLine, { passive: true });
+
+    setStyle('vincent');
+    setTimeout(computeLine, 400);
+  })();
+
+  // ---- The Cloth: tier switcher ----
+  (function(){
+    const wrap = document.getElementById('fabricTiers');
+    if (!wrap) return;
+    const nameEl = document.getElementById('fabName');
+    const compEl = document.getElementById('fabComp');
+    const slots = Array.from(document.querySelectorAll('.adb-fabrics__slot'));
+
+    const data = {
+      reserve:   { num:'01', name:'The Reserve', comp:'100% wool · most breathable', desc:'Pure wool — breathable, naturally temperature-regulating across seasons, with the finest hand and drape in the house. The cloth for the suits you keep longest.', foot:'The finest we offer' },
+      signature: { num:'02', name:'The Signature', comp:'70% wool · fully machine-washable', desc:'A 70% wool blend woven for easy care — far more of wool’s hand and drape, yet fully machine-washable at home. Wrinkle-resistant and made for travel and the working week.', foot:'The everyday, elevated' },
+      essential: { num:'03', name:'The Essential', comp:'50% wool · 50% polyester', desc:'The most hard-wearing cloth we make — it holds a press, shrugs off creasing and takes daily wear without complaint. The dependable everyday suit, and the easiest to care for.', foot:'From $899 CAD' },
+    };
+    const order = ['reserve','signature','essential'];
+    let active = 'reserve';
+
+    const buttons = order.map(k => {
+      const t = data[k];
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'adb-tier';
+      b.dataset.fabric = k;
+      b.setAttribute('aria-label', t.name);
+      b.innerHTML =
+        '<span class="adb-tier__head">' +
+          '<span class="adb-tier__num"></span>' +
+          '<span class="adb-tier__name"></span>' +
+        '</span>' +
+        '<span class="adb-tier__body">' +
+          '<span class="adb-tier__comp"></span>' +
+          '<span class="adb-tier__desc"></span>' +
+          '<span class="adb-tier__foot"></span>' +
+        '</span>';
+      b.querySelector('.adb-tier__num').textContent = t.num;
+      b.querySelector('.adb-tier__name').textContent = t.name;
+      b.querySelector('.adb-tier__comp').textContent = t.comp;
+      b.querySelector('.adb-tier__desc').textContent = t.desc;
+      b.querySelector('.adb-tier__foot').textContent = t.foot;
+      b.addEventListener('click', () => { active = k; paint(); });
+      wrap.appendChild(b);
+      return b;
+    });
+
+    function paint(){
+      const t = data[active];
+      nameEl.textContent = t.name;
+      compEl.textContent = t.comp;
+      buttons.forEach(b => b.classList.toggle('is-active', b.dataset.fabric === active));
+      slots.forEach(s => s.classList.toggle('is-active', s.dataset.fabric === active));
+    }
+    paint();
   })();
 
   // ---- Heritage scrollytelling (sticky stage, 4 steps: Ningbo → Shanghai → Hong Kong → Montréal) ----
@@ -487,7 +724,7 @@ A craft learned where two worlds met.</p>
       { cn:'寧波', title:'Ningbo — where it begins', year:'Late 1800s',
         text:'A Qing-dynasty scholar wrote that “tailors are found everywhere, especially in Ningbo.” From this coastal city along the Fenghua River came the artisans who would master the Western suit. They earned their name from the men they dressed — Westerners the Chinese then called the “red-haired,” 紅毛 — and so became the Hongbang, the Red Gang: the tailors of the red-haired foreigners.\n\nA craft learned where two worlds met.' },
       { cn:'上海', title:'Shanghai — the Bund', year:'1920s–30s',
-        text:'In 1896, a Ningbo tailor opened one of Shanghai’s first suit houses; within a generation, more than four hundred lined Nanjing Road and the city’s grandest avenues. In Shanghai’s golden age, the Red Gang became the master-tailors of the city — structured shoulders, curved chests, hand-stitched lapels, techniques drawn from British and Russian cutters and made entirely their own. By the 1940s, they were six of every ten tailors in the city, dressing its bankers, its film stars, and its foreign houses.\n\nOur house takes its name from the Bund, the emblem of that golden age.' },
+        text:'In 1896, a Ningbo tailor opened one of Shanghai’s first suit houses; within a generation, more than four hundred lined Nanjing Road and the city’s grandest avenues. In Shanghai’s golden age, the Red Gang became the master tailors of the city — structured shoulders, curved chests, hand-stitched lapels, techniques drawn from British and Russian cutters and made entirely their own. By the 1940s, they were six of every ten tailors in the city, dressing its bankers, its film stars, and its foreign houses.\n\nOur house takes its name from the Bund, the emblem of that golden age.' },
       { cn:'香港', title:'Hong Kong — carried south', year:'1949',
         text:'When the era turned, the Red Gang masters carried their craft south to Hong Kong, many following the international clients they had long dressed. The Shanghai hand met the rhythm of a new city, and the lineage lived on — the same methods, the same quiet precision, carried faithfully into the present. What began on the Fenghua River, and flourished on the Bund, continues now in Montréal.\n\nThe thread was never cut; it only traveled.' },
       { cn:'蒙特利爾', title:'Montréal — a new chapter', year:'Today',
