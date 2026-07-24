@@ -481,31 +481,43 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
     /* flex-start, not center: centred content overflows equally in BOTH
        directions, so the longest step rode up under the heading */
     justify-content:flex-start;
-    gap:clamp(.8rem,3vw,1.2rem);
+    gap:0;
     padding-top:10.6rem;     /* clears the fixed heading block */
-    padding-bottom:5.4rem}   /* clears the stepper */
+    padding-bottom:0}
   .heritage__panel,#heritage[data-step="3"] .heritage__panel{
     order:1;position:static;transform:none;width:auto;
     left:auto;right:auto;top:auto;bottom:auto}
-  /* only the active map is in flow, so the inactive one costs no height.
-     position:relative (not static) keeps the city dots anchored to the map
-     instead of escaping to the canvas. */
+  /* The map is anchored above the stepper rather than sitting in flow, so a
+     long panel can never push it down: when space is tight the copy softly
+     overlaps the map (it is faint line-art) and the stepper always stays
+     clear. Only the active map is shown. */
   .heritage__map{
-    order:2;position:relative;transform:none;display:none;
-    top:auto;left:auto;right:auto;bottom:auto;
-    margin-inline:auto;opacity:1}
-  /* the coastline path extends well beyond its viewBox; unclipped it draws
-     straight across the heading and the copy at this size */
-  .heritage__svg{overflow:hidden}
-  /* transform:none here too: the desktop step rules carry translateY(-50%),
-     which would drag the map back up over the copy once it is in flow */
+    order:2;position:absolute;display:none;z-index:0;
+    /* left/right 0 + auto margins centres without a transform, which the
+       desktop rules also set and would fight over */
+    left:0;right:0;top:auto;
+    bottom:5.6rem;                      /* clearance above the stepper row */
+    transform:none;
+    margin-inline:auto;opacity:1;pointer-events:auto}
+  /* the full coastline, not the desktop crop, so the whole country reads */
   #heritage:not([data-step="3"]) .heritage__map--china{
-    display:block;width:min(60%,12.5rem);transform:none}
+    display:block;width:min(94%,21rem);aspect-ratio:780/460;
+    transform:none}
   #heritage[data-step="3"] .heritage__map--china{transform:none}
   #heritage[data-step="3"] .heritage__map--mtl{
-    display:block;width:min(66%,13.5rem);transform:none}
-  /* the legend is absolutely placed against the map's old corner */
-  .heritage__legend--china{display:none}
+    display:block;width:min(78%,16rem);
+    bottom:7.4rem;                      /* sits higher, behind the copy */
+    transform:none}
+  /* markers re-derived for the wider viewBox */
+  .heritage__dot--shanghai{left:77.6%;top:63.1%}
+  .heritage__dot--ningbo{left:78.9%;top:67.5%}
+  .heritage__dot--hongkong{left:65.8%;top:91.7%}
+  .heritage__legend--china{display:block;top:-.9rem;left:2%;font-size:.5rem}
+  /* Montreal always shows the full country outline; the island zoom is not
+     legible at this width and made the panel inconsistent between states */
+  .heritage__mtl-layer--island{display:none}
+  #heritage.is-zoomed .heritage__mtl-layer--canada{opacity:1;transform:none}
+  .heritage__svg{overflow:visible}
   .heritage__glyph{font-size:clamp(2.2rem,10vw,3rem);margin-bottom:.5rem}
   .heritage__copy{font-size:.86rem;line-height:1.5;max-width:none}
   .heritage__city{font-size:clamp(1.3rem,5vw,1.6rem)}
