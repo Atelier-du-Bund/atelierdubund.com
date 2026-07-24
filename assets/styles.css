@@ -471,32 +471,50 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .heritage__panel{width:min(58%,34rem)}
 }
 @media (max-width:640px){
-  /* keep the maps on mobile: centre them above the reading panel rather than
-     hiding them, since they carry the whole point of the section */
-  /* sized to the band between the heading and the reading panel so the
-     line-art never sits under the copy */
-  .heritage__map--china{
-    top:29%;left:50%;right:auto;width:min(31%,7rem);
-    transform:translate(-50%,-50%)}
-  #heritage[data-step="3"] .heritage__map--china{
-    opacity:0;transform:translate(-50%,-50%) translateX(-40px)}
-  .heritage__map--mtl{
-    top:29%;left:50%;right:auto;width:min(46%,11rem);
-    transform:translate(-50%,-50%) translateX(40px)}
-  #heritage[data-step="3"] .heritage__map--mtl{
-    opacity:1;transform:translate(-50%,-50%)}
-  /* the china map's legend would collide with the eyebrow at this size */
-  .heritage__legend--china{display:none}
-  /* let the canvas fill the stage so the panel can bottom-anchor against it */
+  /* Mobile stacks the stage in reading order: heading, copy, then the map
+     below it and above the stepper, where there is natural room. The map is
+     orientation rather than content, so it does not need to come first. */
   .heritage__frame{align-items:stretch}
-  .heritage__canvas{height:100%;margin-top:0}
+  .heritage__canvas{
+    height:100%;margin-top:0;
+    display:flex;flex-direction:column;
+    /* flex-start, not center: centred content overflows equally in BOTH
+       directions, so the longest step rode up under the heading */
+    justify-content:flex-start;
+    gap:clamp(.8rem,3vw,1.2rem);
+    padding-top:10.6rem;     /* clears the fixed heading block */
+    padding-bottom:5.4rem}   /* clears the stepper */
   .heritage__panel,#heritage[data-step="3"] .heritage__panel{
-    left:clamp(1.25rem,5vw,4rem);right:clamp(1.25rem,5vw,4rem);width:auto;
-    top:auto;bottom:clamp(6.5rem,18vh,8.5rem);transform:none}
-  .heritage__glyph{font-size:clamp(2.4rem,11vw,3.4rem);margin-bottom:.6rem}
-  .heritage__copy{font-size:.92rem;line-height:1.6;max-width:none}
+    order:1;position:static;transform:none;width:auto;
+    left:auto;right:auto;top:auto;bottom:auto}
+  /* only the active map is in flow, so the inactive one costs no height.
+     position:relative (not static) keeps the city dots anchored to the map
+     instead of escaping to the canvas. */
+  .heritage__map{
+    order:2;position:relative;transform:none;display:none;
+    top:auto;left:auto;right:auto;bottom:auto;
+    margin-inline:auto;opacity:1}
+  /* the coastline path extends well beyond its viewBox; unclipped it draws
+     straight across the heading and the copy at this size */
+  .heritage__svg{overflow:hidden}
+  /* transform:none here too: the desktop step rules carry translateY(-50%),
+     which would drag the map back up over the copy once it is in flow */
+  #heritage:not([data-step="3"]) .heritage__map--china{
+    display:block;width:min(60%,12.5rem);transform:none}
+  #heritage[data-step="3"] .heritage__map--china{transform:none}
+  #heritage[data-step="3"] .heritage__map--mtl{
+    display:block;width:min(66%,13.5rem);transform:none}
+  /* the legend is absolutely placed against the map's old corner */
+  .heritage__legend--china{display:none}
+  .heritage__glyph{font-size:clamp(2.2rem,10vw,3rem);margin-bottom:.5rem}
+  .heritage__copy{font-size:.86rem;line-height:1.5;max-width:none}
+  .heritage__city{font-size:clamp(1.3rem,5vw,1.6rem)}
   .heritage__eyebrow{letter-spacing:.18em;font-size:.56rem}
   .heritage__eyebrow::before,.heritage__eyebrow::after{width:1.2rem}
+  /* a single compact row frees the vertical space the map needs */
+  .heritage__stepper{gap:.9rem;bottom:clamp(1.4rem,4vh,2rem)}
+  .heritage__step-name{font-size:.6rem;letter-spacing:.1em}
+  .heritage__step{padding:.15rem}
 }
 @media (prefers-reduced-motion:reduce){
   .heritage__photo,.heritage__scrim,.heritage__map,.heritage__mtl-layer--canada,
@@ -847,12 +865,15 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 @media (max-width:860px){
   .adb-about__grid{grid-template-columns:1fr}
   .adb-how__grid{grid-template-columns:1fr 1fr}
-  /* the carousel frame was short and inset, so the photo sat in a small
-     landscape window with the section's cream showing above and below.
-     Run it edge to edge and make it properly tall. */
+  /* Portrait plate, inset within the section's gutters so the cream ground
+     shows on both sides. The subjects are standing figures, so a portrait
+     crop keeps heads and legs in frame. */
   .adb-about__frame{
+    width:100%;                                /* let the gutters set the width;
+                                                  aspect-ratio here would derive
+                                                  width from height and overflow */
     min-height:clamp(30rem,125vw,40rem);
-    margin-inline:calc(-1 * clamp(1.25rem,5vw,4rem))}
+    margin-inline:0}
   /* stack front · card · back and drop the connector line */
   .adb-clstage{grid-template-columns:1fr;gap:2rem}
   .adb-clline{display:none}
