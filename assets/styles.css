@@ -370,6 +370,15 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .heritage__photo[data-step="2"][data-idx="0"]{object-position:center 40%}
 .heritage__photo.is-active{opacity:1}
 .heritage__photo--mtl{object-position:50% 36%;filter:contrast(1.02) brightness(.62) saturate(.85);transition:opacity 1s ease}
+/* Desktop only: drop the founder's face clear of the "A long-lasting heritage."
+   headline. object-position alone cannot do it — at 1100x800 the photo has no
+   vertical overflow to work with — so the frame is filled from the top edge and
+   the photo scaled from that same origin, which pushes the face down without
+   exposing an edge. 1.2 is the least zoom that clears at 1100px, the tightest
+   case. Mobile keeps 50% 36%. */
+@media (min-width:821px){
+  .heritage__photo--mtl{object-position:50% 0%;transform-origin:50% 0;transform:scale(1.2)}
+}
 .heritage__scrim{position:absolute;inset:0;transition:background .8s ease;
   background:linear-gradient(90deg,rgba(16,9,10,.55) 0%,rgba(16,9,10,.42) 40%,rgba(16,9,10,.84) 100%),
              linear-gradient(0deg,rgba(16,9,10,.55),transparent 45%)}
@@ -924,7 +933,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
     margin-inline:0}
   /* One figure at a time, swiped or toggled — not front and back stacked.
      The connector line is dropped; the card sits under the figure. */
-  .adb-clstage{grid-template-columns:1fr;gap:1.1rem;max-width:23rem;margin-inline:auto;
+  .adb-clstage{grid-template-columns:1fr;gap:.8rem;max-width:23rem;margin-inline:auto;
     left:auto;transform:none;width:100%}
   .adb-clline{display:none}
   .adb-clcard-wrap{max-width:24rem;order:3}
@@ -932,7 +941,15 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .adb-clview--back{display:none}
   .adb-clstage.is-back .adb-clview--front{display:none}
   .adb-clstage.is-back .adb-clview--back{display:flex}
-  .adb-clview__figure{width:min(100%,calc(47vh * 0.7495));max-width:none;touch-action:pan-y}
+  /* the multiplier is the figure's height in vh — the aspect ratio turns it back
+     into a width. 55vh keeps figure + toggle + card inside a short phone too. */
+  .adb-clview__figure{width:min(100%,calc(55vh * 0.7495));max-width:none;touch-action:pan-y}
+  /* the illustration is the subject; the caption supports it */
+  .adb-clcard{padding:.8rem 1rem .9rem}
+  .adb-clcard__num{font-size:1.4rem}
+  .adb-clcard__meta{margin-top:.35rem}
+  .adb-clcard__title{font-size:1.1rem;margin:.15rem 0 .3rem}
+  .adb-clcard__text{font-size:.82rem;line-height:1.5}
   .adb-clview__label{display:none}
   .adb-clflip{display:flex;order:2}
 }

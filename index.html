@@ -462,16 +462,26 @@ A craft learned where two worlds met.</p>
 
 <script>
   // ---- Header: transparent over the hero, solid oxblood once scrolled past it.
-  //      The mobile book bar rides the same threshold. ----
+  //      The mobile book plate rides the same threshold, and stands down over
+  //      Heritage so it never covers the city stepper. ----
   (function(){
     const header = document.getElementById('adb-header');
     const hero = document.getElementById('top');
     const cta = document.getElementById('adbMobileCta');
+    const heritage = document.getElementById('heritage');
     if (!header || !hero) return;
+    // the plate sits ~1.1rem off the bottom; treat the lowest 8rem as its zone
+    const PLATE_ZONE = 128;
     const onHdr = () => {
       const solid = window.scrollY > hero.offsetHeight - header.offsetHeight - 8;
       header.classList.toggle('is-solid', solid);
-      if (cta) cta.classList.toggle('is-visible', solid);
+      if (!cta) return;
+      let overHeritage = false;
+      if (heritage) {
+        const r = heritage.getBoundingClientRect();
+        overHeritage = r.top < innerHeight && r.bottom > innerHeight - PLATE_ZONE;
+      }
+      cta.classList.toggle('is-visible', solid && !overHeritage);
     };
     onHdr(); addEventListener('scroll', onHdr, {passive:true});
   })();

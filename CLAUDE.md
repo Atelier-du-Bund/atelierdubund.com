@@ -45,10 +45,17 @@ Exports have broken every one of these at least once.
 - **The mobile nav** and the **EN-CA / FR-CA language toggle**.
 - **URL-encoded heritage image paths** (e.g. `15.%20vintage%20measurement%20form.webp`)
   — a deliberate workaround for spaces in filenames.
-- **The Heritage Montréal framing.** `object-position:50% 36%` on `.heritage__photo--mtl`
-  holds the founder's face clear of the "A long-lasting heritage." headline. It took a
-  long time to land. Never "correct" it, and never change the aspect ratio of
-  `founder-mirror.jpg` — the value is proportional and depends on a 3:2 crop.
+- **The Heritage Montréal framing.** Holds the founder's face clear of the
+  "A long-lasting heritage." headline. It took a long time to land — never "correct" it.
+  Two different values, deliberately:
+  - Mobile (≤820px): `object-position:50% 36%` on `.heritage__photo--mtl`.
+  - Desktop (≥821px): `object-position:50% 0%` + `transform-origin:50% 0` +
+    `transform:scale(1.2)`. `object-position` alone cannot do it, because at 1100×800
+    the photo has no vertical overflow left to shift. Filling from the top edge and
+    scaling from that same origin pushes the face down without exposing an edge.
+    1.2 is the least zoom that clears at 1100px, which is the tightest case.
+  Never change the aspect ratio of `founder-mirror.jpg` — both values are proportional
+  and assume a 3:2 crop. Verify any change at 1440, 1280 and 1100, and re-check 390.
 
 ---
 
