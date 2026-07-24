@@ -496,24 +496,20 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
     /* left/right 0 + auto margins centres without a transform, which the
        desktop rules also set and would fight over */
     left:0;right:0;top:auto;
-    bottom:9rem;                        /* clearance above the stepper row */
+    bottom:5rem;                        /* fixed: sits just above the stepper */
     transform:none;
     margin-inline:auto;opacity:1;pointer-events:auto}
   /* the desktop's zoomed eastern-coast crop: the markers sit ON the coast
      rather than floating beside a full outline */
   #heritage:not([data-step="3"]) .heritage__map--china{
-    display:block;width:min(60%,12.5rem);aspect-ratio:3/4;
+    display:block;width:min(36%,8.5rem);aspect-ratio:3/4;
     transform:none}
   #heritage[data-step="3"] .heritage__map--china{transform:none}
   #heritage[data-step="3"] .heritage__map--mtl{
-    display:block;width:min(78%,16rem);
-    bottom:10.8rem;                     /* raised by the same amount */
+    display:block;width:min(58%,13.5rem);
+    overflow:hidden;                    /* contains the zoom's scale(3.4) */
     transform:none}
   .heritage__legend--china{display:block;top:-.9rem;left:2%;font-size:.5rem}
-  /* Montreal always shows the full country outline; the island zoom is not
-     legible at this width and made the panel inconsistent between states */
-  .heritage__mtl-layer--island{display:none}
-  #heritage.is-zoomed .heritage__mtl-layer--canada{opacity:1;transform:none}
   .heritage__svg{overflow:hidden}
   .heritage__glyph{font-size:clamp(2.2rem,10vw,3rem);margin-bottom:.5rem}
   .heritage__copy{font-size:.86rem;line-height:1.5;max-width:none}
