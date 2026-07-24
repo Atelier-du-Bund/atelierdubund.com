@@ -775,17 +775,6 @@ A craft learned where two worlds met.</p>
       }
     };
 
-    // Mobile shows the whole China outline; desktop keeps the tighter crop.
-    // Only the viewBox can express that, and CSS cannot set it.
-    (function(){
-      const svg = section.querySelector('.heritage__map--china .heritage__svg');
-      if (!svg) return;
-      const mq = matchMedia('(max-width:640px)');
-      const apply = () => svg.setAttribute('viewBox', mq.matches ? '0 0 780 460' : '470 270 165 185');
-      apply();
-      mq.addEventListener('change', apply);
-    })();
-
     const computeStep = () => {
       const total = track.offsetHeight - window.innerHeight;
       const scrolled = Math.min(Math.max(-track.getBoundingClientRect().top, 0), total);
