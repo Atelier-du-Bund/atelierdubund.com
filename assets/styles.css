@@ -707,10 +707,6 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-about__slide.is-active{opacity:1;transform:scale(1.06)}
 .adb-about__slide--mirror{object-position:64% 15%}
 .adb-about__slide--lapel{object-position:68% 56%}
-.adb-about__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:34px;height:34px;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(200,162,75,.5);background:rgba(20,13,12,.28);color:#e0c48a;cursor:pointer;transition:background .3s ease,border-color .3s ease}
-.adb-about__arrow:hover{background:rgba(20,13,12,.5);border-color:#c8a24b}
-.adb-about__arrow--prev{left:.55rem}
-.adb-about__arrow--next{right:.55rem}
 .adb-about__dots{position:absolute;left:1.4rem;bottom:1.4rem;display:flex;gap:.5rem;z-index:2}
 .adb-about__dot{width:10px;height:6px;border-radius:999px;border:0;cursor:pointer;padding:0;background:rgba(40,28,16,.28);transition:all .4s ease}
 .adb-about__dot.is-active{width:26px;background:#8a5e28}
@@ -761,14 +757,22 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-clview__label{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#a08a5f;margin-top:1rem}
 
 /* hotspots */
-.adb-hotspot{position:absolute;transform:translate(-50%,-50%);z-index:4;width:25px;height:25px;border-radius:50%;border:0;padding:0;display:grid;place-items:center;font-family:'Jost',sans-serif;font-weight:600;font-size:.66rem;color:#42121b;background:radial-gradient(circle at 38% 30%,#d8b46a,#a8873f 72%);cursor:pointer;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s,box-shadow .3s,width .3s,height .3s;box-shadow:0 0 0 3px rgba(249,244,234,.85),0 3px 9px -2px rgba(40,20,10,.45)}
+/* hollow gold rings, not solid discs — the figure must read through them */
+.adb-hotspot{position:absolute;transform:translate(-50%,-50%);z-index:4;width:16px;height:16px;border-radius:50%;border:1.5px solid #c8a24b;padding:0;display:grid;place-items:center;font-family:'Jost',sans-serif;font-weight:600;font-size:.55rem;color:#e0c48a;background:transparent;cursor:pointer;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s,border-color .3s,color .3s,box-shadow .3s,width .3s,height .3s;box-shadow:0 0 0 1.5px rgba(249,244,234,.4)}
 .adb-hotspot:hover{transform:translate(-50%,-50%) scale(1.22)}
-.adb-hotspot.is-active{width:30px;height:30px;background:#6e1220;color:#f7ecd8;animation:adbPulse 2.4s ease-in-out infinite;box-shadow:0 0 0 4px rgba(249,244,234,.92),0 0 0 6px rgba(110,18,32,.3),0 5px 13px -2px rgba(40,20,10,.5)}
+.adb-hotspot.is-active{width:22px;height:22px;border-color:#6e1220;background:#6e1220;color:#f7ecd8;animation:adbPulse 2.4s ease-in-out infinite;box-shadow:0 0 0 3px rgba(249,244,234,.9),0 4px 11px -3px rgba(40,22,10,.5)}
 @keyframes adbPulse{0%,100%{box-shadow:0 0 0 4px rgba(249,244,234,.92),0 0 0 5px rgba(110,18,32,.35),0 5px 13px -2px rgba(40,20,10,.5)}50%{box-shadow:0 0 0 4px rgba(249,244,234,.92),0 0 0 11px rgba(110,18,32,0),0 5px 13px -2px rgba(40,20,10,.5)}}
 @media (prefers-reduced-motion:reduce){.adb-hotspot.is-active{animation:none}}
 
 /* connector line + centre card */
 .adb-clline{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:visible}
+/* mobile-only front/back toggle under the single figure */
+.adb-clflip{display:none;justify-content:center;align-items:center;gap:.75rem;margin-top:.8rem}
+.adb-clflip__btn{display:flex;align-items:center;gap:.5em;background:none;border:0;padding:.3rem .2rem;cursor:pointer}
+.adb-clflip__dot{width:6px;height:6px;border-radius:50%;background:rgba(140,110,62,.3);transition:background .3s ease}
+.adb-clflip__lab{font-family:'Jost',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#a08a5f;transition:color .3s ease}
+.adb-clflip__btn.is-active .adb-clflip__dot{background:#6e1220}
+.adb-clflip__btn.is-active .adb-clflip__lab{color:#6e1220}
 .adb-clcard-wrap{order:1;position:relative;z-index:5;justify-self:center;width:100%;max-width:15rem}
 .adb-clcard{position:relative;background:linear-gradient(180deg,#fbf8f1,#f2ebdd);border:1px solid #b2925a;padding:clamp(1.1rem,1.7vw,1.6rem) clamp(1rem,1.5vw,1.35rem);box-shadow:0 0 0 4px #f9f4ea,0 0 0 5px rgba(140,110,62,.42),0 30px 60px -40px rgba(45,30,20,.55);text-align:center}
 .adb-clcard__num{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.7rem,2.6vw,2.2rem);line-height:1;color:#9c7c43}
@@ -857,18 +861,22 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 /* Hidden outright on desktop; fades in on the same threshold that turns the header solid. */
 .adb-mobilecta{display:none}
 @media (max-width:860px){
-  .adb-mobilecta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;
-    align-items:center;justify-content:center;gap:.5em;
+  /* compact brass plate, floating clear of the bottom edge */
+  .adb-mobilecta{display:flex;position:fixed;left:50%;transform:translateX(-50%);
+    bottom:calc(1.1rem + env(safe-area-inset-bottom));z-index:90;
+    width:min(68vw,20rem);
+    align-items:center;justify-content:center;text-align:center;white-space:nowrap;
     opacity:0;pointer-events:none;transition:opacity .5s ease;
-    background:#c8a24b;border-top:1px solid #d9b877;box-shadow:0 -14px 34px -22px rgba(0,0,0,.7);
-    font-family:'Jost',sans-serif;font-size:.76rem;font-weight:500;text-transform:uppercase;
-    letter-spacing:.2em;color:#1a0e10;
-    padding:1.05em 1.2em;padding-bottom:calc(1.05em + env(safe-area-inset-bottom))}
+    background:#c8a24b;border:1px solid #d9b877;border-radius:9px;
+    box-shadow:0 14px 30px -14px rgba(40,22,8,.6),0 2px 5px rgba(40,22,8,.18);
+    font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;text-transform:uppercase;
+    letter-spacing:.13em;color:#1a0e10;
+    padding:1.05em .9em}
   .adb-mobilecta.is-visible{opacity:1;pointer-events:auto}
-  /* beat the global a:hover, which would otherwise put gold text on the gold bar */
+  /* beat the global a:hover, which would otherwise put gold text on the gold plate */
   .adb-mobilecta:hover,.adb-mobilecta:focus{color:#1a0e10}
-  /* clear the bar so it never sits on top of the footer's last line */
-  .adb-footer{padding-bottom:calc(2.5rem + 3.4em + env(safe-area-inset-bottom))}
+  /* clear the plate so it never sits on top of the footer's last line */
+  .adb-footer{padding-bottom:calc(2.5rem + 4.2em + env(safe-area-inset-bottom))}
 }
 
 /* ---------- Home responsive ---------- */
@@ -885,10 +893,12 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .adb-header.is-navopen .adb-header__right{display:flex;flex-direction:column;gap:1.4rem}
   .adb-header.is-navopen .adb-nav-toggle{position:absolute;top:1.35rem;right:clamp(1.25rem,4vw,3.5rem)}
 }
-/* Cloth: stack the top block and the three cloth columns */
+/* Cloth, How It Works and the footer all collapse to one column here */
 @media (max-width:820px){
   .adb-2col{grid-template-columns:1fr;gap:clamp(2rem,7vw,3rem)}
   .adb-3col{grid-template-columns:1fr;gap:0}
+  .adb-4col{grid-template-columns:1fr;gap:1.75rem}
+  .adb-foot{grid-template-columns:1fr;gap:2.25rem}
   .adb-tier{padding:1.5rem 0}
   .adb-tier + .adb-tier{border-top:1px solid rgba(200,162,75,.2)}
   /* the min-heights align the columns side-by-side; stacked they'd leave gaps */
@@ -897,7 +907,6 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 }
 @media (max-width:860px){
   .adb-about__grid{grid-template-columns:1fr}
-  .adb-how__grid{grid-template-columns:1fr 1fr}
   /* Portrait plate, inset within the section's gutters so the cream ground
      shows on both sides. The subjects are standing figures, so a portrait
      crop keeps heads and legs in frame. */
@@ -907,18 +916,22 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
                                                   width from height and overflow */
     min-height:clamp(30rem,125vw,40rem);
     margin-inline:0}
-  /* stack front · card · back and drop the connector line */
-  .adb-clstage{grid-template-columns:1fr;gap:2rem}
+  /* One figure at a time, swiped or toggled — not front and back stacked.
+     The connector line is dropped; the card sits under the figure. */
+  .adb-clstage{grid-template-columns:1fr;gap:1.1rem;max-width:23rem;margin-inline:auto;
+    left:auto;transform:none;width:100%}
   .adb-clline{display:none}
-  .adb-clcard-wrap{max-width:24rem}
-  .adb-clview__figure{max-width:26rem}
-}
-@media (max-width:720px){
-  .adb-footer__grid{grid-template-columns:1fr}
+  .adb-clcard-wrap{max-width:24rem;order:3}
+  .adb-clview{order:1}
+  .adb-clview--back{display:none}
+  .adb-clstage.is-back .adb-clview--front{display:none}
+  .adb-clstage.is-back .adb-clview--back{display:flex}
+  .adb-clview__figure{width:min(100%,calc(47vh * 0.7495));max-width:none;touch-action:pan-y}
+  .adb-clview__label{display:none}
+  .adb-clflip{display:flex;order:2}
 }
 @media (max-width:640px){
   .adb-hero__row{flex-direction:column;align-items:flex-start;gap:1.6rem;margin-bottom:clamp(2rem,10vw,4rem)}
   .adb-hero__price{position:static;text-align:left}
-  .adb-how__grid{grid-template-columns:1fr}
   .adb-footer__base{gap:.6rem}
 }

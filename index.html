@@ -89,8 +89,6 @@
         <img class="adb-about__slide" data-idx="2" src="images/web/lining.jpg" alt="A hand tucking a card into a jacket's deep-red silk-touch lining.">
         <img class="adb-about__slide adb-about__slide--mirror" data-idx="3" src="images/web/mirror.jpg" alt="Adjusting a cuff before a mirror.">
         <img class="adb-about__slide adb-about__slide--lapel" data-idx="4" src="images/web/lapel.jpg" alt="Navy jacket lapel with red working buttonholes over a waistcoat.">
-        <button type="button" class="adb-about__arrow adb-about__arrow--prev" id="aboutPrev" aria-label="Previous photo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
-        <button type="button" class="adb-about__arrow adb-about__arrow--next" id="aboutNext" aria-label="Next photo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
         <div class="adb-about__dots" id="aboutDots" role="tablist" aria-label="Choose photo"></div>
       </div>
 
@@ -102,7 +100,7 @@
           <div class="adb-pillar">
             <span class="adb-pillar__num">01</span>
             <h3 class="adb-pillar__title">Appointment-only</h3>
-            <p class="adb-pillar__text">One client at a time, measured by a seamstress's hand. Over tea, we find the signature that suits you and shape it to your body, reading posture and proportion the way no scanner can. For a fit that is truly yours.</p>
+            <p class="adb-pillar__text">One client at a time, measured by a seamstress's hand. Over tea, we&nbsp;find the signature that suits you and shape it to your body, reading posture and proportion the way no scanner can. For a fit that is truly yours.</p>
           </div>
           <div class="adb-pillar">
             <span class="adb-pillar__num">02</span>
@@ -112,7 +110,7 @@
           <div class="adb-pillar">
             <span class="adb-pillar__num">03</span>
             <h3 class="adb-pillar__title">For the body you have</h3>
-            <p class="adb-pillar__text">No one is built to a standard pattern. We cut for the shoulders you have and the posture you carry, so the suit is shaped to you, and never you to it.</p>
+            <p class="adb-pillar__text">No one is built to a standard pattern. We cut for the shoulders you&nbsp;have and the posture you carry, so the suit is shaped to you, and&nbsp;never you to it.</p>
           </div>
           <div class="adb-pillar">
             <span class="adb-pillar__num">04</span>
@@ -308,6 +306,12 @@ A craft learned where two worlds met.</p>
         </div>
         <span class="adb-clview__label">Back</span>
       </div>
+
+      <!-- mobile only: one figure at a time, swipe or tap to flip -->
+      <div class="adb-clflip" id="adb-cl-flip">
+        <button type="button" class="adb-clflip__btn is-active" data-view="front" aria-label="Front view"><span class="adb-clflip__dot"></span><span class="adb-clflip__lab">Front</span></button>
+        <button type="button" class="adb-clflip__btn" data-view="back" aria-label="Back view"><span class="adb-clflip__dot"></span><span class="adb-clflip__lab">Back</span></button>
+      </div>
     </div>
   </div>
 </section>
@@ -362,7 +366,7 @@ A craft learned where two worlds met.</p>
             <span class="adb-tier__price">$1,249</span>
           </div>
           <p class="adb-tier__purpose">The one that ages with you.</p>
-          <p class="adb-tier__desc">Pure wool, breathable across the seasons. It takes shape under heat and steam, settling into the shoulders you have and keeping that line for years.</p>
+          <p class="adb-tier__desc">Pure wool, breathable across the seasons. It&nbsp;takes shape under heat and steam, settling into the shoulders you&nbsp;have and keeping that line for years.</p>
           <p class="adb-tier__spec">100% wool</p>
           <p class="adb-tier__foot">For the years to come.</p>
         </div>
@@ -390,7 +394,7 @@ A craft learned where two worlds met.</p>
       <span class="adb-eyebrow adb-eyebrow--gold adb-eyebrow--center"><span class="adb-eyebrow__rule"></span>How It Works</span>
       <h2 class="adb-how__heading">Four steps to a suit that is yours.</h2>
     </div>
-    <div class="adb-how__grid">
+    <div class="adb-how__grid adb-4col">
       <div class="adb-how__card" data-reveal><span class="adb-how__num">01</span><h3 class="adb-how__title">The invitation</h3><p class="adb-how__text">An hour by appointment, in a private Montréal atelier. Over tea, we talk about what you need from a suit and what has never been quite right, to determine the house style for you.</p></div>
       <div class="adb-how__card" data-reveal><span class="adb-how__num">02</span><h3 class="adb-how__title">The measure</h3><p class="adb-how__text">A seamstress takes your measurements by hand, reading posture and proportion the way no scanner can. Then we choose the cloth, the lining and the finishings that define your suit.</p></div>
       <div class="adb-how__card" data-reveal><span class="adb-how__num">03</span><h3 class="adb-how__title">The making</h3><p class="adb-how__text">Your suit is cut and hand-finished in the Shanghai–Hong Kong tradition, built to hold its line long after it leaves the bench. Four to five weeks, start to finish.</p></div>
@@ -419,7 +423,7 @@ A craft learned where two worlds met.</p>
 <!-- ============ FOOTER ============ -->
 <footer class="adb-footer">
   <div class="adb-container">
-    <div class="adb-footer__grid">
+    <div class="adb-footer__grid adb-foot">
       <div>
         <div class="adb-footer__brand">
           <span class="adb-mark" aria-hidden="true"><span>外</span><span>灘</span><span>洋</span><span>服</span></span>
@@ -441,7 +445,7 @@ A craft learned where two worlds met.</p>
         <ul class="adb-footer__list">
           <li><a href="mailto:bonjour@atelierdubund.com">bonjour@atelierdubund.com</a></li>
           <li><a href="https://atelierdubund.com">atelierdubund.com</a></li>
-          <li><span class="adb-footer__soon">Instagram</span></li>
+          <li><a href="https://instagram.com/atelierdubund" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           <li><span class="adb-footer__muted">Français — à venir</span></li>
         </ul>
       </div>
@@ -497,14 +501,12 @@ A craft learned where two worlds met.</p>
     els.forEach(el => io.observe(el));
   })();
 
-  // ---- About carousel (5 photos, 4.2s auto-advance, arrows, dots, swipe) ----
+  // ---- About carousel (5 photos, 4.2s auto-advance, dots, swipe — no arrows) ----
   (function(){
     const frame = document.querySelector('.adb-about__frame');
     if (!frame) return;
     const slides = Array.from(frame.querySelectorAll('.adb-about__slide'));
     const dotsWrap = document.getElementById('aboutDots');
-    const prevBtn = document.getElementById('aboutPrev');
-    const nextBtn = document.getElementById('aboutNext');
     const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
     let cur = 0, timer = null;
     const dots = slides.map((_, i) => {
@@ -522,8 +524,6 @@ A craft learned where two worlds met.</p>
     const restart = () => { if (timer) { clearInterval(timer); tick(); } };
     const tick = () => { if (!reduce) timer = setInterval(() => go(cur + 1), 4200); };
     const step = (d) => { go(cur + d); restart(); };
-    if (prevBtn) prevBtn.addEventListener('click', () => step(-1));
-    if (nextBtn) nextBtn.addEventListener('click', () => step(1));
     // swipe (40px threshold, matching the prototype)
     let swipeX = null;
     frame.addEventListener('touchstart', (e) => {
@@ -581,26 +581,26 @@ A craft learned where two worlds met.</p>
       vincent: { name:'The Vincent', tag:"Men's · Signature", blurb:'Our signature unisex cut — effortless from the office to a soirée.', panel:'oxblood',
         front:{ src: BASE + 'vincent-front.png', alt:'The Vincent — navy single-breasted suit, front view.',
           hotspots:[
-            { num:1, title:'Peak lapel', text:'The sharpest lapel there is. It broadens the shoulder and narrows everything below it.', top:'21%', left:'58%' },
+            { num:1, title:'Peak lapel', text:'The sharpest lapel there is. It\u00a0broadens the shoulder and narrows everything below it.', top:'21%', left:'58%' },
             { num:2, title:'Shaped through the body', text:'Seams that draw the jacket in at the waist, so it follows the taper of your body instead of boxing it.', top:'27%', left:'52%' },
             { num:3, title:'Single button', text:'Fastens at the waist, so your jacket opens in a long V that lengthens your silhouette.', top:'36%', left:'49%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'66%', left:'47%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'66%', left:'47%' },
             { num:5, title:'Straight leg', text:'Cut to flatter more bodies than a slim leg does, especially through the calf and thigh.', top:'78%', left:'47%' },
           ] },
         back:{ src: BASE + 'vincent-back.png', alt:'The Vincent — navy single-breasted suit, back view.',
           hotspots:[
             { num:6, title:'Structured shoulder', text:'A defined shoulder line that squares your frame and gives structure to any body shape.', top:'22%', left:'40%' },
             { num:7, title:'Contrast stitching', text:'Buttonholes and buttons stitched in the colour of your lining. Professional, with personality.', top:'43%', left:'36%' },
-            { num:8, title:'Single vent', text:'One opening at the back, so your jacket moves with you when you sit. A clean line from behind.', top:'47%', left:'50%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'72%', left:'47%' },
+            { num:8, title:'Single vent', text:'One opening at the back, so\u00a0your jacket moves with you when you sit. A clean line from behind.', top:'47%', left:'50%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'72%', left:'47%' },
           ] } },
       maximilian: { name:'The Maximilian', tag:"Men's · Double-breasted", blurb:'The double-breasted, elegance in the traditional way.', panel:'green',
         front:{ src: BASE + 'maximilian-front.png', alt:'The Maximilian — brown double-breasted suit, front view.',
           hotspots:[
-            { num:1, title:'Peak lapel', text:'The sharpest lapel there is. It broadens the shoulder and narrows everything below it.', top:'21%', left:'58%' },
+            { num:1, title:'Peak lapel', text:'The sharpest lapel there is. It\u00a0broadens the shoulder and narrows everything below it.', top:'21%', left:'58%' },
             { num:2, title:'Straight through the body', text:'Cut to fall straight from chest to hem, for a broader, more architectural line.', top:'27%', left:'52%' },
             { num:3, title:'Six-on-two', text:'Six buttons, two fastening, the classic double-breasted arrangement.', top:'36%', left:'49%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'66%', left:'47%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'66%', left:'47%' },
             { num:5, title:'Straight leg', text:'Cut to flatter more bodies than a slim leg does, especially through the calf and thigh.', top:'78%', left:'47%' },
           ] },
         back:{ src: BASE + 'maximilian-back.png', alt:'The Maximilian — brown double-breasted suit, back view.',
@@ -608,23 +608,23 @@ A craft learned where two worlds met.</p>
             { num:6, title:'Structured shoulder', text:'A defined shoulder line that squares your frame and gives structure to any body shape.', top:'22%', left:'40%' },
             { num:7, title:'Contrast stitching', text:'Buttonholes and buttons stitched in the colour of your lining. Professional, with personality.', top:'43%', left:'36%' },
             { num:8, title:'Double vent', text:'Two openings rather than one, so the jacket falls cleanly over the hip.', top:'47%', left:'50%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'72%', left:'47%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'72%', left:'47%' },
           ] } },
       vivienne: { name:'The Vivienne', tag:"Women's · Signature", blurb:'Our signature unisex cut — effortless from the office to a soirée.', panel:'oxblood',
         front:{ src: BASE + 'vivienne-front.png', alt:'The Vivienne — black peak-lapel suit, front view.',
           hotspots:[
-            { num:1, title:'Peak lapel', text:'The sharpest lapel there is. It broadens the shoulder and narrows everything below it.', top:'21%', left:'58%' },
+            { num:1, title:'Peak lapel', text:'The sharpest lapel there is. It\u00a0broadens the shoulder and narrows everything below it.', top:'21%', left:'58%' },
             { num:2, title:'Princess seams', text:'Seams that curve over the bust and draw in at the waist, so the jacket cinches for a flattering fit.', top:'27%', left:'52%' },
             { num:3, title:'Single button', text:'Fastens at the waist, so your jacket opens in a long V that lengthens your silhouette.', top:'36%', left:'49%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'66%', left:'47%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'66%', left:'47%' },
             { num:5, title:'Straight leg', text:'Cut to flatter more bodies than a slim leg does, especially through the calf and thigh.', top:'78%', left:'47%' },
           ] },
         back:{ src: BASE + 'vivienne-back.png', alt:'The Vivienne — black peak-lapel suit, back view.',
           hotspots:[
             { num:6, title:'Structured shoulder', text:'A defined shoulder line that squares your frame and gives structure to any body shape.', top:'22%', left:'40%' },
             { num:7, title:'Contrast stitching', text:'Buttonholes and buttons stitched in the colour of your lining. Professional, with personality.', top:'43%', left:'36%' },
-            { num:8, title:'Single vent', text:'One opening at the back, so your jacket moves with you when you sit. A clean line from behind.', top:'47%', left:'50%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'72%', left:'47%' },
+            { num:8, title:'Single vent', text:'One opening at the back, so\u00a0your jacket moves with you when you sit. A clean line from behind.', top:'47%', left:'50%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'72%', left:'47%' },
           ] } },
       maggie: { name:'The Maggie', tag:"Women's · Evening", blurb:'Our feminine evening wear — romantic, cut for day and night.', panel:'green',
         front:{ src: BASE + 'maggie-front.png', alt:'The Maggie — grey notch-lapel suit, front view.',
@@ -632,15 +632,15 @@ A craft learned where two worlds met.</p>
             { num:1, title:'Rounded lapel', text:'The points are curved rather than cut sharp, for a softer line that carries into the evening.', top:'21%', left:'58%' },
             { num:2, title:'Princess seams', text:'Seams that curve over the bust and draw in at the waist, so the jacket cinches for a flattering fit.', top:'27%', left:'52%' },
             { num:3, title:'Two buttons', text:'Fastened higher, lifting your waistline and lengthening your legs.', top:'36%', left:'49%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'66%', left:'47%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'66%', left:'47%' },
             { num:5, title:'Straight leg', text:'Cut to flatter more bodies than a slim leg does, especially through the calf and thigh.', top:'78%', left:'47%' },
           ] },
         back:{ src: BASE + 'maggie-back.png', alt:'The Maggie — grey notch-lapel suit, back view.',
           hotspots:[
             { num:6, title:'Puffed shoulder', text:'A soft rise at the shoulder, romantic without losing the line of a suit.', top:'22%', left:'40%' },
             { num:7, title:'Contrast stitching', text:'Buttonholes and buttons stitched in the colour of your lining. Professional, with personality.', top:'43%', left:'36%' },
-            { num:8, title:'Single vent', text:'One opening at the back, so your jacket moves with you when you sit. A clean line from behind.', top:'47%', left:'50%' },
-            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a structured look.', top:'72%', left:'47%' },
+            { num:8, title:'Single vent', text:'One opening at the back, so\u00a0your jacket moves with you when you sit. A clean line from behind.', top:'47%', left:'50%' },
+            { num:4, title:'Pintuck seam', text:'A narrow fold stitched the length of the leg, front and back, so your trouser holds its line for a\u00a0structured look.', top:'72%', left:'47%' },
           ] } },
     };
 
@@ -756,10 +756,39 @@ A craft learned where two worlds met.</p>
     };
 
     document.querySelectorAll('.adb-styletab').forEach(b => {
-      b.addEventListener('click', () => setStyle(b.dataset.style));
+      // setStyle resets the card to the front detail, so the mobile figure follows it back
+      b.addEventListener('click', () => { setStyle(b.dataset.style); flipTo('front'); });
     });
 
-    mq.addEventListener('change', (e) => { narrow = e.matches; computeLine(); });
+    // ---- mobile: one figure at a time, swipe or tap the toggle to flip ----
+    const flipWrap = document.getElementById('adb-cl-flip');
+    const flipBtns = flipWrap ? Array.from(flipWrap.querySelectorAll('.adb-clflip__btn')) : [];
+    const flipTo = (view) => {
+      stage.classList.toggle('is-back', view === 'back');
+      flipBtns.forEach(b => b.classList.toggle('is-active', b.dataset.view === view));
+      setDetail(view, 0);
+    };
+    flipBtns.forEach(b => b.addEventListener('click', () => flipTo(b.dataset.view)));
+
+    let figX = null;
+    stage.addEventListener('touchstart', (e) => {
+      if (!narrow) return;
+      figX = e.touches && e.touches[0] ? e.touches[0].clientX : null;
+    }, { passive: true });
+    stage.addEventListener('touchend', (e) => {
+      if (!narrow || figX === null) return;
+      const t = e.changedTouches && e.changedTouches[0];
+      const dx = t ? t.clientX - figX : 0;
+      figX = null;
+      if (Math.abs(dx) < 40) return;
+      flipTo(dx < 0 ? 'back' : 'front');
+    }, { passive: true });
+
+    mq.addEventListener('change', (e) => {
+      narrow = e.matches;
+      if (!narrow) { stage.classList.remove('is-back'); flipBtns.forEach((b, i) => b.classList.toggle('is-active', i === 0)); }
+      computeLine();
+    });
     addEventListener('resize', computeLine, { passive: true });
 
     setStyle('vincent');

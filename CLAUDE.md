@@ -45,6 +45,10 @@ Exports have broken every one of these at least once.
 - **The mobile nav** and the **EN-CA / FR-CA language toggle**.
 - **URL-encoded heritage image paths** (e.g. `15.%20vintage%20measurement%20form.webp`)
   — a deliberate workaround for spaces in filenames.
+- **The Heritage Montréal framing.** `object-position:50% 36%` on `.heritage__photo--mtl`
+  holds the founder's face clear of the "A long-lasting heritage." headline. It took a
+  long time to land. Never "correct" it, and never change the aspect ratio of
+  `founder-mirror.jpg` — the value is proportional and depends on a 3:2 crop.
 
 ---
 
@@ -94,7 +98,6 @@ Do not invent product details. Hotspot and cloth copy comes only from supplied s
 - Line-break orphan pass: no line should end with or begin with a stranded short word.
   Fix with `text-wrap: pretty` plus targeted non-breaking spaces — never by changing
   copy, font size, column width or line height.
-- Heritage background photo framing: the headline covers the founder's face.
 - French version (FR-CA) not started. Vouvoiement, heritage register. The orphan pass
   will need repeating for French, which wraps at different points and has its own
   spacing rules.
