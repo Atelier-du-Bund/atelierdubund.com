@@ -905,6 +905,12 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .adb-tier__purpose,.adb-tier__desc{min-height:0}
   .adb-cloth__caption{text-align:left}
 }
+/* The Design jumps How It Works from four columns straight to one, but it never
+   covers 821–860px, where four columns give 167px cards with wrapping titles.
+   Explicit range so it does not depend on source order against the 820px block. */
+@media (max-width:860px) and (min-width:821px){
+  .adb-how__grid{grid-template-columns:1fr 1fr}
+}
 @media (max-width:860px){
   .adb-about__grid{grid-template-columns:1fr}
   /* Portrait plate, inset within the section's gutters so the cream ground
