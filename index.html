@@ -254,14 +254,14 @@ A craft learned where two worlds met.</p>
       <div class="adb-styletabs__group">
         <span class="adb-styletabs__label">Women</span>
         <div class="adb-styletabs__pill" role="tablist" aria-label="Women's house styles">
-          <button type="button" class="adb-styletab" data-style="vivienne" role="tab">The Vivienne</button>
+          <button type="button" class="adb-styletab is-active" data-style="vivienne" role="tab" aria-selected="true">The Vivienne</button>
           <button type="button" class="adb-styletab" data-style="maggie" role="tab">The Maggie</button>
         </div>
       </div>
       <div class="adb-styletabs__group">
         <span class="adb-styletabs__label">Men</span>
         <div class="adb-styletabs__pill" role="tablist" aria-label="Men's house styles">
-          <button type="button" class="adb-styletab is-active" data-style="vincent" role="tab" aria-selected="true">The Vincent</button>
+          <button type="button" class="adb-styletab" data-style="vincent" role="tab">The Vincent</button>
           <button type="button" class="adb-styletab" data-style="maximilian" role="tab">The Maximilian</button>
         </div>
       </div>
@@ -414,7 +414,6 @@ A craft learned where two worlds met.</p>
       <p class="adb-reserve__lede">A private experience and a heritage craft, for a suit cut for you alone. Book your hour with us.</p>
       <div class="adb-reserve__actions">
         <a href="https://cal.com/atelierdubund/appointment" class="adb-reserve__btn" target="_blank" rel="noopener noreferrer">Book a Private Appointment</a>
-        <span class="adb-reserve__note">Custom suits from <span>$899 CAD</span></span>
       </div>
     </div>
   </div>
@@ -654,7 +653,7 @@ A craft learned where two worlds met.</p>
           ] } },
     };
 
-    let style = 'vincent';
+    let style = 'vivienne';
     let detail = { view:'front', idx:0 };
     const mq = matchMedia('(max-width: 860px)');
     let narrow = mq.matches;
@@ -801,7 +800,7 @@ A craft learned where two worlds met.</p>
     });
     addEventListener('resize', computeLine, { passive: true });
 
-    setStyle('vincent');
+    setStyle('vivienne');
     setTimeout(computeLine, 400);
   })();
 

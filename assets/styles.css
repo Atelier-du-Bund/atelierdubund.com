@@ -374,10 +374,10 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    headline. object-position alone cannot do it — at 1100x800 the photo has no
    vertical overflow to work with — so the frame is filled from the top edge and
    the photo scaled from that same origin, which pushes the face down without
-   exposing an edge. 1.2 is the least zoom that clears at 1100px, the tightest
-   case. Mobile keeps 50% 36%. */
+   exposing an edge. 1.12 sits the eyes just below the headline; at 1100px, the
+   tightest width, that is ~21px of clearance. Mobile keeps 50% 36%. */
 @media (min-width:821px){
-  .heritage__photo--mtl{object-position:50% 0%;transform-origin:50% 0;transform:scale(1.2)}
+  .heritage__photo--mtl{object-position:50% 0%;transform-origin:50% 0;transform:scale(1.12)}
 }
 .heritage__scrim{position:absolute;inset:0;transition:background .8s ease;
   background:linear-gradient(90deg,rgba(16,9,10,.55) 0%,rgba(16,9,10,.42) 40%,rgba(16,9,10,.84) 100%),
@@ -846,8 +846,6 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-reserve__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem}
 .adb-reserve__btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-weight:500;font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;padding:1.25em 3em;border:1px solid #c8a24b;background:#c8a24b;color:#1a0e10;border-radius:7px;transition:.4s ease}
 .adb-reserve__btn:hover{background:#e0c48a;border-color:#e0c48a;color:#1a0e10}
-.adb-reserve__note{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#6f6450}
-.adb-reserve__note span{color:#211a12}
 
 /* ---------- Footer ---------- */
 .adb-footer{background:#33161f;border-top:1px solid rgba(200,162,75,.18);padding-block:clamp(3.5rem,7vw,5.5rem) 2.5rem;color:#b9ad97}
@@ -956,5 +954,9 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 @media (max-width:640px){
   .adb-hero__row{flex-direction:column;align-items:flex-start;gap:1.6rem;margin-bottom:clamp(2rem,10vw,4rem)}
   .adb-hero__price{position:static;text-align:left}
+  /* Drop the whole block off the lighter in the background and into the dead
+     space under the price. translateY moves eyebrow, headline and price as one
+     unit, so the spacing between them is untouched. */
+  .adb-hero__inner{transform:translateY(5vh)}
   .adb-footer__base{gap:.6rem}
 }

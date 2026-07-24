@@ -43,6 +43,10 @@ Exports have broken every one of these at least once.
 - **All `<head>` content** — title, meta description, OG and Twitter cards, favicons,
   `theme-color`, `lang`. Exports ship an empty head.
 - **The mobile nav** and the **EN-CA / FR-CA language toggle**.
+- **The Founding Collection opens on the Vivienne**, not the Vincent. Three places
+  must agree: `is-active` + `aria-selected` on the Vivienne tab in the markup, the
+  `let style = 'vivienne'` initialiser, and the `setStyle('vivienne')` call at the end
+  of the module. Exports default to the Vincent and have regressed this more than once.
 - **URL-encoded heritage image paths** (e.g. `15.%20vintage%20measurement%20form.webp`)
   — a deliberate workaround for spaces in filenames.
 - **The Heritage Montréal framing.** Holds the founder's face clear of the
