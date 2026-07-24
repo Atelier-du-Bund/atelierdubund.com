@@ -471,7 +471,22 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .heritage__panel{width:min(58%,34rem)}
 }
 @media (max-width:640px){
-  .heritage__map{display:none}
+  /* keep the maps on mobile: centre them above the reading panel rather than
+     hiding them, since they carry the whole point of the section */
+  /* sized to the band between the heading and the reading panel so the
+     line-art never sits under the copy */
+  .heritage__map--china{
+    top:29%;left:50%;right:auto;width:min(31%,7rem);
+    transform:translate(-50%,-50%)}
+  #heritage[data-step="3"] .heritage__map--china{
+    opacity:0;transform:translate(-50%,-50%) translateX(-40px)}
+  .heritage__map--mtl{
+    top:29%;left:50%;right:auto;width:min(46%,11rem);
+    transform:translate(-50%,-50%) translateX(40px)}
+  #heritage[data-step="3"] .heritage__map--mtl{
+    opacity:1;transform:translate(-50%,-50%)}
+  /* the china map's legend would collide with the eyebrow at this size */
+  .heritage__legend--china{display:none}
   /* let the canvas fill the stage so the panel can bottom-anchor against it */
   .heritage__frame{align-items:stretch}
   .heritage__canvas{height:100%;margin-top:0}
@@ -832,6 +847,12 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 @media (max-width:860px){
   .adb-about__grid{grid-template-columns:1fr}
   .adb-how__grid{grid-template-columns:1fr 1fr}
+  /* the carousel frame was short and inset, so the photo sat in a small
+     landscape window with the section's cream showing above and below.
+     Run it edge to edge and make it properly tall. */
+  .adb-about__frame{
+    min-height:clamp(30rem,125vw,40rem);
+    margin-inline:calc(-1 * clamp(1.25rem,5vw,4rem))}
   /* stack front · card · back and drop the connector line */
   .adb-clstage{grid-template-columns:1fr;gap:2rem}
   .adb-clline{display:none}
