@@ -815,9 +815,9 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 
 /* the three cloths, parallel columns */
 .adb-cloth__tiers{border-top:1px solid rgba(200,162,75,.3);padding-top:clamp(2.5rem,4.5vw,3.5rem)}
-/* Four cloths in 2x2. Four across leaves ~229px columns at 1200px, far too
-   narrow for descriptions this long; 2x2 gives ~510px and no orphan row. */
-.adb-cloth__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.75rem,3.5vw,3.25rem) clamp(2rem,4vw,3.5rem)}
+/* Four across, on the same ladder as How It Works: 4 cols, a 2-col step at
+   821-860, one column at 820 and below. Same 1200px container as that section. */
+.adb-cloth__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
 .adb-tier{cursor:default;display:flex;flex-direction:column}
 .adb-tier__head{display:flex;align-items:baseline;justify-content:space-between;gap:.8rem}
 .adb-tier__name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.5rem,2vw,1.85rem);color:#faf7f1;line-height:1.05}
@@ -927,7 +927,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    covers 821–860px, where four columns give 167px cards with wrapping titles.
    Explicit range so it does not depend on source order against the 820px block. */
 @media (max-width:860px) and (min-width:821px){
-  .adb-how__grid{grid-template-columns:1fr 1fr}
+  .adb-how__grid,.adb-cloth__grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
   .adb-about__grid{grid-template-columns:1fr}
