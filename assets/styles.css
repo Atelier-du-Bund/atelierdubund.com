@@ -818,8 +818,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.75rem,3.5vw,3.25rem)}
 .adb-tier{cursor:default}
 .adb-tier__head{display:flex;align-items:baseline;justify-content:space-between;gap:.8rem}
-.adb-tier__name,.adb-tier__price{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.5rem,2vw,1.85rem);color:#faf7f1;line-height:1.05}
-.adb-tier__price{white-space:nowrap}
+.adb-tier__name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.5rem,2vw,1.85rem);color:#faf7f1;line-height:1.05}
 .adb-tier__purpose{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.2rem,1.6vw,1.4rem);color:#e6d3a6;margin-top:.55rem;line-height:1.3;min-height:2.6em}
 .adb-tier__desc{font-family:'Jost',sans-serif;font-weight:300;font-size:clamp(.92rem,1.15vw,1rem);color:#c9bda6;line-height:1.72;margin-top:.85rem;min-height:7.2em;text-wrap:pretty}
 .adb-tier__spec{font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:#9a8f7c;margin-top:1.15rem}
@@ -856,6 +855,8 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-reserve__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem}
 .adb-reserve__btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Jost',sans-serif;font-weight:500;font-size:.82rem;text-transform:uppercase;letter-spacing:.2em;padding:1.25em 3em;border:1px solid #c8a24b;background:#c8a24b;color:#1a0e10;border-radius:7px;transition:.4s ease}
 .adb-reserve__btn:hover{background:#e0c48a;border-color:#e0c48a;color:#1a0e10}
+.adb-reserve__note{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#6f6450}
+.adb-reserve__note span{color:#211a12}
 
 /* ---------- Footer ---------- */
 .adb-footer{background:#33161f;border-top:1px solid rgba(200,162,75,.18);padding-block:clamp(3.5rem,7vw,5.5rem) 2.5rem;color:#b9ad97}
