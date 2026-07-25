@@ -702,7 +702,11 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__lead{max-width:46rem}
 .adb-hero .adb-eyebrow{font-size:.7rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
-.adb-hero__title{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.02;letter-spacing:.005em;color:#faf7f1;font-size:clamp(2.9rem,7.6vw,6.2rem)}
+/* "Shanghai tailoring," needs 347px at the 2.9rem floor, but a 375px phone only
+   offers 335 — which is what pushed the headline to four lines there. The 11.6vw
+   cap keeps it to three lines from 320px up. It only bites below 400px wide;
+   above that the clamp is always the smaller of the two, so desktop is untouched. */
+.adb-hero__title{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.02;letter-spacing:.005em;color:#faf7f1;font-size:min(clamp(2.9rem,7.6vw,6.2rem),11.6vw)}
 .adb-hero__price{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);text-align:right}
 .adb-hero__price-label{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#c9bda6;margin-bottom:.5rem}
 .adb-hero__price-value{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,3.4vw,2.8rem);color:#faf7f1;line-height:1}
@@ -968,11 +972,19 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .adb-clflip{display:flex;order:2}
 }
 @media (max-width:640px){
-  .adb-hero__row{flex-direction:column;align-items:flex-start;gap:1.6rem;margin-bottom:clamp(2rem,10vw,4rem)}
+  /* The block is bottom-anchored, so opening the gap by the same amount the
+     bottom margin loses drops the price without moving eyebrow or headline —
+     more air above the price, same position for everything else. */
+  /* Whatever comes off the gap goes onto the bottom margin, so the price rises
+     toward the headline while eyebrow and headline hold their position. */
+  .adb-hero__row{flex-direction:column;align-items:flex-start;gap:1.3rem;margin-bottom:2.75rem}
+  /* On a short phone the three-line headline makes the block shorter, and since
+     it is bottom-anchored that drops the eyebrow onto the lighter. More gap
+     lifts eyebrow and headline clear; the margin absorbs the same amount. */
+  @media (max-height:740px){
+    .adb-hero__row{gap:2.75rem;margin-bottom:4.2rem}
+  }
   .adb-hero__price{position:static;text-align:left}
-  /* Drop the whole block off the lighter in the background and into the dead
-     space under the price. translateY moves eyebrow, headline and price as one
-     unit, so the spacing between them is untouched. */
   .adb-hero__inner{transform:translateY(5vh)}
   .adb-footer__base{gap:.6rem}
 }
