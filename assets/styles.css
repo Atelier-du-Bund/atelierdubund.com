@@ -720,6 +720,10 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-about__slide.is-active{opacity:1;transform:scale(1.06)}
 .adb-about__slide--mirror{object-position:64% 15%}
 .adb-about__slide--lapel{object-position:68% 56%}
+/* The frame is portrait and this photograph is 3:2, so it crops horizontally only —
+   the vertical value is inert. 43% centres the ear at every frame width the carousel
+   takes (43.9% at desktop, 42.3% at 390px). */
+.adb-about__slide--founder{object-position:43% center}
 .adb-about__dots{position:absolute;left:1.4rem;bottom:1.4rem;display:flex;gap:.5rem;z-index:2}
 .adb-about__dot{width:10px;height:6px;border-radius:999px;border:0;cursor:pointer;padding:0;background:rgba(40,28,16,.28);transition:all .4s ease}
 .adb-about__dot.is-active{width:26px;background:#8a5e28}
