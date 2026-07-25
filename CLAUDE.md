@@ -70,7 +70,10 @@ Non-negotiable, site-wide:
 - **house styles** — never "signatures," never "models"
 - **made-to-measure** — never "bespoke"
 - **master tailors** — no hyphen
-- **canvassed** — half canvas; never claim full canvas anywhere
+- **Construction varies by suit and is chosen separately from the cloth.** Do not say
+  every suit is canvassed — some are a fused front. Where a suit is canvassed it is
+  half canvas; never claim full canvas anywhere.
+- **fused** is named plainly, the same way polyester is. Never softened or dressed up
 - **hand-finished** — never "handcrafted"
 - **the Red Band** — capital B. Never "Red Gang" (the export README uses it; reject that)
 - Polyester is named plainly. Never "performance blend" or "performance fibre"
@@ -114,3 +117,9 @@ Do not invent product details. Hotspot and cloth copy comes only from supplied s
   spacing rules.
 - Two copy claims are pending supplier confirmation and must not be strengthened:
   the machine-washable claim on the Signature, and the "CASHMERE" selvedge marking.
+- Cloth-weight line removed from the foot of the Cloth section, to be restored once
+  the polyester weight is confirmed: "Every cloth in the house runs between 275 and
+  300 grams, a weight that carries through the seasons and holds a press." The First
+  is 100% polyester and may fall outside that range, so the claim cannot stand as
+  written. Restore it verbatim if the weight checks out, or reword to the range that
+  actually covers all four cloths.
