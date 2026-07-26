@@ -710,6 +710,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__price{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);text-align:right}
 .adb-hero__price-label{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#c9bda6;margin-bottom:.5rem}
 .adb-hero__price-value{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,3.4vw,2.8rem);color:#faf7f1;line-height:1}
+.adb-hero__price-tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#c9bda6;margin-top:.5rem}
 .adb-hero__price-value span{font-size:.6em;color:#c8a24b;letter-spacing:.04em}
 
 /* ---------- About ---------- */
@@ -738,6 +739,8 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-pillar__text{font-size:.95rem;color:#5c5344;max-width:50ch;line-height:1.55}
 .adb-about__from{margin-top:2.2rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.1rem}
 .adb-about__from-price{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#211a12}
+.adb-about__from-group{display:flex;flex-direction:column;gap:.3rem}
+.adb-about__from-tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a7d63}
 .adb-about__from-price span{color:#8a5e28}
 .adb-about__from-tiers{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#8a7d63}
 
@@ -859,6 +862,8 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-reserve__btn:hover{background:#e0c48a;border-color:#e0c48a;color:#1a0e10}
 .adb-reserve__note{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#6f6450}
 .adb-reserve__note span{color:#211a12}
+.adb-reserve__pricegroup{display:flex;flex-direction:column;gap:.35rem}
+.adb-reserve__tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#6f6450}
 
 /* ---------- Footer ---------- */
 .adb-footer{background:#33161f;border-top:1px solid rgba(200,162,75,.18);padding-block:clamp(3.5rem,7vw,5.5rem) 2.5rem;color:#b9ad97}
