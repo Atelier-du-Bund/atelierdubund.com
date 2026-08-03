@@ -8,3 +8,7 @@
 /images/*.jpeg
 /images/*.PNG
 /images/*.png
+
+# Local reference files — kept on disk, never served from the site.
+*.xlsx
+DESIGN-TOKENS.md
