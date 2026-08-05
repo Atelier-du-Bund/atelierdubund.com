@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=20260727">
+<link rel="stylesheet" href="assets/styles.css?v=20260805">
 
 <!-- Icons -->
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -86,13 +86,13 @@
 
       <!-- carousel -->
       <div class="adb-about__frame" data-reveal>
-        <img class="adb-about__slide is-active" data-idx="0" src="images/web/cuff.jpg" alt="Red working buttonholes on a navy jacket cuff.">
-        <img class="adb-about__slide" data-idx="1" src="images/web/collection-seated.jpg" alt="A woman in a navy vest with red buttons seated in a bright studio.">
-        <img class="adb-about__slide adb-about__slide--founder" data-idx="2" src="images/web/founder-mirror.jpg" alt="A dark jacquard waistcoat with red buttons, worn in a brass-and-marble lobby.">
-        <img class="adb-about__slide adb-about__slide--lapel" data-idx="3" src="images/web/lapel.jpg" alt="Navy jacket lapel with red working buttonholes over a waistcoat.">
-        <img class="adb-about__slide" data-idx="4" src="images/web/lining.jpg" alt="A hand tucking a card into a jacket's deep-red silk-touch lining.">
-        <img class="adb-about__slide adb-about__slide--mirror" data-idx="5" src="images/web/mirror.jpg" alt="Adjusting a cuff before a mirror.">
-        <div class="adb-about__dots" id="aboutDots" role="tablist" aria-label="Choose photo"></div>
+        <img class="adb-about__slide is-active" src="images/web/cuff.jpg" alt="Red working buttonholes on a navy jacket cuff.">
+        <img class="adb-about__slide" src="images/web/collection-seated.jpg" alt="A woman in a navy vest with red buttons seated in a bright studio.">
+        <img class="adb-about__slide adb-about__slide--founder" src="images/web/founder-mirror.jpg" alt="A dark jacquard waistcoat with red buttons, worn in a brass-and-marble lobby.">
+        <img class="adb-about__slide adb-about__slide--lapel" src="images/web/lapel.jpg" alt="Navy jacket lapel with red working buttonholes over a waistcoat.">
+        <img class="adb-about__slide" src="images/web/lining.jpg" alt="A hand tucking a card into a jacket's deep-red silk-touch lining.">
+        <img class="adb-about__slide adb-about__slide--mirror" src="images/web/mirror.jpg" alt="Adjusting a cuff before a mirror.">
+        <div class="adb-about__dots" id="aboutDots" role="group" aria-label="Choose photo"></div>
       </div>
 
       <!-- content -->
@@ -344,7 +344,7 @@ A craft learned where two worlds met.</p>
       </div>
     </div>
 
-    <!-- the three cloths, parallel columns -->
+    <!-- the four cloths, parallel columns -->
     <div class="adb-cloth__tiers" data-reveal>
       <div class="adb-cloth__grid">
         <div class="adb-tier">
@@ -526,7 +526,7 @@ A craft learned where two worlds met.</p>
     els.forEach(el => io.observe(el));
   })();
 
-  // ---- About carousel (5 photos, 4.2s auto-advance, dots, swipe — no arrows) ----
+  // ---- About carousel (6 photos, 4.2s auto-advance, dots, swipe — no arrows) ----
   (function(){
     const frame = document.querySelector('.adb-about__frame');
     if (!frame) return;
