@@ -1,7 +1,10 @@
 # atelierdubund.com
 
 Live static site for Atelier du Bund, a made-to-measure tailoring house in Montréal.
-Hand-built. No framework, no build step. `index.html` + `assets/styles.css`, deployed from `main`.
+Hand-built. No framework, no build step. `index.html` + `assets/styles.css` + `assets/main.js`
+(the homepage behaviors, loaded from the end of `<body>` — keep it a plain script tag there,
+never `defer`/`async`/module), deployed from `main`. Both assets are cache-busted with a `?v=`
+token in `index.html`; bump the token on every change to that file.
 
 Read this before touching anything.
 
