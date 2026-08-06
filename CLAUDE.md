@@ -115,11 +115,31 @@ Do not invent product details. Hotspot and cloth copy comes only from supplied s
 - Line-break orphan pass: no line should end with or begin with a stranded short word.
   Fix with `text-wrap: pretty` plus targeted non-breaking spaces — never by changing
   copy, font size, column width or line height.
-- French version (FR-CA) not started. Vouvoiement, heritage register. The orphan pass
-  will need repeating for French, which wraps at different points and has its own
-  spacing rules.
+- French (FR-CA) is live as an in-page swap, not a second page: the whole copy deck is
+  `assets/i18n-fr.js` and `main.js` applies it. Consequences worth knowing:
+  search engines only ever see the English, the OG and Twitter cards stay English
+  because `<head>` is protected, and a link shared from the French view still previews
+  in English. A separate indexed French page is the real fix when it is worth doing.
+  French runs ~20% longer than English, so any heading on a tight measure (the About
+  heading is capped at 20ch) needs its own orphan pass — see the note in the deck.
 - Two copy claims are pending supplier confirmation and must not be strengthened:
   the machine-washable claim on the Signature, and the "CASHMERE" selvedge marking.
+
+### Wanted, not yet built
+
+- **Reviews / testimonials.** The page currently asks a stranger for $699+ and an hour
+  in a private room on assertion alone. Highest-leverage addition on the site.
+- **A qualifying line at the CTA** — the "if this is how you'd rather be dressed" idea.
+  Drafted once and rejected as off-key; to be reworked from scratch.
+- **More on craftsmanship**, carried by Zhenai's own credibility and photographs, so
+  "master tailors trained in its craft" is shown rather than claimed.
+- **A question channel** — WhatsApp Business or similar. Every path today funnels to
+  cal.com; there is no low-commitment way to just ask something first.
+- **Custom cursor.** Shape undecided.
+- **"Never an algorithm"** — the sharpest line in the whole proposition and it only
+  exists in the meta description, where no visitor sees it. Wants a home on the page.
+- **Price ladder** — deliberately deferred. The site shows a starting price and four
+  cloth tiers with no figures, so a visitor cannot self-qualify on budget.
 - Cloth-weight line removed from the foot of the Cloth section, to be restored once
   the polyester weight is confirmed: "Every cloth in the house runs between 275 and
   300 grams, a weight that carries through the seasons and holds a press." The First
