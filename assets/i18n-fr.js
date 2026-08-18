@@ -17,7 +17,7 @@ window.ADB_FR = {
 
   lang: 'fr-CA',
   title: 'Atelier du Bund — L’art du tailleur shanghaïen, façonné pour vous.',
-  description: 'Complets sur mesure dans la tradition des tailleurs de Shanghai et de Hong Kong, arrivée au Canada. Vraiment sur mesure, jamais un algorithme.',
+  description: 'Complets sur mesure dans l’art du tailleur shanghaïen, façonnés pour vous. Une expérience de tailleur privée, sur rendez-vous à Montréal.',
 
   /* ---- plain text nodes: selector -> string, or array in document order
           (null keeps the English) ---------------------------------------- */
