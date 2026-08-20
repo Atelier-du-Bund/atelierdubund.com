@@ -76,10 +76,10 @@ Non-negotiable, site-wide:
 - **house styles** — never "signatures," never "models"
 - **made-to-measure** — never "bespoke"
 - **master tailors** — no hyphen
-- **Construction varies by suit and is chosen separately from the cloth.** Do not say
-  every suit is canvassed — some are a fused front. Where a suit is canvassed it is
-  half canvas; never claim full canvas anywhere.
-- **fused** is named plainly, the same way polyester is. Never softened or dressed up
+- **No suit has a fused front.** Discontinued 2026-08-20; every reference was stripped
+  from both language decks that day. Do not reintroduce the word, and do not let an
+  export bring it back. Construction is still chosen separately from the cloth.
+  Where a suit is canvassed it is half canvas; never claim full canvas anywhere.
 - **hand-finished** — never "handcrafted"
 - **the Red Band** — capital B. Never "Red Gang" (the export README uses it; reject that)
 - Polyester is named plainly. Never "performance blend" or "performance fibre"

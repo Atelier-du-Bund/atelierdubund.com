@@ -9,7 +9,6 @@
    Locked terms (French side of the house glossary):
      sur mesure (never « grande mesure » / bespoke)   maîtres tailleurs
      styles maison (never « signatures », « modèles »)  fini à la main
-     thermocollé / entoilé, named as plainly as polyester
      la Bande Rouge — capital B, never « bande rouge » lowercase
      the word « cachemire » must not appear anywhere. */
 
@@ -55,7 +54,7 @@ window.ADB_FR = {
     '.adb-collection__hint': 'Touchez un point marqué pour découvrir ce qui définit chaque style',
     '.adb-clview__label': ['Devant', 'Dos'],
 
-    '.adb-fabrics__lede': 'Chaque complet est coupé à vos mesures par les mêmes maîtres tailleurs. L’étoffe et la construction suivent le complet dont vous avez besoin, d’un devant thermocollé qui tient sa ligne à un devant entoilé en laine. Ci-dessous, ce à quoi chacun est destiné. Le vôtre se choisit en personne, à votre rendez-vous.',
+    '.adb-fabrics__lede': 'Chaque complet est coupé à vos mesures par les mêmes maîtres tailleurs. L’étoffe et la construction suivent le complet dont vous avez besoin. Ci-dessous, ce à quoi chacun est destiné. Le vôtre se choisit en personne, à votre rendez-vous.',
     '.adb-cloth__caption': 'Sérieux à l’extérieur. Fête à l’intérieur.',
     '.adb-tier__name': ['Le Premier', 'L’Essentiel', 'La Signature', 'La Réserve'],
     '.adb-tier__purpose': [
@@ -65,7 +64,7 @@ window.ADB_FR = {
       'Celui qui vieillit avec vous.'
     ],
     '.adb-tier__desc': [
-      'Votre premier complet, coupé à votre carrure et construit simplement pour qu’il repose léger sur l’épaule tout au long d’une journée. Un devant thermocollé garde la ligne nette, et le polyester perd ses plis pendant la nuit et accepte le fer sans histoire.',
+      'Votre premier complet, coupé à votre carrure et construit simplement pour qu’il repose léger sur l’épaule tout au long d’une journée. Le polyester perd ses plis pendant la nuit et accepte le fer sans histoire.',
       'Se glisse dans un bagage à main et en ressort prêt, pour que vous puissiez descendre d’un long vol et entrer directement en réunion. Le polyester laisse les plis tomber d’eux-mêmes pendant la nuit, sur le cintre.',
       'Lavable à la machine à la maison, il suit le rythme de la semaine au lieu d’attendre le nettoyeur. Le caractère de la laine, sans l’entretien.',
       'Pure laine, respirante d’une saison à l’autre. Elle prend forme sous la chaleur et la vapeur, s’installe dans les épaules que vous avez et garde cette ligne pendant des années.'
