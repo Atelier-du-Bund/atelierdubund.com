@@ -21,7 +21,7 @@ window.ADB_FR = {
   /* ---- plain text nodes: selector -> string, or array in document order
           (null keeps the English) ---------------------------------------- */
   text: {
-    '.adb-nav__link': ['À propos', 'Héritage', 'La Collection fondatrice', 'Comment ça se passe'],
+    '.adb-nav__link': ['À propos', 'Héritage', 'La Collection fondatrice', 'Le déroulement'],
     '.adb-book': 'Réserver un rendez-vous privé',
     '.adb-hero__price-label': 'Complets sur mesure à partir de',
     '.adb-hero__price-tax': 'Taxes incluses',
@@ -114,7 +114,7 @@ window.ADB_FR = {
     '.adb-cloth__eyebrow': '<span class="adb-eyebrow__rule"></span>L’Étoffe',
     '.adb-fabrics__heading': 'La même main dans chaque complet.<br>Construit pour la vie que vous menez.',
     '.adb-cloth__note': 'Un ajustement inclus avec chaque complet.<br>Tous nos prix incluent les taxes.',
-    '.adb-how__head .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Comment ça se passe',
+    '.adb-how__head .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Le déroulement',
     '.adb-reserve .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Sur rendez-vous · Montréal',
     '.adb-reserve__note': 'Complets sur mesure à partir de <span>699 $ CAD</span>',
     '.adb-footer__blurb': 'Atelier du Bund est né d’une recherche : celle d’une expérience de complet privée, et de l’héritage d’artisanat qui la porte.&nbsp;Fondé à Montréal par <span class="adb-footer__founder">Zhenai Xiao</span>, dans la lignée des maîtres tailleurs shanghaïens — sur une conviction simple : bien s’habiller est un investissement que l’on porte des années, et devrait être plus accessible.'
@@ -122,8 +122,8 @@ window.ADB_FR = {
 
   /* ---- attributes ------------------------------------------------------ */
   attr: {
-    /* the footer language link points the other way round in French */
-    '.adb-footer__list a': { href: [null, null, null, null, null, null, null, '?lang=en'] },
+    /* the footer language link points back to the English page */
+    '.adb-footer__list a': { href: [null, null, null, null, null, null, null, '/'] },
     '.adb-brand': { 'aria-label': 'Atelier du Bund — accueil' },
     '.adb-nav': { 'aria-label': 'Principale' },
     '.adb-nav-toggle': { 'aria-label': 'Ouvrir le menu' },

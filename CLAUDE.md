@@ -1,10 +1,15 @@
 # atelierdubund.com
 
 Live static site for Atelier du Bund, a made-to-measure tailoring house in Montréal.
-Hand-built. No framework, no build step. `index.html` + `assets/styles.css` + `assets/main.js`
+Hand-built. No framework. `index.html` + `assets/styles.css` + `assets/main.js`
 (the homepage behaviors, loaded from the end of `<body>` — keep it a plain script tag there,
 never `defer`/`async`/module), deployed from `main`. Both assets are cache-busted with a `?v=`
-token in `index.html`; bump the token on every change to that file.
+token in `index.html`; bump the token on every change to that file. Two changes the same
+day collide on a date-only token, so add a letter: `20260820b`.
+
+There is one build step, and only one: **`python3 tools/build-fr.py` regenerates
+`fr/index.html`** from `index.html` + `assets/i18n-fr.js`. Nothing else is generated.
+Run it after any change to either file, and commit the result. See the French note below.
 
 Read this before touching anything.
 
@@ -45,7 +50,8 @@ Exports have broken every one of these at least once.
   version is state-driven and knows nothing about this.
 - **All `<head>` content** — title, meta description, OG and Twitter cards, favicons,
   `theme-color`, `lang`. Exports ship an empty head.
-- **The mobile nav** and the **EN-CA / FR-CA language toggle**.
+- **The mobile nav** and the **EN-CA / FR-CA language toggle** (`#adbLang`), which is
+  a plain `<a>` between the two pages — never a button, never an in-page swap.
 - **The Founding Collection opens on the Maximilian.** Changed 2026-08-20: a referred
   visitor could not tell the house makes men's suits, so the section now opens on a
   men's style. Three places must agree: `is-active` + `aria-selected` on the Maximilian
@@ -66,6 +72,32 @@ Exports have broken every one of these at least once.
     1.2 is the least zoom that clears at 1100px, which is the tightest case.
   Never change the aspect ratio of `founder-mirror.jpg` — both values are proportional
   and assume a 3:2 crop. Verify any change at 1440, 1280 and 1100, and re-check 390.
+
+---
+
+## The French page
+
+French is a **real page at `/fr/`**, not an in-page swap. Changed 2026-08-20, because
+link previews are read from static HTML by crawlers that never run JavaScript: a
+French link shared in a message used to preview in English, and Google only ever saw
+the English.
+
+- `assets/i18n-fr.js` is still the single source of French copy. Never write French
+  into `fr/index.html` by hand — it is generated and your edit will be overwritten.
+- **`python3 tools/build-fr.py`** applies the deck to `index.html` and writes
+  `fr/index.html`. Run it after touching either file, and commit the result.
+  Needs `beautifulsoup4` (`pip3 install --user beautifulsoup4`) and macOS `osascript`,
+  which it uses to read the deck.
+- The generator does four things the deck cannot: rewrites `<head>` for French
+  (title, description, `og:*`, `twitter:*`, `og:locale`, canonical), points the
+  toggle and the footer link at `/`, makes every asset path root-absolute because
+  `/fr/` is one level down, and restores the SVG attributes `viewBox`,
+  `preserveAspectRatio`, `maskUnits` and `patternUnits`, which the HTML parser
+  lowercases and which break the map and the icons when lowercased.
+- Anything in `main.js` that builds a path at runtime must be root-absolute for the
+  same reason — see `BASE` in the collection module.
+- Both pages carry reciprocal `hreflang` and a canonical. `?lang=fr` redirects to
+  `/fr/` so links shared before the split still land in French.
 
 ---
 
@@ -118,12 +150,7 @@ Do not invent product details. Hotspot and cloth copy comes only from supplied s
 - Line-break orphan pass: no line should end with or begin with a stranded short word.
   Fix with `text-wrap: pretty` plus targeted non-breaking spaces — never by changing
   copy, font size, column width or line height.
-- French (FR-CA) is live as an in-page swap, not a second page: the whole copy deck is
-  `assets/i18n-fr.js` and `main.js` applies it. Consequences worth knowing:
-  search engines only ever see the English, the OG and Twitter cards stay English
-  because `<head>` is protected, and a link shared from the French view still previews
-  in English. A separate indexed French page is the real fix when it is worth doing.
-  French runs ~20% longer than English, so any heading on a tight measure (the About
+- French runs ~20% longer than English, so any heading on a tight measure (the About
   heading is capped at 20ch) needs its own orphan pass — see the note in the deck.
 - Two copy claims are pending supplier confirmation and must not be strengthened:
   the machine-washable claim on the Signature, and the "CASHMERE" selvedge marking.
