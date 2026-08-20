@@ -54,7 +54,7 @@ window.ADB_FR = {
     '.adb-collection__hint': 'Touchez un point marqué pour découvrir ce qui définit chaque style',
     '.adb-clview__label': ['Devant', 'Dos'],
 
-    '.adb-fabrics__lede': 'Chaque complet est coupé à vos mesures par les mêmes maîtres tailleurs. L’étoffe et la construction suivent le complet dont vous avez besoin. Ci-dessous, ce à quoi chacun est destiné. Le vôtre se choisit en personne, à votre rendez-vous.',
+    '.adb-fabrics__lede': 'Chaque complet est coupé à vos mesures par les mêmes maîtres tailleurs. L’étoffe suit le complet dont vous avez besoin. Ci-dessous, ce à quoi chacun est destiné. Le vôtre se choisit en personne, à votre rendez-vous.',
     '.adb-cloth__caption': 'Sérieux à l’extérieur. Fête à l’intérieur.',
     '.adb-tier__name': ['Le Premier', 'L’Essentiel', 'La Signature', 'La Réserve'],
     '.adb-tier__purpose': [
@@ -94,6 +94,7 @@ window.ADB_FR = {
 
     '.adb-footer__h': ['Explorer', 'Atelier'],
     '.adb-footer__list a': ['À propos', 'Héritage', 'La Collection fondatrice', 'Réserver un rendez-vous', null, null, null, 'English'],
+    '.adb-cloth__note': 'Tous nos prix incluent les taxes.',
     '.adb-mobilecta': 'Réserver un rendez-vous privé'
   },
 
@@ -113,7 +114,6 @@ window.ADB_FR = {
     '.adb-collection__intro .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>La Collection fondatrice<span class="adb-eyebrow__rule"></span>',
     '.adb-cloth__eyebrow': '<span class="adb-eyebrow__rule"></span>L’Étoffe',
     '.adb-fabrics__heading': 'La même main dans chaque complet.<br>Construit pour la vie que vous menez.',
-    '.adb-cloth__note': 'Un ajustement inclus avec chaque complet.<br>Tous nos prix incluent les taxes.',
     '.adb-how__head .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Le déroulement',
     '.adb-reserve .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Sur rendez-vous · Montréal',
     '.adb-reserve__note': 'Complets sur mesure à partir de <span>699 $ CAD</span>',
