@@ -36,7 +36,6 @@ window.ADB_FR = {
       'Personne n’est bâti sur un patron standard. Nous coupons pour les épaules que vous avez et la posture que vous portez, afin que le complet s’ajuste à vous, et jamais vous à lui.',
       'Doublures affirmées, surpiqûres contrastantes, boutons de céramique et de corne, broderie personnalisée : les détails qui élèvent votre complet en un instant, et le rendent unique. Découvrez la sélection complète à votre rendez-vous.'
     ],
-    '.adb-about__from-tiers': 'Le Premier · L’Essentiel · La Signature · La Réserve   ↓   Plus de détails ci-dessous',
 
     '.heritage__subtitle': 'Un héritage qui perdure.',
     '.heritage__legend--china': 'Chine 中國',
@@ -98,6 +97,8 @@ window.ADB_FR = {
   /* ---- elements holding markup (a <br>, a <span>) ---------------------- */
   html: {
     '.adb-hero__title': 'L’art du tailleur shanghaïen,<br>façonné pour vous.',
+    '.adb-hero__origin-designed': 'Conçu à <span>Montréal</span>.',
+    '.adb-hero__origin-made': 'Fabriqué en <span>Chine</span>.',
     '.adb-about .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>À propos',
     /* The heading measure is 20ch, and French runs ~20% longer than English:
        « et … pour votre corps » stranded « corps, » on a line of its own. The
