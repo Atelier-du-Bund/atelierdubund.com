@@ -629,13 +629,17 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 }
 @media (max-width:640px){
   /* Bottom-anchored, so this margin alone sets how low the headline sits. */
-  .adb-hero__row{flex-direction:column;align-items:flex-start;margin-bottom:4rem}
+  .adb-hero__row{flex-direction:column;align-items:flex-start;margin-bottom:5rem}
   /* A short phone has less frame to give, so ease the margin back and keep the
      eyebrow clear of the lighter. */
   @media (max-height:740px){
-    .adb-hero__row{margin-bottom:3.25rem}
+    .adb-hero__row{margin-bottom:4rem}
   }
-  .adb-hero__origin{position:static;text-align:left;margin-top:1.9rem}
+  /* The mark supports the headline, it does not compete with it: more air above
+     it, and the two lines pulled tight so they read as one stamp rather than as
+     two statements. */
+  .adb-hero__origin{position:static;text-align:left;margin-top:2.6rem}
+  .adb-hero__origin-made{margin-top:.3rem}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
   .adb-hero__inner{transform:translateY(5vh)}
   .adb-footer__base{gap:.6rem}
