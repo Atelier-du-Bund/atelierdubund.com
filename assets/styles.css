@@ -629,16 +629,19 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 }
 @media (max-width:640px){
   /* Bottom-anchored, so this margin alone sets how low the headline sits. */
-  .adb-hero__row{flex-direction:column;align-items:flex-start;margin-bottom:5rem}
-  /* A short phone has less frame to give, so ease the margin back and keep the
-     eyebrow clear of the lighter. */
+  .adb-hero__row{flex-direction:column;align-items:flex-start;margin-bottom:2.75rem}
+  /* The mark sits exactly where the price used to: 2.75rem of bottom margin puts
+     it the same distance off the bottom edge. The headline must not move with it,
+     so whatever comes off this margin goes onto the gap above the mark below. */
+  /* The mark supports the headline, it does not compete with it: the two lines
+     are pulled tight so they read as one stamp rather than two statements. */
+  .adb-hero__origin{position:static;text-align:left;margin-top:4.85rem}
+  /* A short phone has less frame to give, and there the price already sat higher.
+     Hold both values so the headline stays put and the mark keeps its clearance. */
   @media (max-height:740px){
     .adb-hero__row{margin-bottom:4rem}
+    .adb-hero__origin{margin-top:2.6rem}
   }
-  /* The mark supports the headline, it does not compete with it: more air above
-     it, and the two lines pulled tight so they read as one stamp rather than as
-     two statements. */
-  .adb-hero__origin{position:static;text-align:left;margin-top:2.6rem}
   .adb-hero__origin-made{margin-top:.3rem}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
   .adb-hero__inner{transform:translateY(5vh)}
