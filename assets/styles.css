@@ -356,9 +356,11 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    the lowercase serif H1. Tracking and the edge compensation are in em, so both
    scale with the type. */
 .adb-hero__origin{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);
-  text-align:right;font-family:'Jost',sans-serif;text-transform:uppercase;color:#faf7f1}
-.adb-hero__origin-designed{font-weight:400;font-size:clamp(.81rem,1.11vw,.96rem);letter-spacing:.3em;color:#c9bda6;margin-right:-.3em}
-.adb-hero__origin-made{font-weight:500;font-size:clamp(1.37rem,2.28vw,1.89rem);letter-spacing:.2em;margin-top:.78rem;margin-right:-.2em}
+  text-align:right;font-family:'Jost',sans-serif;text-transform:uppercase}
+.adb-hero__origin-designed,.adb-hero__origin-made{
+  font-weight:300;font-size:clamp(.74rem,.95vw,.88rem);letter-spacing:.28em;line-height:1.5;
+  color:#c9bda6;margin-right:-.28em}
+.adb-hero__origin-made{margin-top:.2rem}
 .adb-hero__origin span{color:#c8a24b}
 .adb-hero .adb-eyebrow{font-size:.7rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
@@ -635,12 +637,12 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
      so whatever comes off this margin goes onto the gap above the mark below. */
   /* The mark supports the headline, it does not compete with it: the two lines
      are pulled tight so they read as one stamp rather than two statements. */
-  .adb-hero__origin{position:static;text-align:left;margin-top:4.85rem}
+  .adb-hero__origin{position:static;text-align:left;margin-top:6.1rem}
   /* A short phone has less frame to give, and there the price already sat higher.
      Hold both values so the headline stays put and the mark keeps its clearance. */
   @media (max-height:740px){
     .adb-hero__row{margin-bottom:4rem}
-    .adb-hero__origin{margin-top:2.6rem}
+    .adb-hero__origin{margin-top:3.85rem}
   }
   .adb-hero__origin-made{margin-top:.3rem}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
