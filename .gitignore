@@ -12,3 +12,7 @@
 # Local reference files — kept on disk, never served from the site.
 *.xlsx
 DESIGN-TOKENS.md
+
+# Python bytecode from tools/build-fr.py
+__pycache__/
+*.pyc

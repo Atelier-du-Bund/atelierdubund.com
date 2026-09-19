@@ -347,7 +347,9 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:52% 28%;filter:brightness(1.16) contrast(1.02) saturate(1.06);animation:adb-heroZoom 9s ease forwards}
 .adb-hero__scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,13,12,.78) 0%,rgba(20,13,12,.4) 32%,rgba(20,13,12,.08) 56%,transparent 76%),linear-gradient(0deg,rgba(20,13,12,.86) 0%,rgba(20,13,12,.24) 28%,transparent 52%)}
 .adb-hero__inner{position:relative;width:100%;max-width:1320px;margin-inline:auto;padding:0 clamp(1.25rem,5vw,4rem) clamp(3rem,7vw,5.5rem)}
-.adb-hero__row{display:flex;align-items:flex-end;gap:2rem;margin-bottom:clamp(3rem,10vw,8.5rem)}
+/* Bottom-anchored: this margin is the whole lever on how high the text sits.
+   Less margin drops it down the frame, more lifts it. */
+.adb-hero__row{display:flex;align-items:flex-end;margin-bottom:clamp(1.5rem,3vw,3.5rem)}
 .adb-hero__lead{max-width:46rem}
 .adb-hero .adb-eyebrow{font-size:.7rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
@@ -356,11 +358,6 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    cap keeps it to three lines from 320px up. It only bites below 400px wide;
    above that the clamp is always the smaller of the two, so desktop is untouched. */
 .adb-hero__title{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.02;letter-spacing:.005em;color:#faf7f1;font-size:min(clamp(2.9rem,7.6vw,6.2rem),11.6vw)}
-.adb-hero__price{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);text-align:right}
-.adb-hero__price-label{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#c9bda6;margin-bottom:.5rem}
-.adb-hero__price-value{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,3.4vw,2.8rem);color:#faf7f1;line-height:1}
-.adb-hero__price-tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#c9bda6;margin-top:1.15rem}
-.adb-hero__price-value span{font-size:.6em;color:#c8a24b;letter-spacing:.04em}
 
 /* ---------- About ---------- */
 .adb-about{background:linear-gradient(180deg,#faf7f1,#f2ece0);color:#2b2620;padding-block:clamp(5rem,11vw,9rem);overflow:hidden}
@@ -387,11 +384,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-pillar__title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.3rem,2.3vw,1.6rem);color:#211a12;line-height:1.15}
 .adb-pillar__text{font-size:.95rem;color:#5c5344;max-width:50ch;line-height:1.55}
 .adb-about__from{margin-top:2.2rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.1rem}
-.adb-about__from-price{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:#211a12}
-.adb-about__from-group{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
-.adb-about__from-tax::before,.adb-reserve__tax::before{content:'\00B7';margin-right:.5rem}
-.adb-about__from-tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#8a7d63}
-.adb-about__from-price span{color:#8a5e28}
+.adb-reserve__tax::before{content:'\00B7';margin-right:.5rem}
 .adb-about__from-tiers{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#8a7d63}
 
 /* ---------- Founding Collection ---------- */
@@ -628,19 +621,13 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .adb-clflip{display:flex;order:2}
 }
 @media (max-width:640px){
-  /* The block is bottom-anchored, so opening the gap by the same amount the
-     bottom margin loses drops the price without moving eyebrow or headline —
-     more air above the price, same position for everything else. */
-  /* Whatever comes off the gap goes onto the bottom margin, so the price rises
-     toward the headline while eyebrow and headline hold their position. */
-  .adb-hero__row{flex-direction:column;align-items:flex-start;gap:1.3rem;margin-bottom:2.75rem}
-  /* On a short phone the three-line headline makes the block shorter, and since
-     it is bottom-anchored that drops the eyebrow onto the lighter. More gap
-     lifts eyebrow and headline clear; the margin absorbs the same amount. */
+  /* Bottom-anchored, so this margin alone sets how low the headline sits. */
+  .adb-hero__row{flex-direction:column;align-items:flex-start;margin-bottom:4rem}
+  /* A short phone has less frame to give, so ease the margin back and keep the
+     eyebrow clear of the lighter. */
   @media (max-height:740px){
-    .adb-hero__row{gap:2.75rem;margin-bottom:4.2rem}
+    .adb-hero__row{margin-bottom:3.25rem}
   }
-  .adb-hero__price{position:static;text-align:left}
   .adb-hero__inner{transform:translateY(5vh)}
   .adb-footer__base{gap:.6rem}
 }

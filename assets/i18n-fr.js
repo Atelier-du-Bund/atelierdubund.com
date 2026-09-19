@@ -23,8 +23,6 @@ window.ADB_FR = {
   text: {
     '.adb-nav__link': ['À propos', 'Héritage', 'La Collection fondatrice', 'Le déroulement'],
     '.adb-book': 'Réserver un rendez-vous privé',
-    '.adb-hero__price-label': 'Complets sur mesure à partir de',
-    '.adb-hero__price-tax': 'Taxes incluses',
 
     '.adb-pillar__title': [
       'Sur rendez-vous uniquement',
@@ -38,7 +36,6 @@ window.ADB_FR = {
       'Personne n’est bâti sur un patron standard. Nous coupons pour les épaules que vous avez et la posture que vous portez, afin que le complet s’ajuste à vous, et jamais vous à lui.',
       'Doublures affirmées, surpiqûres contrastantes, boutons de céramique et de corne, broderie personnalisée : les détails qui élèvent votre complet en un instant, et le rendent unique. Découvrez la sélection complète à votre rendez-vous.'
     ],
-    '.adb-about__from-tax': 'Taxes incluses',
     '.adb-about__from-tiers': 'Le Premier · L’Essentiel · La Signature · La Réserve   ↓   Plus de détails ci-dessous',
 
     '.heritage__subtitle': 'Un héritage qui perdure.',
@@ -101,14 +98,12 @@ window.ADB_FR = {
   /* ---- elements holding markup (a <br>, a <span>) ---------------------- */
   html: {
     '.adb-hero__title': 'L’art du tailleur shanghaïen,<br>façonné pour vous.',
-    '.adb-hero__price-value': '699 $ <span>CAD</span>',
     '.adb-about .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>À propos',
     /* The heading measure is 20ch, and French runs ~20% longer than English:
        « et … pour votre corps » stranded « corps, » on a line of its own. The
        comma-parallel is tighter and matches the English's two beats, and the
        nbsp keeps « Montréal. » from being orphaned off the last line. */
     '.adb-about__heading': 'Mesuré à la main, façonné à votre corps,<br>dans un atelier privé au centre-ville de&nbsp;Montréal.',
-    '.adb-about__from-price': 'À partir de <span>699 $ CAD</span>',
     '.heritage__eyebrow': 'Le Hongbang · 紅幫 · L’héritage des tailleurs de la Bande Rouge',
     '.heritage__marker--canada .heritage__marker-label': 'Montréal<br>蒙特利爾',
     '.adb-collection__intro .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>La Collection fondatrice<span class="adb-eyebrow__rule"></span>',
