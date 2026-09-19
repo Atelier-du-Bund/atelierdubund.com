@@ -360,7 +360,10 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__origin-designed,.adb-hero__origin-made{
   font-weight:300;font-size:clamp(.74rem,.95vw,.88rem);letter-spacing:.28em;line-height:1.5;
   color:#c9bda6;margin-right:-.28em}
-.adb-hero__origin-made{margin-top:.2rem}
+/* Made in China is the anchor line, so it takes a size step up. Weight and
+   colour stay where they are, so the step reads as hierarchy, not as volume.
+   Bigger caps need less tracking to look evenly spaced. */
+.adb-hero__origin-made{font-size:clamp(1.07rem,1.38vw,1.28rem);letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
 .adb-hero__origin span{color:#c8a24b}
 .adb-hero .adb-eyebrow{font-size:.7rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
@@ -637,12 +640,12 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
      so whatever comes off this margin goes onto the gap above the mark below. */
   /* The mark supports the headline, it does not compete with it: the two lines
      are pulled tight so they read as one stamp rather than two statements. */
-  .adb-hero__origin{position:static;text-align:left;margin-top:6.1rem}
+  .adb-hero__origin{position:static;text-align:left;margin-top:5.6rem}
   /* A short phone has less frame to give, and there the price already sat higher.
      Hold both values so the headline stays put and the mark keeps its clearance. */
   @media (max-height:740px){
     .adb-hero__row{margin-bottom:4rem}
-    .adb-hero__origin{margin-top:3.85rem}
+    .adb-hero__origin{margin-top:3.35rem}
   }
   .adb-hero__origin-made{margin-top:.3rem}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
