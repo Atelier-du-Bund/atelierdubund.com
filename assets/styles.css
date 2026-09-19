@@ -351,13 +351,14 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    Less margin drops it down the frame, more lifts it. */
 .adb-hero__row{display:flex;align-items:flex-end;margin-bottom:clamp(1.5rem,3vw,3.5rem)}
 .adb-hero__lead{max-width:46rem}
-/* Origin mark, where the price used to sit. Set in the wordmark's own recipe —
-   Cormorant caps, tracked — so it reads as the house signing the garment rather
-   than a second headline. Tracked caps keep it clear of the lowercase H1. */
+/* Origin mark, where the price used to sit. Jost caps — the face the nav and the
+   booking button already use — so it reads as a maker's stamp and stays clear of
+   the lowercase serif H1. Tracking and the edge compensation are in em, so both
+   scale with the type. */
 .adb-hero__origin{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);
-  text-align:right;font-family:'Cormorant Garamond',serif;text-transform:uppercase;color:#faf7f1}
-.adb-hero__origin-designed{font-weight:500;font-size:clamp(.8rem,1.15vw,1rem);letter-spacing:.26em;color:#c9bda6;margin-right:-.26em}
-.adb-hero__origin-made{font-weight:600;font-size:clamp(1.45rem,2.4vw,2rem);letter-spacing:.14em;margin-top:.5rem;margin-right:-.14em}
+  text-align:right;font-family:'Jost',sans-serif;text-transform:uppercase;color:#faf7f1}
+.adb-hero__origin-designed{font-weight:400;font-size:clamp(.81rem,1.11vw,.96rem);letter-spacing:.3em;color:#c9bda6;margin-right:-.3em}
+.adb-hero__origin-made{font-weight:500;font-size:clamp(1.37rem,2.28vw,1.89rem);letter-spacing:.2em;margin-top:.78rem;margin-right:-.2em}
 .adb-hero__origin span{color:#c8a24b}
 .adb-hero .adb-eyebrow{font-size:.7rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
