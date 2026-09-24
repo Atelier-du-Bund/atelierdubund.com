@@ -359,7 +359,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   text-align:right;font-family:'Jost',sans-serif;text-transform:uppercase}
 .adb-hero__origin-designed,.adb-hero__origin-made{
   font-weight:300;font-size:clamp(.74rem,.95vw,.88rem);letter-spacing:.28em;line-height:1.5;
-  color:#c9bda6;margin-right:-.28em}
+  color:#ece3d2;margin-right:-.28em}
 /* Made in China is the anchor line, so it takes a size step up. Weight and
    colour stay where they are, so the step reads as hierarchy, not as volume.
    Bigger caps need less tracking to look evenly spaced. */
