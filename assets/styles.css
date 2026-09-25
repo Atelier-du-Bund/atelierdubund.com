@@ -348,8 +348,10 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,13,12,.78) 0%,rgba(20,13,12,.4) 32%,rgba(20,13,12,.08) 56%,transparent 76%),linear-gradient(0deg,rgba(20,13,12,.86) 0%,rgba(20,13,12,.24) 28%,transparent 52%)}
 .adb-hero__inner{position:relative;width:100%;max-width:1320px;margin-inline:auto;padding:0 clamp(1.25rem,5vw,4rem) clamp(3rem,7vw,5.5rem)}
 /* Bottom-anchored: this margin is the whole lever on how high the text sits.
-   Less margin drops it down the frame, more lifts it. */
-.adb-hero__row{display:flex;align-items:flex-end;margin-bottom:clamp(1.5rem,3vw,3.5rem)}
+   Less margin drops it down the frame, more lifts it. The origin mark is
+   positioned off the bottom on its own, so this moves the headline alone and
+   sets the vertical air between the two. */
+.adb-hero__row{display:flex;align-items:flex-end;margin-bottom:clamp(2.5rem,5.2vw,5.5rem)}
 .adb-hero__lead{max-width:46rem}
 /* Origin mark, where the price used to sit. Jost caps — the face the nav and the
    booking button already use — so it reads as a maker's stamp and stays clear of
@@ -357,7 +359,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    tracking and edge compensation included, is in em and scales with it. */
 .adb-hero__origin{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);
   text-align:right;font-family:'Jost',sans-serif;text-transform:uppercase;
-  font-size:clamp(.74rem,1.232vw,1.144rem)}
+  font-size:clamp(.74rem,1.176vw,1.092rem)}
 .adb-hero__origin-designed,.adb-hero__origin-made{
   font-weight:300;letter-spacing:.28em;line-height:1.5;
   color:#ece3d2;margin-right:-.28em}
@@ -372,13 +374,21 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__origin-made{font-size:1.617em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
 :lang(fr) .adb-hero__origin-made{font-size:1.646em}
 .adb-hero__origin span{color:#c8a24b}
-.adb-hero .adb-eyebrow{font-size:.7rem;letter-spacing:.32em;margin-bottom:1.5rem}
+.adb-hero .adb-eyebrow{font-size:.82rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
 /* "Shanghai tailoring," needs 347px at the 2.9rem floor, but a 375px phone only
    offers 335 — which is what pushed the headline to four lines there. The 11.6vw
    cap keeps it to three lines from 320px up. It only bites below 400px wide;
    above that the clamp is always the smaller of the two, so desktop is untouched. */
 .adb-hero__title{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.02;letter-spacing:.005em;color:#faf7f1;font-size:min(clamp(2.9rem,7.6vw,6.2rem),11.6vw)}
+/* On a short screen, a phone on its side or a small laptop under its browser
+   toolbars, there is no room above the headline: the header can already reach
+   the eyebrow there. The lift and the bigger eyebrow would push it further under,
+   so below 760px of height the hero keeps its earlier, lower setting. */
+@media (min-width:641px) and (max-height:760px){
+  .adb-hero__row{margin-bottom:clamp(1.5rem,3vw,3.5rem)}
+  .adb-hero .adb-eyebrow{font-size:.7rem}
+}
 
 /* ---------- About ---------- */
 .adb-about{background:linear-gradient(180deg,#faf7f1,#f2ece0);color:#2b2620;padding-block:clamp(5rem,11vw,9rem);overflow:hidden}
@@ -641,20 +651,20 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 }
 @media (max-width:640px){
   /* Bottom-anchored, so this margin alone sets how low the headline sits. */
-  .adb-hero__row{flex-direction:column;align-items:flex-start;margin-bottom:2.75rem}
-  /* The mark sits exactly where the price used to: 2.75rem of bottom margin puts
-     it the same distance off the bottom edge. The headline must not move with it,
-     so whatever comes off this margin goes onto the gap above the mark below. */
+  .adb-hero__row{flex-direction:column;align-items:flex-start;margin-bottom:1.75rem}
+  /* The mark sits a rem below where the price used to, for more air under the
+     headline. The headline must not move with it, so whatever comes off this
+     margin goes onto the gap above the mark below. */
   /* The mark supports the headline, it does not compete with it: the two lines
      are pulled tight so they read as one stamp rather than two statements. */
-  /* 5.1228 and 2.8728 below are not rounder on purpose: they land the headline on
+  /* 6.1228 and 3.8728 below are not rounder on purpose: they land the headline on
      exactly the layout pixel it had before the mark was resized. */
-  .adb-hero__origin{position:static;text-align:left;margin-top:5.1228rem;font-size:.74rem}
+  .adb-hero__origin{position:static;text-align:left;margin-top:6.1228rem;font-size:.74rem}
   /* A short phone has less frame to give, and there the price already sat higher.
      Hold both values so the headline stays put and the mark keeps its clearance. */
   @media (max-height:740px){
-    .adb-hero__row{margin-bottom:4rem}
-    .adb-hero__origin{margin-top:2.8728rem}
+    .adb-hero__row{margin-bottom:3rem}
+    .adb-hero__origin{margin-top:3.8728rem}
   }
   /* Flush left here, so the INs stand on their left edges, which takes a bigger
      step. French cannot do the same (FABRIQUÉ runs longer than CONÇU) and keeps
@@ -662,6 +672,7 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
      so the step can differ by language without moving the headline. */
   .adb-hero__origin-made{font-size:1.831em;line-height:2.08rem;margin-top:.3rem}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
+  .adb-hero .adb-eyebrow{font-size:.7rem}
   .adb-hero__inner{transform:translateY(5vh)}
   .adb-footer__base{gap:.6rem}
 }
