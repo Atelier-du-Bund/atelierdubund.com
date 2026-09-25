@@ -647,12 +647,14 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
      so whatever comes off this margin goes onto the gap above the mark below. */
   /* The mark supports the headline, it does not compete with it: the two lines
      are pulled tight so they read as one stamp rather than two statements. */
-  .adb-hero__origin{position:static;text-align:left;margin-top:5.12rem;font-size:.74rem}
+  /* 5.1228 and 2.8728 below are not rounder on purpose: they land the headline on
+     exactly the layout pixel it had before the mark was resized. */
+  .adb-hero__origin{position:static;text-align:left;margin-top:5.1228rem;font-size:.74rem}
   /* A short phone has less frame to give, and there the price already sat higher.
      Hold both values so the headline stays put and the mark keeps its clearance. */
   @media (max-height:740px){
     .adb-hero__row{margin-bottom:4rem}
-    .adb-hero__origin{margin-top:2.87rem}
+    .adb-hero__origin{margin-top:2.8728rem}
   }
   /* Flush left here, so the INs stand on their left edges, which takes a bigger
      step. French cannot do the same (FABRIQUÉ runs longer than CONÇU) and keeps
