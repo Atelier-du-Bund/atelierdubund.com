@@ -373,7 +373,9 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    French stands AU over EN, which needs a slightly bigger step. */
 .adb-hero__origin-made{font-size:1.323em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
 :lang(fr) .adb-hero__origin-made{font-size:1.358em}
-.adb-hero__origin span{color:#c8a24b}
+/* Made in China is the highlight, so the whole line is gold and the line above
+   stays ivory. */
+.adb-hero__origin-made{color:#c8a24b}
 .adb-hero .adb-eyebrow{font-size:.82rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
 /* "Shanghai tailoring," needs 347px at the 2.9rem floor, but a 375px phone only
