@@ -97,7 +97,7 @@ window.ADB_FR = {
   /* ---- elements holding markup (a <br>, a <span>) ---------------------- */
   html: {
     '.adb-hero__title': 'L’art du tailleur shanghaïen,<br>façonné pour vous.',
-    '.adb-hero__origin-designed': 'Conçu à <span>Montréal</span>.',
+    '.adb-hero__origin-designed': 'Conçu au <span>Canada</span>.',
     '.adb-hero__origin-made': 'Fabriqué en <span>Chine</span>.',
     '.adb-about .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>À propos',
     /* The heading measure is 20ch, and French runs ~20% longer than English:

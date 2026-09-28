@@ -355,11 +355,11 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__lead{max-width:46rem}
 /* Origin mark, where the price used to sit. Jost caps — the face the nav and the
    booking button already use — so it reads as a maker's stamp and stays clear of
-   the lowercase serif H1. The size is set once, on the block; everything inside,
-   tracking and edge compensation included, is in em and scales with it. */
+   the lowercase serif H1. The size is set once, on the block. Tracking and edge
+   compensation are in em and scale with it; the gap between the lines is in rem. */
 .adb-hero__origin{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);
   text-align:right;font-family:'Jost',sans-serif;text-transform:uppercase;
-  font-size:clamp(.74rem,1.176vw,1.092rem)}
+  font-size:clamp(.74rem,1.29vw,1.198rem)}
 .adb-hero__origin-designed,.adb-hero__origin-made{
   font-weight:300;letter-spacing:.28em;line-height:1.5;
   color:#ece3d2;margin-right:-.28em}
@@ -370,9 +370,9 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    on a single vertical, their right edges here, where the block is set flush
    right. Because it is a ratio it holds at every width. Measured on the ink,
    so change the tracking or the words and it has to be measured again.
-   French stands À over EN, which needs a slightly bigger step. */
-.adb-hero__origin-made{font-size:1.617em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
-:lang(fr) .adb-hero__origin-made{font-size:1.646em}
+   French stands AU over EN, which needs a slightly bigger step. */
+.adb-hero__origin-made{font-size:1.323em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
+:lang(fr) .adb-hero__origin-made{font-size:1.358em}
 .adb-hero__origin span{color:#c8a24b}
 .adb-hero .adb-eyebrow{font-size:.82rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
