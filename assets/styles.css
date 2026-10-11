@@ -535,6 +535,10 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-reserve__btn:hover{background:#e0c48a;border-color:#e0c48a;color:#1a0e10}
 .adb-reserve__note{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#6f6450}
 .adb-reserve__note span{color:#211a12}
+/* The French price line is three phrases. They run as one line here; on a phone
+   they stack a blank line apart (see the mobile block). Only the price itself
+   takes the dark ink. */
+.adb-reserve__note .adb-reserve__line,.adb-reserve__note .adb-reserve__sep{color:inherit}
 .adb-reserve__pricegroup{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
 .adb-reserve__tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#6f6450}
 
@@ -676,5 +680,10 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
   .adb-hero .adb-eyebrow{font-size:.7rem}
   .adb-hero__inner{transform:translateY(5vh)}
+  .adb-reserve__line{display:block}
+  /* full width, so Taxes incluses stays under the price instead of beside line one */
+  :lang(fr) .adb-reserve__note{flex-basis:100%}
+  .adb-reserve__line + .adb-reserve__line{margin-top:1.6em;margin-top:1lh}
+  .adb-reserve__sep{display:none}
   .adb-footer__base{gap:.6rem}
 }

@@ -115,7 +115,9 @@ window.ADB_FR = {
     '.adb-fabrics__heading': 'La même main dans chaque complet.<br>Construit pour la vie que vous menez.',
     '.adb-how__head .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Le déroulement',
     '.adb-reserve .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Sur rendez-vous · Montréal',
-    '.adb-reserve__note': 'Complets sur mesure d’un savoir-⁠faire centenaire, à partir de <span>899 $ CAD</span>',
+    /* three phrases: one line on desktop, stacked a blank line apart on phones,
+       where the comma drops (see .adb-reserve__line in styles.css) */
+    '.adb-reserve__note': '<span class="adb-reserve__line">Complets sur mesure</span> <span class="adb-reserve__line">d’un savoir-⁠faire centenaire<span class="adb-reserve__sep">,</span></span> <span class="adb-reserve__line">à partir de <span>899 $ CAD</span></span>',
     '.adb-footer__blurb': 'Atelier du Bund est né d’une recherche : celle d’une expérience de complet privée, et de l’héritage d’artisanat qui la porte.&nbsp;Fondé à Montréal par <span class="adb-footer__founder">Zhenai Xiao</span>, dans la lignée des maîtres tailleurs shanghaïens — sur une conviction simple : bien s’habiller est un investissement que l’on porte des années, et devrait être plus accessible.'
   },
 
