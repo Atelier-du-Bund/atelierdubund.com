@@ -363,15 +363,9 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-hero__origin-designed,.adb-hero__origin-made{
   font-weight:300;letter-spacing:.28em;line-height:1.5;
   color:#ece3d2;margin-right:-.28em}
-/* Tailored in Shanghai is the anchor line, so it takes a size step up and the
-   gold. Bigger caps need less tracking to look evenly spaced.
-   The step is not a free choice: it is the one that stands the IN of each line
-   on a single vertical, their right edges here, where the block is set flush
-   right. DESIGNED and TAILORED are the same length, so the step is small. It is
-   a ratio, so it holds at every width. Measured on the ink: change the tracking
-   or the words and it has to be measured again. French, À over À, lands on the
-   same step. */
-.adb-hero__origin-made{font-size:1.085em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
+/* Tailored in Shanghai is the anchor line, so it takes a clear size step up,
+   and the gold. Bigger caps need less tracking to look evenly spaced. */
+.adb-hero__origin-made{font-size:1.4em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
 /* Tailored in Shanghai is the highlight, so the whole line is gold and the
    line above stays ivory. */
 .adb-hero__origin-made{color:#c8a24b}
@@ -658,21 +652,20 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
      margin goes onto the gap above the mark below. */
   /* The mark supports the headline, it does not compete with it: the two lines
      are pulled tight so they read as one stamp rather than two statements. */
-  /* 6.7328 and 4.4828 below are not rounder on purpose: they land the headline on
+  /* 6.4526 and 4.2026 below are not rounder on purpose: they land the headline on
      exactly the layout pixel it had before the mark was resized. */
-  .adb-hero__origin{position:static;text-align:left;margin-top:6.7328rem;font-size:.794rem}
+  .adb-hero__origin{position:static;text-align:left;margin-top:6.4526rem;font-size:min(.794rem,3.85vw)}
   /* A short phone has less frame to give, and there the price already sat higher.
      Hold both values so the headline stays put and the mark keeps its clearance. */
   @media (max-height:740px){
     .adb-hero__row{margin-bottom:3rem}
-    .adb-hero__origin{margin-top:4.4828rem}
+    .adb-hero__origin{margin-top:4.2026rem}
   }
-  /* Flush left here, so the INs stand on their left edges, which takes a bigger
-     step. French stands À over À on a step of its own. The line box is fixed
-     rather than 1.5 of the type, so the step can differ by language without
-     moving the headline. */
-  .adb-hero__origin-made{font-size:1.167em;line-height:1.39rem;margin-top:.3rem}
-  :lang(fr) .adb-hero__origin-made{font-size:1.231em}
+  /* Tailored in Shanghai is the longest line on the page at this size, so below
+     about 330px the type follows the screen width to keep it on one line. Both
+     line boxes are fixed, so that never moves the headline. */
+  .adb-hero__origin-designed{line-height:1.19rem}
+  .adb-hero__origin-made{line-height:1.67rem;margin-top:.3rem}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
   .adb-hero .adb-eyebrow{font-size:.7rem}
   .adb-hero__inner{transform:translateY(5vh)}
