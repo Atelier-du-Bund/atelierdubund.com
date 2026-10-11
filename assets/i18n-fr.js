@@ -4,7 +4,7 @@
 
    Register: vouvoiement throughout, heritage tone, Québec French.
      is a non-breaking space — French sets one before : ; ! ? and inside
-   « », and it keeps "699 $" and "100 % laine" from breaking across lines.
+   « », and it keeps "899 $" and "100 % laine" from breaking across lines.
 
    Locked terms (French side of the house glossary):
      sur mesure (never « grande mesure » / bespoke)   maîtres tailleurs
@@ -16,7 +16,10 @@ window.ADB_FR = {
 
   lang: 'fr-CA',
   title: 'Atelier du Bund — L’art du tailleur shanghaïen, façonné pour vous.',
-  description: 'Complets sur mesure dans l’art du tailleur shanghaïen, façonnés pour vous. Une expérience de tailleur privée, sur rendez-vous à Montréal.',
+  description: 'Complets sur mesure d’un savoir-faire centenaire, sur rendez-vous privé à Montréal.',
+  /* what a shared link shows: title, then the line under it */
+  og_title: 'L’art du tailleur shanghaïen, façonné pour vous. Complets sur mesure d’un savoir-faire centenaire, sur rendez-vous privé.',
+  og_description: 'Atelier du Bund · Montréal',
 
   /* ---- plain text nodes: selector -> string, or array in document order
           (null keeps the English) ---------------------------------------- */
@@ -97,8 +100,8 @@ window.ADB_FR = {
   /* ---- elements holding markup (a <br>, a <span>) ---------------------- */
   html: {
     '.adb-hero__title': 'L’art du tailleur shanghaïen,<br>façonné pour vous.',
-    '.adb-hero__origin-designed': 'Conçu à <span>Montréal</span>.',
-    '.adb-hero__origin-made': 'Taillé à <span>Shanghai</span>.',
+    '.adb-hero__origin-designed': 'Conçu au <span>Canada</span>.',
+    '.adb-hero__origin-made': 'Fabriqué en <span>Chine</span>.',
     '.adb-about .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>À propos',
     /* The heading measure is 20ch, and French runs ~20% longer than English:
        « et … pour votre corps » stranded « corps, » on a line of its own. The
@@ -112,7 +115,7 @@ window.ADB_FR = {
     '.adb-fabrics__heading': 'La même main dans chaque complet.<br>Construit pour la vie que vous menez.',
     '.adb-how__head .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Le déroulement',
     '.adb-reserve .adb-eyebrow': '<span class="adb-eyebrow__rule"></span>Sur rendez-vous · Montréal',
-    '.adb-reserve__note': 'Complets sur mesure à partir de <span>699 $ CAD</span>',
+    '.adb-reserve__note': 'Complets sur mesure d’un savoir-⁠faire centenaire, à partir de <span>899 $ CAD</span>',
     '.adb-footer__blurb': 'Atelier du Bund est né d’une recherche : celle d’une expérience de complet privée, et de l’héritage d’artisanat qui la porte.&nbsp;Fondé à Montréal par <span class="adb-footer__founder">Zhenai Xiao</span>, dans la lignée des maîtres tailleurs shanghaïens — sur une conviction simple : bien s’habiller est un investissement que l’on porte des années, et devrait être plus accessible.'
   },
 

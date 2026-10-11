@@ -89,7 +89,9 @@ the English.
   Needs `beautifulsoup4` (`pip3 install --user beautifulsoup4`) and macOS `osascript`,
   which it uses to read the deck.
 - The generator does four things the deck cannot: rewrites `<head>` for French
-  (title, description, `og:*`, `twitter:*`, `og:locale`, canonical), points the
+  (title, description, `og:*`, `twitter:*`, `og:locale`, canonical; a shared link's
+  title and line come from the deck's `og_title` and `og_description`, falling back to
+  `title` and `description`), points the
   toggle and the footer link at `/`, makes every asset path root-absolute because
   `/fr/` is one level down, and restores the SVG attributes `viewBox`,
   `preserveAspectRatio`, `maskUnits` and `patternUnits`, which the HTML parser
@@ -107,6 +109,11 @@ Non-negotiable, site-wide:
 
 - **house styles** — never "signatures," never "models"
 - **made-to-measure** — never "bespoke"
+- **heritage sur mesure suits, by private appointment** describes the product line. Never
+  "custom suits". Changed 2026-10-11. A shared link reads "The art of Shanghai tailoring,
+  made for you. Heritage sur mesure suits, by private appointment." as its title (og and
+  twitter), with "Atelier du Bund · Montréal" under it, because iMessage shows the title
+  only. French: *complets sur mesure d’un savoir-faire centenaire, sur rendez-vous privé*.
 - **master tailors** — no hyphen
 - **No suit has a fused front.** Discontinued 2026-08-20; every reference was stripped
   from both language decks that day. Do not reintroduce the word, and do not let an
@@ -157,7 +164,7 @@ Do not invent product details. Hotspot and cloth copy comes only from supplied s
 
 ### Wanted, not yet built
 
-- **Reviews / testimonials.** The page currently asks a stranger for $699+ and an hour
+- **Reviews / testimonials.** The page currently asks a stranger for $899+ and an hour
   in a private room on assertion alone. Highest-leverage addition on the site.
 - **A qualifying line at the CTA** — the "if this is how you'd rather be dressed" idea.
   Drafted once and rejected as off-key; to be reworked from scratch.

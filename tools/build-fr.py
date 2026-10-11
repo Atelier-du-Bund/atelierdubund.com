@@ -136,13 +136,17 @@ def main():
             each(soup, selector, value, lambda n, v, a=name: n.__setitem__(a, v))
 
     # ---- head: this page is French, and it is its own URL ----------------
+    # A shared link can carry its own title and line under it (og_title,
+    # og_description in the deck); without them it reuses the page's.
+    og_title = fr.get("og_title", fr["title"])
+    og_description = fr.get("og_description", fr["description"])
     for key, val, attr in (
-        ("og:title", fr["title"], "property"),
-        ("og:description", fr["description"], "property"),
+        ("og:title", og_title, "property"),
+        ("og:description", og_description, "property"),
         ("og:url", FR_URL, "property"),
         ("og:locale", "fr_CA", "property"),
-        ("twitter:title", fr["title"], "name"),
-        ("twitter:description", fr["description"], "name"),
+        ("twitter:title", og_title, "name"),
+        ("twitter:description", og_description, "name"),
     ):
         tag = soup.find("meta", attrs={attr: key})
         if tag:
