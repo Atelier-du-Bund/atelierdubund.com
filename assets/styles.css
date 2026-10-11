@@ -359,22 +359,21 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
    compensation are in em and scale with it; the gap between the lines is in rem. */
 .adb-hero__origin{position:absolute;right:clamp(1.25rem,5vw,4rem);bottom:clamp(3rem,7vw,5.5rem);
   text-align:right;font-family:'Jost',sans-serif;text-transform:uppercase;
-  font-size:clamp(.74rem,1.29vw,1.198rem)}
+  font-size:clamp(.74rem,1.176vw,1.092rem)}
 .adb-hero__origin-designed,.adb-hero__origin-made{
   font-weight:300;letter-spacing:.28em;line-height:1.5;
   color:#ece3d2;margin-right:-.28em}
-/* Made in China is the anchor line, so it takes a size step up. Weight and
-   colour stay where they are, so the step reads as hierarchy, not as volume.
-   Bigger caps need less tracking to look evenly spaced.
+/* Tailored in Shanghai is the anchor line, so it takes a size step up and the
+   gold. Bigger caps need less tracking to look evenly spaced.
    The step is not a free choice: it is the one that stands the IN of each line
    on a single vertical, their right edges here, where the block is set flush
-   right. Because it is a ratio it holds at every width. Measured on the ink,
-   so change the tracking or the words and it has to be measured again.
-   French stands AU over EN, which needs a slightly bigger step. */
-.adb-hero__origin-made{font-size:1.323em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
-:lang(fr) .adb-hero__origin-made{font-size:1.358em}
-/* Made in China is the highlight, so the whole line is gold and the line above
-   stays ivory. */
+   right. DESIGNED and TAILORED are the same length, so the step is small. It is
+   a ratio, so it holds at every width. Measured on the ink: change the tracking
+   or the words and it has to be measured again. French, À over À, lands on the
+   same step. */
+.adb-hero__origin-made{font-size:1.085em;letter-spacing:.22em;margin-right:-.22em;margin-top:.2rem}
+/* Tailored in Shanghai is the highlight, so the whole line is gold and the
+   line above stays ivory. */
 .adb-hero__origin-made{color:#c8a24b}
 .adb-hero .adb-eyebrow{font-size:.82rem;letter-spacing:.32em;margin-bottom:1.5rem}
 .adb-hero .adb-eyebrow__rule{width:2.2rem;opacity:.85}
@@ -659,20 +658,21 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
      margin goes onto the gap above the mark below. */
   /* The mark supports the headline, it does not compete with it: the two lines
      are pulled tight so they read as one stamp rather than two statements. */
-  /* 6.1228 and 3.8728 below are not rounder on purpose: they land the headline on
+  /* 6.7328 and 4.4828 below are not rounder on purpose: they land the headline on
      exactly the layout pixel it had before the mark was resized. */
-  .adb-hero__origin{position:static;text-align:left;margin-top:6.1228rem;font-size:.74rem}
+  .adb-hero__origin{position:static;text-align:left;margin-top:6.7328rem;font-size:.794rem}
   /* A short phone has less frame to give, and there the price already sat higher.
      Hold both values so the headline stays put and the mark keeps its clearance. */
   @media (max-height:740px){
     .adb-hero__row{margin-bottom:3rem}
-    .adb-hero__origin{margin-top:3.8728rem}
+    .adb-hero__origin{margin-top:4.4828rem}
   }
   /* Flush left here, so the INs stand on their left edges, which takes a bigger
-     step. French cannot do the same (FABRIQUÉ runs longer than CONÇU) and keeps
-     its own step from above. The line box is fixed rather than 1.5 of the type,
-     so the step can differ by language without moving the headline. */
-  .adb-hero__origin-made{font-size:1.831em;line-height:2.08rem;margin-top:.3rem}
+     step. French stands À over À on a step of its own. The line box is fixed
+     rather than 1.5 of the type, so the step can differ by language without
+     moving the headline. */
+  .adb-hero__origin-made{font-size:1.167em;line-height:1.39rem;margin-top:.3rem}
+  :lang(fr) .adb-hero__origin-made{font-size:1.231em}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
   .adb-hero .adb-eyebrow{font-size:.7rem}
   .adb-hero__inner{transform:translateY(5vh)}
