@@ -535,15 +535,15 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
 .adb-reserve__btn:hover{background:#e0c48a;border-color:#e0c48a;color:#1a0e10}
 .adb-reserve__note{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#6f6450}
 .adb-reserve__note span{color:#211a12}
-/* The French price line is three phrases. Here the price starts its own line;
-   on a phone every phrase does (see the mobile block). The note takes the full
-   row, so Taxes incluses sits under the price, not beside the first line. Only
-   the price itself takes the dark ink. */
+/* The price line is phrases in spans, and it flows as one run of text with the
+   tax at its end, so the tax always follows the price on its line. The breaks
+   come from the spans, never a <br>: French starts the price on a new line
+   everywhere, and on a phone every phrase starts one (see the mobile block).
+   Only the price itself takes the dark ink. */
 .adb-reserve__note .adb-reserve__line{color:inherit}
-.adb-reserve__line:last-child{display:block}
-:lang(fr) .adb-reserve__note{flex-basis:100%}
-.adb-reserve__pricegroup{display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
-.adb-reserve__tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#6f6450}
+:lang(fr) .adb-reserve__line:last-child::before{content:'\A';white-space:pre}
+.adb-reserve__pricegroup{font-size:.72rem}
+.adb-reserve__tax{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#6f6450;margin-left:.5rem;white-space:nowrap}
 
 /* ---------- Footer ---------- */
 .adb-footer{background:#33161f;border-top:1px solid rgba(200,162,75,.18);padding-block:clamp(3.5rem,7vw,5.5rem) 2.5rem;color:#b9ad97}
@@ -683,10 +683,12 @@ h3{font-size:clamp(1.4rem,2.6vw,1.9rem)}
   .adb-hero__origin-designed,.adb-hero__origin-made{margin-right:0}
   .adb-hero .adb-eyebrow{font-size:.7rem}
   .adb-hero__inner{transform:translateY(5vh)}
-  .adb-reserve__line{display:block}
-  .adb-reserve__line + .adb-reserve__line{margin-top:.5em}
-  /* Réserver un rendez-vous privé holds one line in the button: less side
-     padding, and below about 386px the type follows the screen width. */
-  :lang(fr) .adb-reserve__btn{padding-inline:1.25em;white-space:nowrap;font-size:min(.82rem,3.4vw)}
+  .adb-reserve__line + .adb-reserve__line::before{content:'\A';white-space:pre}
+  .adb-reserve__pricegroup{line-height:2.1}
+  /* The booking button holds one line: less side padding, and on the narrowest
+     phones the type follows the screen width (below about 350px in English,
+     386px in French, which runs longer). */
+  .adb-reserve__btn{padding-inline:1.25em;white-space:nowrap;font-size:min(.82rem,3.7vw)}
+  :lang(fr) .adb-reserve__btn{font-size:min(.82rem,3.4vw)}
   .adb-footer__base{gap:.6rem}
 }
