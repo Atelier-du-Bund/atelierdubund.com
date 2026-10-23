@@ -1,6 +1,6 @@
 # atelierdubund.com
 
-Live static site for Atelier du Bund, a made-to-measure tailoring house in Montréal.
+Live static site for Atelier du Bund, a sur mesure tailoring house in Montréal.
 Hand-built. No framework. `index.html` + `assets/styles.css` + `assets/main.js`
 (the homepage behaviors, loaded from the end of `<body>` — keep it a plain script tag there,
 never `defer`/`async`/module), deployed from `main`. Both assets are cache-busted with a `?v=`
@@ -108,12 +108,19 @@ the English.
 Non-negotiable, site-wide:
 
 - **house styles** — never "signatures," never "models"
-- **made-to-measure** — never "bespoke"
-- **heritage sur mesure suits, by private appointment** describes the product line. Never
-  "custom suits". Changed 2026-10-11. A shared link reads "The art of Shanghai tailoring,
-  made for you. Heritage sur mesure suits, by private appointment." as its title (og and
-  twitter), with "Atelier du Bund · Montréal" under it, because iMessage shows the title
-  only. French: *complets sur mesure d’un savoir-faire centenaire, sur rendez-vous privé*.
+- **sur mesure** in anything a person reads: the page and shared-link previews.
+  Lowercase, no hyphen, no italics: *sur mesure suits*. The product line is
+  "Heritage sur mesure suits, by private appointment." **custom** only where search
+  engines read: the `<title>` and the meta description (*custom suits*). Never
+  "made-to-measure", never "MTM", never "bespoke". Changed 2026-10-23.
+  - Google: title "Atelier du Bund — Custom suits in Montréal"; description "Custom suits
+    in the art of Shanghai tailoring, made for you. A private suiting experience, by
+    appointment in Montréal."
+  - Shared links (og and twitter): title "The art of Shanghai tailoring, made for you.",
+    with "Heritage sur mesure suits, by private appointment." under it. iMessage shows
+    the title only.
+  - French keeps « sur mesure » throughout: *complets sur mesure d’un savoir-faire
+    centenaire, sur rendez-vous privé*.
 - **master tailors** — no hyphen
 - **No suit has a fused front.** Discontinued 2026-08-20; every reference was stripped
   from both language decks that day. Do not reintroduce the word, and do not let an
